@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="https://esqa.moneris.com/HPPDP/index.php" method="post">
+    <input type="hidden" name="ps_store_id" value="U63SPTore1">
+    <input type="hidden" name="hpp_key" value="dpXCK796IP8O">
+    <input type="hidden" name="lang" value="en-ca"/>
+    <input type="hidden" name="cc_num" value="4242424242424242"/>
+    <input type="hidden" name="expMonth" value="05"/>
+    <input type="hidden" name="expYear" value="12"/>
+    <!—- eFraud Information -->
+    <input type="text" name="avs_street_number" value="200"/>
+    <input type="text" name="avs_street_name" value="Bay St"/>
+    <input type="text" name="avs_zipcode" value="M5L2L5"/>
+    <input type="text" name="cvd_value" value="123"/>
+    <input type="text" name="cvd_indicator" value="1"/>
+    <!--Customer ID -->
+    <input type="hidden" name="cust_id" value="customer num"/>
+    <!-- Item Information-->
+    <input type="hidden" name="quantity1" value="3"/>
+    <input type="hidden" name="description1" value="qunat 3"/>
+    <input type="hidden" name="id1" value="sku123"/>
+    <input type="hidden" name="price1" value="4.00"/>
+    <input type="hidden" name="subtotal1" value="12.00"/>
+    <input type="hidden" name="quantity2" value="2"/>
+    <input type="hidden" name="description2" value="qunat 2"/>
+    <input type="hidden" name="id2" value="2sku123"/>
+    <input type="hidden" name="price2" value="24.00"/>
+    <input type="hidden" name="subtotal2" value="212.00"/>
+    Email:
+    <input type="text" name="email" value=""/><br/>
+    <input type="hidden" name="note" value="these are special instructions"/>
+    <!-- rvar Information -->
+    <input type="hidden" name="rvar1" value="1_rvar"/>
+    <input type="hidden" name="rvar2" value="2_rvar"/>
+    <input type="hidden" name="rvar3" value="3_rvar"/>
+    <input type="hidden" name="rvar4" value="4_rvar"/>
+    <input type="hidden" name="gst" value="3.03"/>
+    <input type="hidden" name="shipping_cost" value="4.03"/>-->
+    <!-- Shipping information -->
+    <input type="hidden" name="ship_first_name" value="sfn"/>
+    <input type="hidden" name="ship_last_name" value="sln"/>
+    <input type="hidden" name="ship_company_name" value="scn"/>
+    <input type="hidden" name="ship_address_one" value="sao"/>
+    <input type="hidden" name="ship_city" value="sc"/>
+    <input type="hidden" name="ship_state_or_province" value="ssop"/>
+    <input type="hidden" name="ship_postal_code" value="spc"/>
+    eSELECTplus DirectPost October 17, 2008 Page 21 of 24
+    <input type="hidden" name="ship_country" value="scount"/>
+    <input type="hidden" name="ship_phone" value="sp"/>
+    <input type="hidden" name="ship_fax" value="sf"/>
+    <!-- Billing Information -->
+    <input type="hidden" name="bill_first_name" value="Tom"/>
+    <input type="hidden" name="bill_last_name" value="Smith"/>
+    <!--<input type="hidden" name="bill_company_name" value="bcn"/>-->
+    <input type="hidden" name="bill_address_one" value="1900 Beach Av"/>
+    <input type="hidden" name="bill_city" value="Vancouver"/>
+    <input type="hidden" name="bill_state_or_province" value="BC"/>
+    <input type="hidden" name="bill_postal_code" value="V6G1U7"/>
+    <input type="hidden" name="bill_country" value="Canada"/>
+    <input type="hidden" name="bill_phone" value="604-903-3124"/>
+    <input type="hidden" name="bill_fax" value="bf"/>
+    <!-- Recurring Information -->
+    <input type="hidden" name="doRecur" value="1"/>
+    <input type="hidden" name="recurUnit" value="month"/>
+    <input type="hidden" name="recurStartDate" value="2011/08/21"/>
+    <input type="hidden" name="recurNum" value="12"/>
+    <input type="hidden" name="recurStartNow" value="true"/>
+    <input type="hidden" name="recurPeriod" value="1"/>
+    <input type="hidden" name="recurAmount" value="4.00"/>
+    <!------- DEFINE CHARGE TOTAL HERE --->
+    Amount:<input type="text" name="charge_total" value="300.00"/><br/>
+    <br/>
+    <input type="submit" name="SUBMIT" value="Click to process transaction"/>
+    </form>
+</body>
+</html>

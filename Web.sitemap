@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/" title="LottoTry.com Site Map"  description="Site Map Page">
+
+
+		<siteMapNode url="~/LottoTry.aspx" title="LottoTry"  description="LottoTry Page" />
+		<siteMapNode url="~/memberLogin.aspx" title="Login"  description="Login Page" roles="*" />
+		<siteMapNode url="~/instructions.aspx" title="Instructions"  description="Instructions Page" roles="*" />
+		<siteMapNode url="~/about.aspx" title="About"  description="About Page" roles="*" />
+		<siteMapNode url="~/contact.aspx" title="Contact"  description="Contact Page" roles="*" />
+		<siteMapNode url="~/Register.aspx" title="Member Registration"  description="Register Page" roles="*" />
+		<siteMapNode url="~/forget_password.aspx" title="Forget Your Password"  description="Forget_password Page" roles="*" />
+		<siteMapNode url="~/terms.aspx" title="Terms and Conditions"  description="Terms Page" roles="*" />
+		<siteMapNode url="~/Privacy.aspx" title="Privacy Policy"  description="Privacy Policy" roles="*" />
+		<siteMapNode url="~/Predict.aspx" title="Predict Draws document"  description="Predict Draws document" roles="*" />
+		<siteMapNode url="~/AutoDraws.aspx" title="Auto Draws document"  description="Auto Draws document" roles="*" />
+		<siteMapNode url="~/Potential.aspx" title="Potential Draws document"  description="Potential Draws document" roles="*" />
+		<siteMapNode url="~/Statistics1.aspx" title="Statistics1 document"  description="Statistics1 document" roles="*" />
+		<siteMapNode url="~/Statistics2.aspx" title="Statistics2 document"  description="Statistics2 document" roles="*" />
+		<siteMapNode url="~/Statistics3.aspx" title="Statistics3 document"  description="Statistics3 document" roles="*" />
+		<siteMapNode url="~/Statistics4.aspx" title="Statistics4 document"  description="Statistics4 document" roles="*" />
+		<siteMapNode url="~/Statistics5.aspx" title="Statistics5 document"  description="Statistics5 document" roles="*" />
+		<siteMapNode url="~/Statistics6.aspx" title="Statistics6 document"  description="Statistics6 document" roles="*" />
+		<siteMapNode url="~/Statistics7.aspx" title="Statistics7 document"  description="Statistics7 document" roles="*" />
+
+		<siteMapNode url="~/Predict_video.aspx" title="Predict Draws Video Clips"  description="Predict Draws Video Clips" roles="*" />
+		<siteMapNode url="~/AutoDraws_video.aspx" title="Auto Draws Video Clips"  description="Auto Draws Video Clips" roles="*" />
+		<siteMapNode url="~/Potential_video.aspx" title="Potential Draws Video Clips"  description="Potential Draws Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics1_video.aspx" title="Statistics1 Video Clips"  description="Statistics1 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics2_video.aspx" title="Statistics2 Video Clips"  description="Statistics2 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics3_video.aspx" title="Statistics3 Video Clips"  description="Statistics3 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics4_video.aspx" title="Statistics4 Video Clips"  description="Statistics4 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics5_video.aspx" title="Statistics5 Video Clips"  description="Statistics5 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics6_video.aspx" title="Statistics6 Video Clips"  description="Statistics6 Video Clips" roles="*" />
+		<siteMapNode url="~/Statistics7_video.aspx" title="Statistics7 Video Clips"  description="Statistics7 Video Clips" roles="*" />
+
+		<siteMapNode url="~/LottoSites/Lotto649.aspx" title="Lottery - 649"  description="Lotto 649" roles="*" />
+		<siteMapNode url="~/LottoSites/BC49.aspx" title="Lottery - BC/49"  description="BC/49" roles="*" />
+		<siteMapNode url="~/LottoSites/LottoMax.aspx" title="Lottery - Lotto Max"  description="Lotto Max" roles="*" />
+		<siteMapNode url="~/LottoSites/FloridaFantasy5.aspx" title="Lottery - Florida Fantasy 5"  description="Florida Fantasy 5" roles="*" />
+    <siteMapNode url="~/LottoSites/LottoFlorida.aspx" title="Lottery - Florida Lotto"  description="Florida Lotto" roles="*" />
+		<siteMapNode url="~/LottoSites/LottoFloridaLucky.aspx" title="Lottery - Florida Mega Money"  description="Florida Mega Money" roles="*" />
+    <siteMapNode url="~/LottoSites/CaSuperlottoPlus.aspx" title="Lottery - California Super Lotto Plus"  description="California Super Lotto Plus" roles="*" />
+    <siteMapNode url="~/LottoSites/NewJerseyPick6Lotto.aspx" title="Lottery - New Jersey Pick 6 Lotto"  description="New Jersey Pick 6 Lotto" roles="*" />
+    <siteMapNode url="~/LottoSites/OregonMegabucks.aspx" title="Lottery - Oregon Megabucks"  description="Oregon Megabucks" roles="*" />
+    <siteMapNode url="~/LottoSites/MegaMillions.aspx" title="Lottery - Mega Millions"  description="Mega Millions" roles="*" />
+		<siteMapNode url="~/LottoSites/PowerBall.aspx" title="Lottery - Power Ball"  description="Power Ball" roles="*" />
+		<siteMapNode url="~/LottoSites/NYLotto.aspx" title="Lottery - New York Lottery"  description="New York Lottery" roles="*" />
+		<siteMapNode url="~/LottoSites/LottoSites/EuroMillions.aspx" title="Lottery - Euro Millions"  description="Euro Millions" roles="*" />
+		<siteMapNode url="~/LottoSites/EuroJackpot.aspx" title="Lottery - Euro Jackpot"  description="Euro Jackpot" roles="*" />
+		<siteMapNode url="~/LottoSites/GermanLotto.aspx" title="Lottery - Germany Lotto 6/49 + B"  description="Germany Lotto 6/49 + B" roles="*" />
+		<siteMapNode url="~/LottoSites/BritishLotto.aspx" title="Lottery - British Lotto"  description="British Lotto" roles="*" />
+		<siteMapNode url="~/LottoSites/OZLotto.aspx" title="Lottery - OZ Lotto"  description="OZ Lotto" roles="*" />
+		<siteMapNode url="~/LottoSites/AustralianLotto.aspx" title="Lottery - Australian Saturday Lotto 6/45"  description="Australian Saturday Lotto 6/45" roles="*" />
+		<siteMapNode url="~/LottoSites/NYSweetMillion.aspx" title="Lottery - New York Sweet Million"  description="New York Sweet Million" roles="*" />
+		<siteMapNode url="~/LottoSites/ColoradoLotto.aspx" title="Lottery - Colorado Lotto"  description="Colorado Lotto" roles="*" />
+		<siteMapNode url="~/LottoSites/SSQ.aspx" title="Lottery - 双色球 of China Double-Color Balls"  description="双色球 of China Double-Color Balls" roles="*" />
+		<siteMapNode url="~/LottoSites/SevenLotto.aspx" title="Lottery - 七乐彩 of China Seven Lotto"  description="七乐彩 of China Seven Lotto" roles="*" />
+		<siteMapNode url="~/LottoSites/SuperLotto.aspx" title="Lottery - 超级大乐透 of China Sports Super Lotto"  description="超级大乐透 of China Sports Super Lotto" roles="*" />
+
+
+		<siteMapNode url="/Members" title="Member Data Management"  description="Members">
+			<siteMapNode url="/Members/userAdmin.aspx" title="Edit Profile"  description="Edit Profile Page" roles="Admin, Member" />
+			<siteMapNode url="/Members/ReceiptRecord.aspx" title="Receipt Record"  description="Receipt Record Page" roles="Admin, Member" />
+			<siteMapNode url="/Members/RemoveReceiptRecords.aspx" title="Remove Receipt Records"  description="Remove Receipt Record Page" roles="Admin, Member" />
+			<!--<siteMapNode url="/Members/RenewMembership.aspx" title="Renew Membership"  description="Renew Membership Page" roles="Admin, Member" />-->
+
+		</siteMapNode>
+
+		<siteMapNode url="~/Admin" title="Admin"  description="Admin" >
+			<siteMapNode url="~/Admin/clientStatus.aspx" title="Check Client Status"  description="Check Client Status" roles="Admin" />
+			<siteMapNode url="~/Admin/emailToAll.aspx" title="Email to All Clients"  description="Email to All Clients" roles="Admin" />
+		</siteMapNode>
+
+	</siteMapNode>
+</siteMap>

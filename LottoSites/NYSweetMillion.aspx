@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="NYSweetMillion.aspx.cs" Inherits="Lottotry.NYSweetMillion" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="cphcontent" runat="server">
+    <div class="docs">
+
+        <iframe id="lottolinks" runat="server" src="" frameborder="0" marginwidth="0"></iframe>
+</asp:Content>
+
+<asp:Content ID="Content7" runat="server" ContentPlaceHolderID="cphleftsidebar">
+</asp:Content>
+<asp:Content ID="Content8" runat="server" ContentPlaceHolderID="cphrightsidebar">
+</asp:Content>
+
+

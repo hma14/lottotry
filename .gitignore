@@ -1,0 +1,17 @@
+bin/*.exe
+bin/
+bin/Lottery.*
+obj/
+.svn
+*.db
+*.suo
+*.user
+*.pyc
+XML/*.xml
+bin/*.dll
+bin/*.pdb
+XML/*
+packages/*
+.vs/
+SqlScripts/Putback_TexasCashFive.sql
+SqlScripts/LottotryData_Azure.sql

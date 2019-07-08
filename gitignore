@@ -1,0 +1,5 @@
+XML/*.xml
+bin/*.dll
+bin/*.pdb
+*.csproj
+

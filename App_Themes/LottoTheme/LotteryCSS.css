@@ -1,0 +1,961 @@
+﻿
+*
+{
+    margin: 0px;
+}
+
+body
+{
+    background-color: #307D7E;
+    /*margin-left: 1px;*/
+    margin-right: 5px;
+    width: 1050px;
+    height: 600px;
+    font-family: Arial, Times New Roman, Serif;
+}
+
+#container
+{
+    margin-top: 0px;
+    width: 100%;
+    height: 600px;
+}
+
+#wrapper
+{
+    background-color: #99C68E;
+    color: #F6358A;
+    width: 100%; /*height:763px;*/
+    border-style: ridge;
+    border-width: 3px;
+}
+
+
+
+#banner
+{
+    /*margin-left:100px; */
+    float: left;
+    width: 70%;
+}
+
+#right_banner
+{
+    float: right;
+    width: 16%;
+}
+
+#godaddy_seal
+{
+    float: right;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#follow_lottotry
+{
+    clear: both;
+    float: right;
+    margin: 10px;
+    margin-right: -10px;
+}
+
+
+#menubar
+{
+    width: 100%;
+    clear: both;
+    text-shadow: #985813 0 -1px;
+    background-image: -moz-linear-gradient(top, #f78c40,#d67632);
+    background-image: -webkit-gradient(linear,left bottom,left top, from(#d67632),to(#f78c40));
+    background-color: #d67632;
+    display: block;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0 0 0;
+    height: 30px;
+}
+
+
+.docs
+{
+    padding: 0px;
+    border: 0px;
+    margin: auto;
+    z-index: -1;
+    width:99%;
+}
+
+
+.pdf
+{
+    z-index: -1;
+}
+
+.dropdownmenu
+{
+    z-index: 1;
+}
+
+
+#form1
+{
+    margin-top: 0px;
+}
+
+h1
+{
+    font-size: 1.2em;
+    text-align: center;
+    color: #FAFAFA;
+    margin: 5px;
+    text-shadow: Black 0 -1px;
+}
+
+h2
+{
+    font-size: 1em;
+    color: #FAFAFA;
+    margin-top: 10px;
+    text-align: left;
+    text-shadow: #985813 0 -1px;
+}
+
+p
+{
+    margin: 10px;
+}
+
+strong
+{
+    color: red;
+    
+}
+
+
+em, strike
+{
+    color: #00FFFF;
+    font-size: 80%; /*font-weight:bold;*/
+}
+
+a.more, a.more2, a.more3, a.more4, a.more5, a.more6, a.more7, a.more8, a.more9, a.more10, a.more11, a.more12, a.more13, a.more14, a.more15, a.more16, a.more17, a.more18, a.more19, a.more20
+{
+    color: red;
+    font-style: italic;
+}
+
+.tblUserInput td
+{
+    margin:0;
+    padding:0;
+    width:60px;
+    text-align:right;
+    
+}
+
+
+.lbl 
+{
+    color: #985813;
+    position: relative;
+    font-size: .7em;
+    vertical-align: auto;
+    caption-side: top;
+    
+}
+
+.lbl2
+{
+    color: #9AFEFF;
+    position: static;
+    font-size: smaller;
+}
+
+#submit1, #submit2, #submit3, #submit4, #submit5, #submit6
+{
+    background-color: ActiveBorder;
+    color: White;
+    margin-left: 1em;
+    font-weight: bolder;
+}
+
+
+img
+{
+    border-width: 0;
+    vertical-align: bottom;
+}
+
+
+
+#lbl
+{
+    font-family: Verdana, Sans-Serif, italian;
+    color: Red;
+    margin: 10px 0px 10px 0px;
+}
+
+.dbexetime
+{
+    color: Green;
+}
+
+Button:active
+{
+    background-color: Lime;
+}
+
+Button:hover
+{
+    font-style: italic;
+    background-color: Fuchsia;
+}
+
+
+
+#tdRelativeDist0
+{
+    color: #ff0033;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#tdRelativeDist
+{
+    color: #0066ff;
+    font-style: italic;
+}
+
+
+th
+{
+    text-align: center;
+}
+
+
+.style1
+{
+    height: 118px;
+}
+
+
+#lotteries_animation
+{
+    clear: both;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-style: inset;
+    border-spacing: 3px;
+    border-width: 3px;
+}
+
+
+/*#front_page_content {*/
+#main
+{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    float: left;
+    width: 810px; /*height:584px;*/
+    height: 450px;
+    color: Maroon; /*background-color:White;*/
+}
+
+    #main .leftside
+    {
+        float: left;
+        width: 30%;
+        margin: 10px;
+    }
+
+    #main .rightside
+    {
+        float: right;
+        width: 30%;
+        margin: 10px;
+    }
+
+
+
+    #main .para
+    {
+        clear: both;
+    }
+
+
+#lotto_content
+{
+    margin: 5px;
+    float: left;
+    width: 1040px; /*background-color:#99C68E;*/
+}
+
+    #lotto_content p
+    {
+        font-family: Times New Roman;
+        font-size: 85%;
+        color: Green;
+    }
+
+#content
+{
+    /*font-family:Arial;*/
+    margin-left: 10px;
+    width: 510px;
+    float: left; /* text-align:center; */
+}
+
+
+
+
+
+#result_table
+{
+    height: 250px;
+    margin-left: -100px;
+    overflow: auto;
+}
+
+#left_sidebar
+{
+    float: left;
+    width: 120px;
+    height: 400px;
+    margin-left: 1px; /*background-color:#99C68E; */
+}
+
+#right_sidebar
+{
+    margin-right: 1px;
+    float: right;
+    width: 120px;
+    height: 400px;
+}
+
+
+#footer
+{
+    clear: both;
+    width: 100%;
+    height: 70px;
+    background-color: teal;
+    background-image: -moz-linear-gradient(top, #77BFC7, Teal);
+    background-image: -webkit-gradient(linear,left bottom,left top,from(Teal),to(#77BFC7));
+    color: White;
+    font-size: 80%;
+    vertical-align: middle;
+    border-top-style: ridge;
+    border-top-width: 2px;
+    text-shadow: #985813 0 -1px;
+}
+
+#LinkBar
+{
+    clear: both;
+    float: left;
+    background-color: Teal;
+    width: 100%;
+}
+
+
+.footer_icons
+{
+    float: left;
+    margin: 5px;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+#footer_links
+{
+    clear: left;
+    text-align: center;
+    width: 100%;
+}
+
+
+#copyright
+{
+    width: 25%;
+    float: right;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+
+
+#footer_menu
+{
+    width: 73%;
+    float: left;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+    #footer_menu a
+    {
+        margin: 5px;
+        color: #FFF;
+        text-decoration: none;
+    }
+
+        #footer_menu a:link
+        {
+            color: #FFF;
+        }
+
+        #footer_menu a:visited
+        {
+            color: Orange;
+        }
+
+        #footer_menu a:hover
+        {
+            color: #00FFFF;
+            background-color: Maroon;
+        }
+
+        #footer_menu a:active
+        {
+            color: #09C;
+        }
+
+#displayTime
+{
+    float: left;
+    width: 15%;
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+
+
+
+
+/* Newly added css */
+
+
+
+
+
+#termsConditions
+{
+    width: 300px;
+    height: 25px;
+    background-color: #B23030;
+    float: left;
+    text-align: center;
+    color: White;
+}
+
+
+#lblResult, #lblLoginFailed
+{
+    text-align: center;
+    color: Red;
+}
+
+#adminLinks
+{
+    text-align: left;
+    text-decoration: none;
+}
+
+.checkbox
+{
+    display: list-item;
+    color: Black;
+}
+
+.basicLabel
+{
+    color: #FAFAFA;
+    font-size: 100%;
+}
+
+.notifyLabel
+{
+    color: Black;
+    background-color: White;
+}
+
+.listTable
+{
+    border-style: solid;
+    border: 1;
+    display: list-item;
+    margin-bottom: 10px;
+}
+
+    .listTable th
+    {
+        width: 100px;
+    }
+
+
+
+
+span
+{
+    color: #806517;
+    font-size: 80%;
+    margin-right: 5px;
+}
+
+
+.numItems
+{
+    color: #F87217;
+    font-weight: bolder;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+#printPage
+{
+    position: relative;
+    margin-left: 200px;
+    text-align: center;
+}
+
+    #printPage h2
+    {
+        color: Navy;
+        margin-left: -300px;
+    }
+
+.memberAdded
+{
+    color: Green;
+}
+
+.userTitle
+{
+    color: Gray;
+    font-weight: bold;
+    font-size: large;
+}
+
+.signupError
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.passwordResult
+{
+    text-align: center;
+}
+
+.commentAdded
+{
+    color: Black;
+    font-size: 100%;
+}
+
+
+
+
+.gridviews
+{
+
+    margin: 0px;
+    margin: auto;
+    width: 100%;
+    height: 450px;
+    /*background-color: #E0FFFF; 
+    background-repeat: no-repeat;
+    background-position: right top;*/
+    align-content: center;
+}
+
+.refresh {
+    float:right;
+}
+
+
+#lblConfirm
+{
+    color: Red;
+}
+
+h3
+{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+h3, h4
+{
+    color: Maroon;
+}
+
+.contents
+{
+    margin: 2px;
+    width: 720px;
+    height: 100%;
+    font-size: 90%;
+    color: Black;
+    float: left;
+}
+
+    .contents img
+    {
+        border-color: inherit;
+        border-width: 0px;
+        vertical-align: bottom;
+    }
+
+
+    .contents #lotteries
+    {
+        float: left;
+    }
+
+
+    .contents table
+    {
+        margin-top: 5px;
+        font-size: medium; /*background-color:#E0FFFF;*/
+    }
+
+        .contents table td
+        {
+            /*text-align: center;*/
+            width: 100px;
+        }
+
+.clsReceipt
+{
+    color: #FFFF00;
+    font-style: italic;
+}
+
+
+hr
+{
+    margin: 5px;
+}
+
+/*
+.tdAlignRight
+{
+	float:right;
+	
+}
+*/
+
+#lotto_content table td
+{
+    text-align: center;
+}
+
+
+#creditCards
+{
+    float: right;
+}
+
+.htmlcontent
+{
+    align-content:center;
+    margin:30px;
+    
+    padding: 20px;
+    width: 700px;
+     /*background-color:#E0FFFF;*/
+    color: #FAFAFA; /*background-image:url(/images/LottoTryLogo_bg.png);*/
+    background-color:#3B9C9C;
+    background-repeat: no-repeat;
+    background-position: right top; /* 	border-width:2px; 	border-spacing:4px; 	border-style:inset; */
+
+}
+
+.htmlcontent td, th
+{
+    width: 60px;
+    text-align: center;
+    color: #fff;
+    text-shadow: #985813 0 -1px;
+}
+
+    .htmlcontent 
+    {
+        color:#FAFAFA;
+    }
+
+    .tables
+    {
+        align-content: center;
+    }
+
+    .htmlcontent a
+    {
+        color:#FFF380;
+        font-size:90%;
+    }
+.video_clips
+{
+    margin-left: 70px; /*38px;*/
+    width: 700px;
+    height: 500px;
+    background-color: #E0FFFF;
+    background-image: url(/images/LottoTryLogo_bg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    border-width: 2px;
+    border-spacing: 4px;
+    border-style: inset;
+    overflow: auto;
+    text-align: center;
+}
+
+
+.docimage
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.image
+{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.credit_cards_image
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+
+.passwordStrength 
+{
+    font-family:'Times New Roman' ;
+    font-size:small;
+    font-style: italic;
+    color:#FAFAFA;
+}
+
+.watermark
+{
+    
+    color: lightblue;
+}
+
+.star
+{
+    font-size: small;
+    color: #9AFEFF;
+}
+
+#creditcard
+{
+    float: left;
+}
+
+#b05
+{
+    float: left;
+}
+
+#b07
+{
+    float: right;
+}
+
+
+
+.ReceiptRecord
+{
+    font-size: small;
+    margin: 10px 10px 0 20px;
+    padding: 10px;
+    border: dashed 2px #3B9C9C;
+
+    text-shadow: #190202 0 -1px;
+    /*background-image: -moz-linear-gradient(top, #d67632,#985813);
+    background-image: -webkit-gradient(linear,left bottom,left top, from(#985813),to(#d67632));*/
+    background-color:#985813;
+}
+
+b
+{
+    color: #00FFFF;
+    margin:20px;
+    padding:10px;
+ 
+}
+
+.oltext
+{
+    font-size: 80%;
+    color: Green;
+}
+
+
+.htmlsubcontent
+{
+    margin: 20px;
+    margin-left: 50px;
+    height: 75%;
+}
+
+.htmlsubcontent2
+{
+    font-size:80%;
+    color:#FAFAFA;
+    font-style:italic;
+}
+
+
+
+.indicator
+{
+    font-weight: bold;
+    text-align: center;
+}
+
+strike
+{
+    color: Green;
+}
+
+
+
+
+#lblRememberme
+{
+    font-size: 80%;
+}
+
+#hlForget
+{
+    float: left;
+}
+
+.spinner
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align: center;
+    z-index: 1234;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+#img-spinner
+{
+    height: 110px;
+}
+
+
+#UpdateProgress1
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align: center;
+    z-index: 1234;
+    width: 100px; /* width of the spinner gif */
+    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+.LottoList
+{
+
+    font-stretch: expanded;
+    color:aquamarine;
+    font-size:100%;
+    text-decoration:none;
+        
+}
+
+.LottoList a
+{
+    text-decoration:none;   
+}
+
+.rememberme_forget_password
+{
+    color: #fff;
+    width: 100%;
+    font-size: smaller;
+    text-decoration: none;
+}
+
+
+.footer_icons.twitter-follow
+{
+    float: right;
+}
+
+.lblCounter
+{
+    clear: both;
+    float: right;
+    font-size: .8em;
+    text-align: right;
+    background-color: teal;
+    color: white;
+    margin-right: 5px;
+    padding: 5px;
+
+    text-shadow: #985813 0 -1px;
+    background-image: -moz-linear-gradient(top, #43BFC7,teal);
+    background-image: -webkit-gradient(linear,left bottom,left top, from(teal),to(#43BFC7));
+    background-color: teal;
+    
+}
+
+#userInfo1
+{
+    float:left;
+    width:100%;
+}
+
+#userInfo2
+{
+    clear:left;
+    float:left;
+    width:100%;
+}
+
+.userID
+{
+    font-size:large;
+    color:#E0FFFF;
+}
+
+#LblError
+{
+    clear:both;
+    padding:10px;
+    margin:10px;
+    
+}
+
+#LblError span
+{
+    color:red;
+    font-weight:bolder;
+}
+
+    #LblError em 
+    {
+        font-size:1.1em;
+    }

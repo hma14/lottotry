@@ -1,0 +1,1221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5ED1B032-6162-4833-918F-B7AB415F5D1A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottotry</RootNamespace>
+    <AssemblyName>Lottery</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DesktopBuildPackageLocation>..\inetpub\wwwroot\WebDeployment\Lottery.zip</DesktopBuildPackageLocation>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <DesktopBuildPackageLocation>http://www.lottotry.com</DesktopBuildPackageLocation>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabases>false</PublishDatabases>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lottotry.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Lottery.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Lottery.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.WebJobs, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.WebJobs.Core.1.1.1\lib\net45\Microsoft.Azure.WebJobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.WebJobs.Extensions, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.WebJobs.Extensions.1.0.1\lib\net45\Microsoft.Azure.WebJobs.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.WebJobs.Extensions.SendGrid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.WebJobs.Extensions.SendGrid.1.0.1\lib\net45\Microsoft.Azure.WebJobs.Extensions.SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.WebJobs.Host, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.WebJobs.1.1.1\lib\net45\Microsoft.Azure.WebJobs.Host.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="NCrontab, Version=2.0.16709.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ncrontab.2.0.0\lib\net20\NCrontab.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=8.0.5.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>packages\Sendgrid.8.0.5\lib\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid-MailBuilder, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid-MailBuilder.1.1.0.0\lib\net40\SendGrid-MailBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid.CSharp.HTTP.Client.3.0.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SmtpServer, Version=1.6.0.0, Culture=neutral, PublicKeyToken=bc012021074fc105, processorArchitecture=MSIL">
+      <HintPath>packages\SmtpServer.1.6.0\lib\net45\SmtpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Admin\BlackList.aspx" />
+    <Content Include="Admin\clientStatus.aspx" />
+    <Content Include="Admin\editAboutPage.aspx" />
+    <Content Include="Admin\emailToAll.aspx" />
+    <Content Include="Admin\LottoDbStatus.aspx" />
+    <Content Include="Admin\PayPalAccount.aspx" />
+    <Content Include="Admin\ShawAllMembers.aspx" />
+    <Content Include="App_Themes\LottoTheme\GeneratedPages.css" />
+    <Content Include="App_Themes\LottoTheme\LotteryCSS.css" />
+    <Content Include="App_Themes\LottoTheme\Menu.css" />
+    <Content Include="images\CaliforniaSuperLotto.png" />
+    <Content Include="images\CaSuperlottoPlus.png" />
+    <Content Include="images\FloridaLuckyMoney.jpg" />
+    <Content Include="images\NewJerseyPick6Lotto.png" />
+    <Content Include="images\NewYorkTake5.png" />
+    <Content Include="images\OregonMegabucks.png" />
+    <Content Include="images\OZMondayLotto.png" />
+    <Content Include="images\OZSaturdayLotto.png" />
+    <Content Include="images\OZTuesdayLotto.png" />
+    <Content Include="images\OZWednesdayLotto.png" />
+    <Content Include="images\TexasCashFive.png" />
+    <Content Include="LottoSites\CaSuperlottoPlus.aspx" />
+    <Content Include="LottoSites\NewYorkTake5.aspx" />
+    <Content Include="LottoSites\TexasCashFive.aspx" />
+    <Content Include="LottoSites\NewJerseyPick6Lotto.aspx" />
+    <Content Include="LottoSites\OregonMegabucks.aspx" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\lib\net20\AjaxMin.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\lib\net35\AjaxMin.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net35\AjaxMin.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net35\AjaxMinTask.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMin.dll" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMinTask.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\HAPIcon.png" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40-client\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40-client\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40-client\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl3-wp\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl3-wp\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl3-wp\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4-windowsphone71\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4-windowsphone71\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4-windowsphone71\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl4\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl5\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl5\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\sl5\HtmlAgilityPack.XML" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.dll" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.pdb" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.xml" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\readme.txt" />
+    <Content Include="Register.aspx" />
+    <Content Include="SSL_Certificate\lottotry_iis_CSR.txt" />
+    <Content Include="Statistics\AutoDraws.aspx" />
+    <Content Include="Statistics_Videos\AutoDraws_video.aspx" />
+    <Content Include="LottoSites\ColoradoLotto.aspx" />
+    <Content Include="LottoSites\ConnecticutLotto.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="LottoSites\BC49.aspx" />
+    <Content Include="LottoSites\BritishLotto.aspx" />
+    <Content Include="images\CTLotto.jpg" />
+    <Content Include="LottoSites\OZLottoWed.aspx" />
+    <Content Include="LottoSites\OZLottoMon.aspx" />
+    <Content Include="LottoSites\OZLottoSat.aspx" />
+    <Content Include="Controls\AutoDrawConfig.ascx" />
+    <Content Include="Controls\ConfigForm.ascx" />
+    <Content Include="LottoSites\FloridaFantasy5.aspx" />
+    <Content Include="LottoSites\GermanLotto.aspx" />
+    <Content Include="LottoSites\EuroJackpot.aspx" />
+    <Content Include="images\649.png" />
+    <Content Include="images\AustralianLotto.png" />
+    <Content Include="images\bc49.png" />
+    <Content Include="images\EuroJackpot.png" />
+    <None Include="images\lottotry.ico" />
+    <Content Include="images\FloridaFantasy5.png" />
+    <Content Include="login.ico" />
+    <Content Include="LottoSites\LottoFloridaLucky.aspx" />
+    <Content Include="LottoSites\EuroMillions.aspx" />
+    <Content Include="forget_password.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\ad_placeholder.gif" />
+    <Content Include="images\ad_placement.gif" />
+    <Content Include="images\ajax-loader-large.gif" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\ajax-loader_2.gif" />
+    <Content Include="images\ajax_loader_gray_128.gif" />
+    <Content Include="images\ajax_loader_green_128.gif" />
+    <Content Include="images\balls64.gif" />
+    <Content Include="images\Banner.png" />
+    <Content Include="images\btn_bclc.png" />
+    <Content Include="images\btn_bclcover.png" />
+    <Content Include="images\btn_contact.png" />
+    <Content Include="images\btn_contact_over.png" />
+    <Content Include="images\btn_home.png" />
+    <Content Include="images\btn_lottotry.png" />
+    <Content Include="images\btn_lottotry_over.png" />
+    <Content Include="images\btn_main.png" />
+    <Content Include="images\btn_mainover.png" />
+    <Content Include="images\btn_newwin.png" />
+    <Content Include="images\btn_newwinover.png" />
+    <Content Include="images\btn_statistics.png" />
+    <Content Include="images\btn_statisticsover.png" />
+    <Content Include="images\btn_update.png" />
+    <Content Include="images\btn_updateover.png" />
+    <Content Include="images\cards_home.gif" />
+    <Content Include="images\ColoradoLotto.png" />
+    <Content Include="images\content.png" />
+    <Content Include="images\credit-security-code.gif" />
+    <Content Include="images\credit_cards.gif" />
+    <Content Include="images\facebook.png" />
+    <Content Include="images\FloridaMegaMoney.png" />
+    <Content Include="images\footer.png" />
+    <Content Include="images\join_now.gif" />
+    <Content Include="images\left_sidebar.png" />
+    <Content Include="images\linkedin-icon.png" />
+    <Content Include="images\LottoTryLogo.png" />
+    <Content Include="images\LottoTryLogo2.png" />
+    <Content Include="images\LottoTry_Animation.gif" />
+    <Content Include="images\Lotto_Animation.gif" />
+    <Content Include="images\Lotto_Animation_2.gif" />
+    <Content Include="images\lotto_banner.swf" />
+    <Content Include="images\Lotto_Main.png" />
+    <Content Include="images\Lotto_Main_01.gif" />
+    <Content Include="images\Lotto_Main_02.gif" />
+    <Content Include="images\Lotto_Main_04.gif" />
+    <Content Include="images\lotto_main_05.png" />
+    <Content Include="images\lotto_main_06.png" />
+    <Content Include="images\lotto_main_07.png" />
+    <Content Include="images\lotto_main_08.png" />
+    <Content Include="images\Lotto_Main_09.png" />
+    <Content Include="images\lotto_main_btn_join_now.png" />
+    <Content Include="images\lotto_main_btn_join_now_over.png" />
+    <Content Include="images\lotto_main_creditcards.png" />
+    <Content Include="images\lotto_main_howtouse.gif" />
+    <Content Include="images\lotto_main_improve.png" />
+    <Content Include="images\lotto_main_improve_4.99.png" />
+    <Content Include="images\lotto_main_lotteries.png" />
+    <Content Include="images\lotto_main_perfect.png" />
+    <Content Include="images\lotto_main_register.gif" />
+    <Content Include="images\lotto_main_whatcanwe.gif" />
+    <Content Include="images\lotto_main_whatisabout.gif" />
+    <Content Include="images\MasterCard_Icon.jpg" />
+    <Content Include="images\MasterCard_Logo.png" />
+    <Content Include="images\money_notes.jpg" />
+    <Content Include="images\money_notes.png" />
+    <Content Include="images\myspace-icon.png" />
+    <Content Include="images\navebar.html" />
+    <Content Include="images\NYSweetMillin.png" />
+    <Content Include="images\Progress.gif" />
+    <Content Include="images\right_sidebar.png" />
+    <Content Include="images\screenshot_config.png" />
+    <Content Include="images\screenshot_predict.png" />
+    <Content Include="images\screenshot_stat3.png" />
+    <Content Include="images\twitter.png" />
+    <Content Include="images\VISA_icon.jpg" />
+    <Content Include="images\VISA_Logo.png" />
+    <Content Include="images\youtube_icon.png" />
+    <Content Include="js\backColor.js" />
+    <Content Include="js\fadeIn.js" />
+    <Content Include="js\highlight.js" />
+    <Content Include="LottoTry.aspx" />
+    <Content Include="instructions.aspx" />
+    <Content Include="JSScripts\images\help.gif" />
+    <Content Include="JSScripts\images\important.gif" />
+    <Content Include="JSScripts\images\info.gif" />
+    <Content Include="JSScripts\jquery.alerts.css" />
+    <Content Include="JSScripts\jquery.alerts.js" />
+    <Content Include="JSScripts\images\title.gif" />
+    <Content Include="LottoSites\Lotto649.aspx" />
+    <Content Include="LottoSites\LottoFlorida.aspx" />
+    <Content Include="LottoSites\LottoMax.aspx" />
+    <Content Include="lottotry.ico" />
+    <Content Include="LottoTryLogo.ico" />
+    <Content Include="LottoSites\MegaMillions.aspx" />
+    <Content Include="memberLogin.aspx" />
+    <Content Include="Members\Lotto.aspx" />
+    <Content Include="Members\ReceiptRecord.aspx" />
+    <Content Include="Members\RemoveReceiptRecords.aspx" />
+    <Content Include="Members\RenewMembership.aspx" />
+    <Content Include="Members\UpdateBillingInfo.aspx" />
+    <Content Include="Members\userAdmin.aspx" />
+    <Content Include="Members\watch.js" />
+    <Content Include="MonerisAPI.html" />
+    <Content Include="LottoSites\NYLotto.aspx" />
+    <Content Include="LottoSites\NYSweetMillion.aspx" />
+    <Content Include="LottoSites\OZLotto.aspx" />
+    <Content Include="Statistics\Potential.aspx" />
+    <Content Include="Statistics_Videos\Potential_video.aspx" />
+    <Content Include="LottoSites\PowerBall.aspx" />
+    <Content Include="Statistics\Predict.aspx" />
+    <Content Include="Statistics_Videos\Predict_video.aspx" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="Receipt.aspx" />
+    <Content Include="Admin\Register.aspx" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\AjaxMin.4.97.4951.28483.nupkg" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\AjaxMin.4.97.4951.28483.nuspec" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net35\AjaxMin.targets" />
+    <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMin.targets" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\HtmlAgilityPack.1.4.6.nupkg" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\HtmlAgilityPack.1.4.6.nuspec" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.pri" />
+    <Content Include="packages\repositories.config" />
+    <Content Include="MasterPage.master" />
+    <Content Include="libman.json" />
+    <None Include="packages.config" />
+    <Content Include="packages\HtmlAgilityPack.1.4.6\.signature.p7s" />
+    <None Include="Properties\PublishProfiles\Lottotry-localhost-deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\LottotryAzure - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\LottotryAzure - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\LottotryAzure - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Lottotry_deploy.pubxml" />
+    <None Include="Resources\lottotry.ico" />
+    <Content Include="LottoSites\SevenLotto.aspx" />
+    <Content Include="signup.aspx" />
+    <Content Include="signupCont.aspx" />
+    <Content Include="SiteMap.aspx" />
+    <Content Include="SpryAssets\jquery.js" />
+    <Content Include="SpryAssets\SpryAccordion.js" />
+    <Content Include="SpryAssets\SpryCollapsiblePanel.css" />
+    <Content Include="SpryAssets\SpryCollapsiblePanel.js" />
+    <Content Include="SpryAssets\SpryMenuBar.js" />
+    <Content Include="SpryAssets\SpryMenuBarDown.gif" />
+    <Content Include="SpryAssets\SpryMenuBarDownHover.gif" />
+    <Content Include="SpryAssets\SpryMenuBarHorizontal.css" />
+    <Content Include="SpryAssets\SpryMenuBarRight.gif" />
+    <Content Include="SpryAssets\SpryMenuBarRightHover.gif" />
+    <Content Include="SpryAssets\SpryMenuBarVertical.css" />
+    <Content Include="SpryAssets\SpryTabbedPanels.css" />
+    <Content Include="SpryAssets\SpryTabbedPanels.js" />
+    <Content Include="LottoSites\SSQ.aspx" />
+    <Content Include="Statistics\Statistics1.aspx" />
+    <Content Include="Statistics_Videos\Statistics1_video.aspx" />
+    <Content Include="Statistics\Statistics2.aspx" />
+    <Content Include="Statistics_Videos\Statistics2_video.aspx" />
+    <Content Include="Statistics\Statistics3.aspx" />
+    <Content Include="Statistics_Videos\Statistics3_video.aspx" />
+    <Content Include="Statistics\Statistics4.aspx" />
+    <Content Include="Statistics_Videos\Statistics4_video.aspx" />
+    <Content Include="Statistics\Statistics5.aspx" />
+    <Content Include="Statistics_Videos\Statistics5_video.aspx" />
+    <Content Include="Statistics\Statistics6.aspx" />
+    <Content Include="Statistics_Videos\Statistics6_video.aspx" />
+    <Content Include="Statistics\Statistics7.aspx" />
+    <Content Include="Statistics_Videos\Statistics7_video.aspx" />
+    <Content Include="LottoSites\SuperLotto.aspx" />
+    <Content Include="terms.aspx" />
+    <Content Include="TreeLineImages\dash.gif" />
+    <Content Include="TreeLineImages\dashminus.gif" />
+    <Content Include="TreeLineImages\dashplus.gif" />
+    <Content Include="TreeLineImages\i.gif" />
+    <Content Include="TreeLineImages\l.gif" />
+    <Content Include="TreeLineImages\lminus.gif" />
+    <Content Include="TreeLineImages\lplus.gif" />
+    <Content Include="TreeLineImages\minus.gif" />
+    <Content Include="TreeLineImages\noexpand.gif" />
+    <Content Include="TreeLineImages\plus.gif" />
+    <Content Include="TreeLineImages\r.gif" />
+    <Content Include="TreeLineImages\rminus.gif" />
+    <Content Include="TreeLineImages\rplus.gif" />
+    <Content Include="TreeLineImages\t.gif" />
+    <Content Include="TreeLineImages\tminus.gif" />
+    <Content Include="TreeLineImages\tplus.gif" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Members\WSGetDrawNumbers.asmx" />
+    <Content Include="XML\bc49.xml" />
+    <Content Include="XML\ColoradoLotto.xml" />
+    <Content Include="XML\FloridaFantasy5.xml" />
+    <Content Include="XML\EuroMillions.xml" />
+    <Content Include="XML\EuroMillions_LuckyStars.xml" />
+    <Content Include="XML\FloridaLotto.xml" />
+    <Content Include="XML\Lottery.xml" />
+    <Content Include="XML\lotto649.xml" />
+    <Content Include="XML\LottoMax.xml" />
+    <Content Include="XML\MegaMillions.xml" />
+    <Content Include="XML\MegaMillions_MegaBall.xml" />
+    <Content Include="XML\NYLotto.xml" />
+    <Content Include="XML\NYSweetMillion.xml" />
+    <Content Include="XML\OZLotto.xml" />
+    <Content Include="XML\PowerBall.xml" />
+    <Content Include="XML\PowerBall_PowerBall.xml" />
+    <Content Include="XML\SevenLotto.xml" />
+    <Content Include="XML\SSQ.xml" />
+    <Content Include="XML\SSQ_Blue.xml" />
+    <Content Include="XML\SuperLotto.xml" />
+    <Content Include="XML\SuperLotto_Rear.xml" />
+    <Content Include="SSL_Certificate\gd_iis_intermediates.p7b" />
+    <Content Include="SSL_Certificate\lottotry.com.crt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BlackList.aspx.cs">
+      <DependentUpon>BlackList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BlackList.aspx.designer.cs">
+      <DependentUpon>BlackList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\clientStatus.aspx.cs">
+      <DependentUpon>clientStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\clientStatus.aspx.designer.cs">
+      <DependentUpon>clientStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\editAboutPage.aspx.cs">
+      <DependentUpon>editAboutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\editAboutPage.aspx.designer.cs">
+      <DependentUpon>editAboutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\emailToAll.aspx.cs">
+      <DependentUpon>emailToAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\emailToAll.aspx.designer.cs">
+      <DependentUpon>emailToAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LottoDbStatus.aspx.cs">
+      <DependentUpon>LottoDbStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LottoDbStatus.aspx.designer.cs">
+      <DependentUpon>LottoDbStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PayPalAccount.aspx.cs">
+      <DependentUpon>PayPalAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PayPalAccount.aspx.designer.cs">
+      <DependentUpon>PayPalAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShawAllMembers.aspx.cs">
+      <DependentUpon>ShawAllMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShawAllMembers.aspx.designer.cs">
+      <DependentUpon>ShawAllMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessTier\SendGridEmailClient.cs" />
+    <Compile Include="LottoSites\CaSuperlottoPlus.aspx.cs">
+      <DependentUpon>CaSuperlottoPlus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\CaSuperlottoPlus.aspx.designer.cs">
+      <DependentUpon>CaSuperlottoPlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\NewYorkTake5.aspx.cs">
+      <DependentUpon>NewYorkTake5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\NewYorkTake5.aspx.designer.cs">
+      <DependentUpon>NewYorkTake5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\TexasCashFive.aspx.cs">
+      <DependentUpon>TexasCashFive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\TexasCashFive.aspx.designer.cs">
+      <DependentUpon>TexasCashFive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\NewJerseyPick6Lotto.aspx.cs">
+      <DependentUpon>NewJerseyPick6Lotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\NewJerseyPick6Lotto.aspx.designer.cs">
+      <DependentUpon>NewJerseyPick6Lotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\OregonMegabucks.aspx.cs">
+      <DependentUpon>OregonMegabucks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\OregonMegabucks.aspx.designer.cs">
+      <DependentUpon>OregonMegabucks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Lotto.aspx.designer.cs">
+      <DependentUpon>Lotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\AutoDraws.aspx.cs">
+      <DependentUpon>AutoDraws.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\AutoDraws.aspx.designer.cs">
+      <DependentUpon>AutoDraws.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\AutoDraws_video.aspx.cs">
+      <DependentUpon>AutoDraws_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\AutoDraws_video.aspx.designer.cs">
+      <DependentUpon>AutoDraws_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessTier\AutoDraw.cs" />
+    <Compile Include="BusinessTier\BusinessLogic.cs" />
+    <Compile Include="BusinessTier\CaesarCipher.cs" />
+    <Compile Include="BusinessTier\CandidateLists.cs" />
+    <Compile Include="BusinessTier\clsLotto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BusinessTier\CryptoManager.cs" />
+    <Compile Include="BusinessTier\GenRandom.cs" />
+    <Compile Include="BusinessTier\Mailer.cs" />
+    <Compile Include="BusinessTier\NumberCounter.cs" />
+    <Compile Include="BusinessTier\NumGen.cs" />
+    <Compile Include="BusinessTier\PotentialNumbers.cs" />
+    <Compile Include="BusinessTier\ScaleDistMatrix.cs" />
+    <Compile Include="BusinessTier\SSLHandler.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusinessTier\Statistics.cs" />
+    <Compile Include="BusinessTier\SubStatistics.cs" />
+    <Compile Include="BusinessTier\Util.cs" />
+    <Compile Include="LottoSites\ColoradoLotto.aspx.cs">
+      <DependentUpon>ColoradoLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\ColoradoLotto.aspx.designer.cs">
+      <DependentUpon>ColoradoLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\ConnecticutLotto.aspx.cs">
+      <DependentUpon>ConnecticutLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\ConnecticutLotto.aspx.designer.cs">
+      <DependentUpon>ConnecticutLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\BC49.aspx.cs">
+      <DependentUpon>BC49.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\BC49.aspx.designer.cs">
+      <DependentUpon>BC49.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\BritishLotto.aspx.cs">
+      <DependentUpon>BritishLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\BritishLotto.aspx.designer.cs">
+      <DependentUpon>BritishLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoWed.aspx.cs">
+      <DependentUpon>OZLottoWed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoWed.aspx.designer.cs">
+      <DependentUpon>OZLottoWed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoMon.aspx.cs">
+      <DependentUpon>OZLottoMon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoMon.aspx.designer.cs">
+      <DependentUpon>OZLottoMon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoSat.aspx.cs">
+      <DependentUpon>OZLottoSat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\OZLottoSat.aspx.designer.cs">
+      <DependentUpon>OZLottoSat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AutoDrawConfig.ascx.cs">
+      <DependentUpon>AutoDrawConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AutoDrawConfig.ascx.designer.cs">
+      <DependentUpon>AutoDrawConfig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConfigForm.ascx.cs">
+      <DependentUpon>ConfigForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ConfigForm.ascx.designer.cs">
+      <DependentUpon>ConfigForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\FloridaFantasy5.aspx.cs">
+      <DependentUpon>FloridaFantasy5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\FloridaFantasy5.aspx.designer.cs">
+      <DependentUpon>FloridaFantasy5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\GermanLotto.aspx.cs">
+      <DependentUpon>GermanLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\GermanLotto.aspx.designer.cs">
+      <DependentUpon>GermanLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\EuroJackpot.aspx.cs">
+      <DependentUpon>EuroJackpot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\EuroJackpot.aspx.designer.cs">
+      <DependentUpon>EuroJackpot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\LottoFloridaLucky.aspx.cs">
+      <DependentUpon>LottoFloridaLucky.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\LottoFloridaLucky.aspx.designer.cs">
+      <DependentUpon>LottoFloridaLucky.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessTier\DataAccessLayer.cs" />
+    <Compile Include="DataAccessTier\EncryptionManager.cs" />
+    <Compile Include="DataAccessTier\UserAuthManager.cs" />
+    <Compile Include="LottoSites\EuroMillions.aspx.cs">
+      <DependentUpon>EuroMillions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\EuroMillions.aspx.designer.cs">
+      <DependentUpon>EuroMillions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forget_password.aspx.cs">
+      <DependentUpon>forget_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forget_password.aspx.designer.cs">
+      <DependentUpon>forget_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LottoTry.aspx.cs">
+      <DependentUpon>LottoTry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoTry.aspx.designer.cs">
+      <DependentUpon>LottoTry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="instructions.aspx.cs">
+      <DependentUpon>instructions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="instructions.aspx.designer.cs">
+      <DependentUpon>instructions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\Lotto649.aspx.cs">
+      <DependentUpon>Lotto649.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\Lotto649.aspx.designer.cs">
+      <DependentUpon>Lotto649.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\LottoFlorida.aspx.cs">
+      <DependentUpon>LottoFlorida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\LottoFlorida.aspx.designer.cs">
+      <DependentUpon>LottoFlorida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\LottoMax.aspx.cs">
+      <DependentUpon>LottoMax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\LottoMax.aspx.designer.cs">
+      <DependentUpon>LottoMax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\MegaMillions.aspx.cs">
+      <DependentUpon>MegaMillions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\MegaMillions.aspx.designer.cs">
+      <DependentUpon>MegaMillions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberLogin.aspx.cs">
+      <DependentUpon>memberLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberLogin.aspx.designer.cs">
+      <DependentUpon>memberLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Lotto.aspx.cs">
+      <DependentUpon>Lotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\ReceiptRecord.aspx.cs">
+      <DependentUpon>ReceiptRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\ReceiptRecord.aspx.designer.cs">
+      <DependentUpon>ReceiptRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\RemoveReceiptRecords.aspx.cs">
+      <DependentUpon>RemoveReceiptRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\RemoveReceiptRecords.aspx.designer.cs">
+      <DependentUpon>RemoveReceiptRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\RenewMembership.aspx.cs">
+      <DependentUpon>RenewMembership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\RenewMembership.aspx.designer.cs">
+      <DependentUpon>RenewMembership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\UpdateBillingInfo.aspx.cs">
+      <DependentUpon>UpdateBillingInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\UpdateBillingInfo.aspx.designer.cs">
+      <DependentUpon>UpdateBillingInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\userAdmin.aspx.cs">
+      <DependentUpon>userAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\userAdmin.aspx.designer.cs">
+      <DependentUpon>userAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\NYLotto.aspx.cs">
+      <DependentUpon>NYLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\NYLotto.aspx.designer.cs">
+      <DependentUpon>NYLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\NYSweetMillion.aspx.cs">
+      <DependentUpon>NYSweetMillion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\NYSweetMillion.aspx.designer.cs">
+      <DependentUpon>NYSweetMillion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\OZLotto.aspx.cs">
+      <DependentUpon>OZLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\OZLotto.aspx.designer.cs">
+      <DependentUpon>OZLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Potential.aspx.cs">
+      <DependentUpon>Potential.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Potential.aspx.designer.cs">
+      <DependentUpon>Potential.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Potential_video.aspx.cs">
+      <DependentUpon>Potential_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Potential_video.aspx.designer.cs">
+      <DependentUpon>Potential_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\PowerBall.aspx.cs">
+      <DependentUpon>PowerBall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\PowerBall.aspx.designer.cs">
+      <DependentUpon>PowerBall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Predict.aspx.cs">
+      <DependentUpon>Predict.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Predict.aspx.designer.cs">
+      <DependentUpon>Predict.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Predict_video.aspx.cs">
+      <DependentUpon>Predict_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Predict_video.aspx.designer.cs">
+      <DependentUpon>Predict_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\SevenLotto.aspx.cs">
+      <DependentUpon>SevenLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\SevenLotto.aspx.designer.cs">
+      <DependentUpon>SevenLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signupCont.aspx.cs">
+      <DependentUpon>signupCont.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signupCont.aspx.designer.cs">
+      <DependentUpon>signupCont.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMap.aspx.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMap.aspx.designer.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\SSQ.aspx.cs">
+      <DependentUpon>SSQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\SSQ.aspx.designer.cs">
+      <DependentUpon>SSQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics1.aspx.cs">
+      <DependentUpon>Statistics1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics1.aspx.designer.cs">
+      <DependentUpon>Statistics1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics1_video.aspx.cs">
+      <DependentUpon>Statistics1_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics1_video.aspx.designer.cs">
+      <DependentUpon>Statistics1_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics2.aspx.cs">
+      <DependentUpon>Statistics2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics2.aspx.designer.cs">
+      <DependentUpon>Statistics2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics2_video.aspx.cs">
+      <DependentUpon>Statistics2_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics2_video.aspx.designer.cs">
+      <DependentUpon>Statistics2_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics3.aspx.cs">
+      <DependentUpon>Statistics3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics3.aspx.designer.cs">
+      <DependentUpon>Statistics3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics3_video.aspx.cs">
+      <DependentUpon>Statistics3_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics3_video.aspx.designer.cs">
+      <DependentUpon>Statistics3_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics4.aspx.cs">
+      <DependentUpon>Statistics4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics4.aspx.designer.cs">
+      <DependentUpon>Statistics4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics4_video.aspx.cs">
+      <DependentUpon>Statistics4_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics4_video.aspx.designer.cs">
+      <DependentUpon>Statistics4_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics5.aspx.cs">
+      <DependentUpon>Statistics5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics5.aspx.designer.cs">
+      <DependentUpon>Statistics5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics5_video.aspx.cs">
+      <DependentUpon>Statistics5_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics5_video.aspx.designer.cs">
+      <DependentUpon>Statistics5_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics6.aspx.cs">
+      <DependentUpon>Statistics6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics6.aspx.designer.cs">
+      <DependentUpon>Statistics6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics6_video.aspx.cs">
+      <DependentUpon>Statistics6_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics6_video.aspx.designer.cs">
+      <DependentUpon>Statistics6_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics\Statistics7.aspx.cs">
+      <DependentUpon>Statistics7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics\Statistics7.aspx.designer.cs">
+      <DependentUpon>Statistics7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics7_video.aspx.cs">
+      <DependentUpon>Statistics7_video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics_Videos\Statistics7_video.aspx.designer.cs">
+      <DependentUpon>Statistics7_video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\SuperLotto.aspx.cs">
+      <DependentUpon>SuperLotto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\SuperLotto.aspx.designer.cs">
+      <DependentUpon>SuperLotto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="terms.aspx.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="terms.aspx.designer.cs">
+      <DependentUpon>terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\WSGetDrawNumbers.asmx.cs">
+      <DependentUpon>WSGetDrawNumbers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolkitScriptManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\LottoTheme\LotterySkin.skin" />
+    <Content Include="images\bclclogin.png" />
+    <Content Include="images\bclcloginover.png" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\btn_about.png" />
+    <Content Include="images\btn_aboutover.png" />
+    <Content Include="images\btn_homeover.png" />
+    <Content Include="images\btn_solutions.png" />
+    <Content Include="images\btn_solutionsover.png" />
+    <Content Include="images\funstuff.png" />
+    <Content Include="images\funstuffover.png" />
+    <Content Include="images\navbar_lotto_smaller_01.png" />
+    <Content Include="images\navbar_lotto_smaller_01over.png" />
+    <Content Include="images\navbar_lotto_smaller_02.png" />
+    <Content Include="images\navbar_lotto_smaller_02over.png" />
+    <Content Include="images\navbar_lotto_smaller_04.png" />
+    <Content Include="images\navbar_lotto_smaller_05.png" />
+    <Content Include="images\navbar_lotto_smaller_06.png" />
+    <Content Include="images\navbar_lotto_smaller_07.png" />
+    <Content Include="images\navbar_lotto_smaller_07over.png" />
+    <Content Include="images\navbar_lotto_smaller_08.png" />
+    <Content Include="images\navbar_lotto_smaller_08over.png" />
+    <Content Include="images\navbar_lotto_smaller_09.png" />
+    <Content Include="images\navbar_lotto_smaller_10.png" />
+    <Content Include="images\navbar_lotto_smaller_12.png" />
+    <Content Include="images\navbar_lotto_smaller_12over.png" />
+    <Content Include="images\navbar_lotto_smaller_14.png" />
+    <Content Include="images\navbar_lotto_smaller_14over.png" />
+    <Content Include="images\navbar_lotto_smaller_15.png" />
+    <Content Include="images\navbar_lotto_smaller_15over.png" />
+    <Content Include="images\navbar_lotto_smaller_16.png" />
+    <Content Include="images\navbar_lotto_smaller_16over.png" />
+    <Content Include="images\newwindow.png" />
+    <Content Include="images\newwindowover.png" />
+    <Content Include="images\Rollover_Button_03.png" />
+    <Content Include="images\Rollover_Button_03over.png" />
+    <Content Include="images\statistics.png" />
+    <Content Include="images\statisticsover.png" />
+    <Content Include="images\Update.png" />
+    <Content Include="images\Updateover.png" />
+    <Content Include="watch.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Members\Web.config" />
+    <Content Include="Admin\Web.config" />
+    <None Include="Doc\Auto_Draws.docx" />
+    <None Include="Doc\Auto_Draws.pdf" />
+    <None Include="Doc\Potential_Draws.docx" />
+    <None Include="Doc\Potential_Draws.pdf" />
+    <None Include="Doc\Predict_Draws.docx" />
+    <None Include="Doc\Predict_Draws.pdf" />
+    <None Include="Doc\Statistics1.docx" />
+    <None Include="Doc\Statistics1.pdf" />
+    <None Include="Doc\Statistics2.docx" />
+    <None Include="Doc\Statistics2.pdf" />
+    <None Include="Doc\Statistics3.docx" />
+    <None Include="Doc\Statistics3.pdf" />
+    <None Include="Doc\Statistics4.docx" />
+    <None Include="Doc\Statistics4.pdf" />
+    <None Include="Doc\Statistics5.docx" />
+    <None Include="Doc\Statistics5.pdf" />
+    <None Include="Doc\Statistics6.docx" />
+    <None Include="Doc\Statistics6.pdf" />
+    <None Include="Doc\Statistics7.docx" />
+    <None Include="Doc\Statistics7.pdf" />
+    <None Include="Doc\Terms_and_Conditions.docx" />
+    <None Include="Doc\Terms_and_Conditions.pdf" />
+    <None Include="SqlScripts\Create_Lotto_Table.sql" />
+    <Content Include="images\login.ico" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41927</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:42927</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://192.168.0.36/Lottery</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets" Condition="Exists('packages\Microsoft.Web.WebJobs.Publish.1.0.12\tools\webjobs.targets')" />
+</Project>

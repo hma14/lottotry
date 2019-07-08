@@ -1,0 +1,83 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:GridView SkinId="GridViewSkin" runat="server" BackColor="White"  align="Center" 
+    BorderColor="#CC9966" BorderStyle="Inset" BorderWidth="2px" CellPadding="5" CellSpacing="3">
+    <RowStyle BackColor="White" ForeColor="#330099" Font-Size="0.9em" />
+    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+    <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="False" Font-Size="0.8em" ForeColor="#663399" />
+    <HeaderStyle BackColor="Teal" Font-Bold="True" Font-Size="0.8em" ForeColor="#FFFFCC"  HorizontalAlign="Center"   />
+</asp:GridView>
+
+
+<asp:Button runat="server"  SkinId="buttonSkin"  Font-Names="Georgia"  BackColor="teal" ForeColor="White" 
+    Font-Bold="True" Font-Size="0.7em" style="font-style:Inset;"
+     BorderStyle="Outset" BorderWidth="1px" Width="80px" height="25px" Font-Family="Times"/>
+
+<asp:Button runat="server"  SkinId="smallerButtonSkin"  Font-Names="Georgia"  BackColor="#808000" ForeColor="White" 
+    Font-Bold="True" Font-Size="0.5em" style="font-style:Inset;"
+     BorderStyle="Outset" BorderWidth="0.5px" Width="80px" height="20px" Font-Family="Times"/>
+
+
+<asp:TextBox runat="server" SkinId="TextBoxSkin" Width="200px" BorderColor="#CCFFFF" BorderStyle="Inset" 
+                BorderWidth="2px" ></asp:TextBox>
+
+<asp:TextBox runat="server" SkinId="ShorterTextBoxSkin" Width="50px" BorderColor="#CCFFFF" BorderStyle="Inset" 
+                BorderWidth="2px" ></asp:TextBox>
+
+<%--<asp:DropDownList SkinId="dwopDownListSkin" runat="server" Width="100px" >
+        </asp:DropDownList>
+        --%>   
+<asp:DropDownList SkinId="dwopDownListSkin" runat="server" Width="50" Style="border-top-style: Inset; border-right-style: Inset;
+            border-left-style: Inset; border-collapse: separate; border-bottom-style: Inset; background-color:#FFF;" BorderWidth="2px" >
+        </asp:DropDownList>
+
+<asp:DropDownList SkinId="dwopDownListLongSkin" runat="server" Width="350" Style="border-top-style: Inset; border-right-style: Inset;
+            border-left-style: Inset; border-collapse: separate; border-bottom-style: Inset; background-color:#FFF;" BorderWidth="2px" >
+        </asp:DropDownList>
+
+
+<asp:TreeView  runat="server" SkinId="TreeViewSkin"
+    ImageSet="Arrows" >
+    <ParentNodeStyle Font-Bold="False" />
+    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+    <SelectedNodeStyle Font-Underline="False" BackColor="#990000" ForeColor="White" 
+        HorizontalPadding="1px" VerticalPadding="2px" />
+    <NodeStyle Font-Names="Verdana" Font-Size="0.8em" ForeColor="#8C4510" 
+        HorizontalPadding="3px" NodeSpacing="0px" VerticalPadding="3px" />
+</asp:TreeView>
+
+
+<asp:SiteMapPath SkinId="SiteMapPathSkin" runat="server" Font-Names="Verdana" 
+            Font-Size="0.8em" PathSeparator=" : ">
+            <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+            <CurrentNodeStyle ForeColor="#333333" />
+            <NodeStyle Font-Bold="True" ForeColor="#990000" />
+            <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+</asp:SiteMapPath>
+
+<asp:Menu SkinId="MenuSkin" runat="server"  
+            BackColor="Cyan" DynamicHorizontalOffset="5" Font-Names="Verdana" 
+            Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="1px">
+            <StaticSelectedStyle BackColor="#FFCC66" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" />
+            <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+            <DynamicMenuStyle BackColor="#FFFBD6" />
+            <DynamicSelectedStyle BackColor="#FFCC66" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" />
+            <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+</asp:Menu>
