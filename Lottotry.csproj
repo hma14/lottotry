@@ -210,6 +210,7 @@
     <Content Include="images\OZTuesdayLotto.png" />
     <Content Include="images\OZWednesdayLotto.png" />
     <Content Include="images\TexasCashFive.png" />
+    <Content Include="images\tile-daily-grand-3x2.png" />
     <Content Include="LottoSites\CaSuperlottoPlus.aspx" />
     <Content Include="LottoSites\NewYorkTake5.aspx" />
     <Content Include="LottoSites\TexasCashFive.aspx" />

@@ -49,7 +49,8 @@ namespace DataAccessTier
         NewJerseyPick6Lotto,
         OregonMegabucks,
         NewYorkTake5 =35,
-        TexasCashFive = 37
+        TexasCashFive = 37,
+        DailyGrand,
     }
 
 

@@ -98,6 +98,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.OregonMegabucks] = 6;
             ColumnnsOfLottoDic[Database.NewYorkTake5] = 5;
             ColumnnsOfLottoDic[Database.TexasCashFive] = 5;
+            ColumnnsOfLottoDic[Database.DailyGrand] = 5;
         }
 
         public static int getColumnnsOfLotto_no_bonus(Database db)
@@ -142,6 +143,7 @@ namespace BusinessTier
             ColumnnsOfLotto_no_bonusDic[Database.OregonMegabucks] = 6;
             ColumnnsOfLotto_no_bonusDic[Database.NewYorkTake5] = 5;
             ColumnnsOfLotto_no_bonusDic[Database.TexasCashFive] = 5;
+            ColumnnsOfLotto_no_bonusDic[Database.DailyGrand] = 5;
         }
 
         public static void InitBonusColName()
@@ -182,6 +184,7 @@ namespace BusinessTier
             BonusColNameDic[Database.OregonMegabucks] = null;
             BonusColNameDic[Database.NewYorkTake5] = null;
             BonusColNameDic[Database.TexasCashFive] = null;
+            BonusColNameDic[Database.DailyGrand] = "Grand";
         }
 
         public static string getBonusColName(Database db)
@@ -227,6 +230,8 @@ namespace BusinessTier
             LogoDic[Database.OregonMegabucks] = "/images/OregonMegabucks.png";
             LogoDic[Database.NewYorkTake5] = "/images/NewYorkTake5.png";
             LogoDic[Database.TexasCashFive] = "/images/TexasCashFive.png";
+            LogoDic[Database.DailyGrand] = "/images/tile-daily-grand-3x2.png";
+            
         }
 
         public static string getLottoImage(Database db)
@@ -272,6 +277,7 @@ namespace BusinessTier
             dic[Database.OregonMegabucks] = "Statistics" + statisitcs.ToString() + "_OregonMegabucks";
             dic[Database.NewYorkTake5] = "Statistics" + statisitcs.ToString() + "_NewYorkTake5";
             dic[Database.TexasCashFive] = "Statistics" + statisitcs.ToString() + "_TexasCashFive";
+            dic[Database.DailyGrand] = "Statistics" + statisitcs.ToString() + "_DailyGrand";
 
 
             return dic[db];
@@ -314,6 +320,7 @@ namespace BusinessTier
             CacheFileDic[Database.OregonMegabucks] = rootDir + "/OregonMegabucks.xml";
             CacheFileDic[Database.NewYorkTake5] = rootDir + "/NewYorkTake5.xml";
             CacheFileDic[Database.TexasCashFive] = rootDir + "/TexasCashFive.xml";
+            CacheFileDic[Database.DailyGrand] = rootDir + "/DailyGrand.xml";
         }
 
         public static string getCacheFile(Database db)
@@ -359,6 +366,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.OregonMegabucks] = 5;
             LottoNumberRangesDic[Database.NewYorkTake5] = 4;
             LottoNumberRangesDic[Database.TexasCashFive] = 4;
+            LottoNumberRangesDic[Database.DailyGrand] = 4;
         }
 
         public static int getLottoNumberRanges(Database db)
@@ -404,6 +412,7 @@ namespace BusinessTier
             TotalLottoNumbersDic[Database.OregonMegabucks] = 48;
             TotalLottoNumbersDic[Database.NewYorkTake5] = 39;
             TotalLottoNumbersDic[Database.TexasCashFive] = 39;
+            TotalLottoNumbersDic[Database.DailyGrand] = 49;
         }
 
         public static int getTotalLottoNumbers(Database db)
