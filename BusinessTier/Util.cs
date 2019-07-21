@@ -366,7 +366,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.OregonMegabucks] = 5;
             LottoNumberRangesDic[Database.NewYorkTake5] = 4;
             LottoNumberRangesDic[Database.TexasCashFive] = 4;
-            LottoNumberRangesDic[Database.DailyGrand] = 4;
+            LottoNumberRangesDic[Database.DailyGrand] = 5;
         }
 
         public static int getLottoNumberRanges(Database db)
