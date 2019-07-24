@@ -50,7 +50,8 @@ namespace DataAccessTier
         OregonMegabucks,
         NewYorkTake5 =35,
         TexasCashFive = 37,
-        DailyGrand,
+        DailyGrand = 38,
+        DailyGrand_GrandNumber = 39,
     }
 
 

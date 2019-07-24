@@ -536,7 +536,7 @@ namespace BusinessTier
             }
 
             // <TD> part
-            for (int i = 0; i < range; ++i)
+            for (int i = 0; i < drawNumber.Count; ++i)
             {
                 stmt += "<TR>";
                 stmt += "<TD style=color:#FF00FF >" + drawNumber[i] + "</TD>"
