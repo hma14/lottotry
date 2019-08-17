@@ -185,8 +185,21 @@ namespace Lottotry.BusinessTier
                         stmt += "<TD style=\"background-color:#ffcc99; width:65px;\"></TD>\n";
                     }
                 }
-                stmt += "<TD style=\"width:45px; text-align:center; font-style:italic; color:#ff0033\">"
-                    + total + "</TD>\n";
+                if (total <= 2)
+                {
+                    stmt += "<TD style=\"width:45px; text-align:center; font-style:italic; color:#4662FC; font-weight:bold; background-color:#FCF646;\">"
+                        + total + "</TD>\n";
+                }
+                else if (total == 3)
+                {
+                    stmt += "<TD style=\"width:45px; text-align:center; font-style:italic; color:#FCF646; font-weight:bold; background-color:#4662FC; \">"
+                        + total + "</TD>\n";
+                }
+                else
+                {
+                    stmt += "<TD style=\"width:45px; text-align:center; font-style:italic; color:#ff0033\">"
+                        + total + "</TD>\n";
+                }
                 stmt += "</TR>\n";
             }
 
