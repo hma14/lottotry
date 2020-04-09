@@ -12,7 +12,7 @@ namespace Lottotry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lottolinks.Attributes.Add("src", "http://www.zhcw.com/ssq/");
+            lottolinks.Attributes.Add("src", "http://www.cwl.gov.cn/kjxx/ssq/");
             Util.SetLottoPageLayout(lottolinks);
         }
     }

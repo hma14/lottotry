@@ -1069,12 +1069,23 @@ namespace Lottotry.BusinessTier
                 {
                     if (st[i].RelativeDist == 0)
                     {
-                        stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
-                                + st[i].Num
-                                + "</B></font>"
-                                + "<font color=\"#cc00cc\">("
-                                + st[i].SavedDist
-                                + ")</font></TD>\n";
+                        if (st[i].SavedDist >= 20)
+                        {
+                            stmt += "<TD bgcolor=\"#ff00ff\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ffbf00\"><B>"
+                                    + st[i].Num
+                                    + "</B></font>"
+                                    + "<font color=\"#ffff00\" > (<B>"
+                                    + st[i].SavedDist
+                                    + "</B>)</font></TD>\n";
+                        }
+                        else {
+                            stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
+                                    + st[i].Num
+                                    + "</B></font>"
+                                    + "<font color=\"#cc00cc\">("
+                                    + st[i].SavedDist
+                                    + ")</font></TD>\n";
+                        }
                     }
                     else
                     {
