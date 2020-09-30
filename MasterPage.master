@@ -12,6 +12,7 @@
     <link href="/SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
     <link href="/JSScripts/jquery.alerts.css" rel="Stylesheet" type="text/css" media="screen" />
     <link rel="icon" type="image/png" href="images/LottoTryLogo.png" />
+    <link rel="Stylesheet" type="text/css" href="/App_Themes/LottoTheme/LotteryCSS.css" />
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
 
@@ -27,7 +28,7 @@
     
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
 
 
 
