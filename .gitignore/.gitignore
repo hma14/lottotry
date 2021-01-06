@@ -17,6 +17,8 @@ SqlScripts/Putback_TexasCashFive.sql
 SqlScripts/LottotryData_Azure.sql
 Web.config
 *.mdf
+*.nc
+*.DS_store
 SqlScripts
 SqlScripts/database_backup/*.mdf
 SqlScripts/database_backup/*.ldf
