@@ -253,8 +253,6 @@
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.xml" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\readme.txt" />
     <Content Include="Register.aspx" />
-    <Content Include="SqlScripts\database_backup\AdventureWorksDW2012_Data.mdf" />
-    <Content Include="SqlScripts\database_backup\AdventureWorksDW2012_log.ldf" />
     <Content Include="SqlScripts\database_backup\AjaxPhotoAlbum.mdf" />
     <Content Include="SqlScripts\database_backup\AjaxPhotoAlbum_log.ldf">
       <DependentUpon>AjaxPhotoAlbum.mdf</DependentUpon>
