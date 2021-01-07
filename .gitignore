@@ -15,4 +15,7 @@ packages/*
 .vs/
 SqlScripts/database_backup/*.mdf
 SqlScripts/database_backup/*.ldf
+SqlScripts/database_backup/AdventureWorksDW2012_Data.mdf 
+SqlScripts/database_backup/lottotry_log.ldf
+
 Web.config
