@@ -13,5 +13,6 @@ bin/*.pdb
 XML/*
 packages/*
 .vs/
-SqlScripts/Putback_TexasCashFive.sql
-SqlScripts/LottotryData_Azure.sql
+SqlScripts/database_backup/*.mdf
+SqlScripts/database_backup/*.ldf
+Web.config
