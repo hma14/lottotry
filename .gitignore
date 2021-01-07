@@ -19,3 +19,19 @@ SqlScripts/database_backup/AdventureWorksDW2012_Data.mdf
 SqlScripts/database_backup/lottotry_log.ldf
 
 Web.config
+SqlScripts/Interview_QA/Joins.sql
+SqlScripts/Interview_QA/Agregate_functions.sql
+SqlScripts/Interview_QA/Access_Permissions.sql
+SqlScripts/Create_Lotto_Table.sql
+SqlScripts/Interview_QA/sqlGreaterLessProblemAnswer.sql
+SqlScripts/Interview_QA/homework.sql
+SqlScripts/database_backup/lottotry_database_backup2.sql
+SqlScripts/database_backup/lottotry_database_backup.sql
+SqlScripts/Interview_QA/tblLocks.sql
+SqlScripts/Interview_QA/tablesRelationshipExample.vsd
+SqlScripts/Interview_QA/sqlTestCreateTable.sql
+SqlScripts/Interview_QA/sqlGreaterLessProblemCreateTable.sql
+SqlScripts/Interview_QA/Trigger.sql
+SqlScripts/Interview_QA/Temp_Table.sql
+SqlScripts/Interview_QA/Sql_Interview_QA.sql
+SqlScripts/Interview_QA/Sql_Commmands.sql
