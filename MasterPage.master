@@ -603,18 +603,18 @@
 
         // Prevent copy/past to re-enter email textbox
         //
-        $(function () {
-            $('input[id$=tbEmail]').bind('cut copy paste', function (e) {
-                e.preventDefault();
-                alert('You cannot ' + e.type + ' text!');
-            });
-        });
-        $(function () {
-            $('input[id$=tbEmail2]').bind('cut copy paste', function (e) {
-                e.preventDefault();
-                alert('You cannot ' + e.type + ' text!');
-            });
-        });
+        //$(function () {
+        //    $('input[id$=tbEmail]').bind('cut copy paste', function (e) {
+        //        e.preventDefault();
+        //        alert('You cannot ' + e.type + ' text!');
+        //    });
+        //});
+        //$(function () {
+        //    $('input[id$=tbEmail2]').bind('cut copy paste', function (e) {
+        //        e.preventDefault();
+        //        alert('You cannot ' + e.type + ' text!');
+        //    });
+        //});
 
         // Cancel buttons for disabling ReqiredValidateField
         function disableReqiredValidation(id) {

@@ -174,7 +174,7 @@ namespace Lottotry
                                             "Free",
                                             "Free",
                                             tbFName.Text.Trim() + " " + tbLName.Text.Trim(),
-                                            "1-year free",
+                                            "1-year plan",
                                             registerDate.ToShortDateString(),
                                             expiryDate.ToShortDateString()
                                             );
