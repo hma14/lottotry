@@ -52,6 +52,7 @@ namespace DataAccessTier
         TexasCashFive = 37,
         DailyGrand = 38,
         DailyGrand_GrandNumber = 39,
+        Cash4Life = 40,
     }
 
 

@@ -199,6 +199,7 @@
     <Content Include="App_Themes\LottoTheme\GeneratedPages.css" />
     <Content Include="App_Themes\LottoTheme\LotteryCSS.css" />
     <Content Include="App_Themes\LottoTheme\Menu.css" />
+    <Content Include="images\c4l-game-pg-banner.jpg" />
     <Content Include="images\CaliforniaSuperLotto.png" />
     <Content Include="images\CaSuperlottoPlus.png" />
     <Content Include="images\FloridaLuckyMoney.jpg" />

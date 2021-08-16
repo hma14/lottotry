@@ -1824,7 +1824,8 @@ function resetDDL(nodeId) {
     //}
             //var tab = parseInt(getURLParam('tab'));
 
-    var tab = "<%= Session["DefaultTabbedPanel"].ToString()%>";
+    
+            var tab = "0";
     tab = parseInt(tab);
     var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1", { defaultTab: tab });
     //-->

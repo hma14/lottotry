@@ -178,7 +178,7 @@ namespace Lottotry.Members
                     DBDdl13.DataBind();
 
 #endif
-                    setDBDropDownSelectedItem((int)Session["SelectedDBDdl"]);
+                    setDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 1);
                    
                     setLoadLottoLogo((Database)int.Parse(DBDdl12.SelectedValue));
                     
