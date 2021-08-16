@@ -1676,11 +1676,11 @@ namespace Lottotry.BusinessTier
                     {
                         arr[ii][4]++;
                     }
-                    else if (num[i] > 50 && num[i] < 60)
+                    else if (num[i] > 50 && num[i] <= 60)
                     {
                         arr[ii][5]++;
                     }
-                    else if (num[i] >= 60 && num[i] < 70)
+                    else if (num[i] > 60 && num[i] < 70)
                     {
                         arr[ii][6]++;
                     }
@@ -1740,7 +1740,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">30 - 39</TH>\n";
                 stmt += "<TH class=\"tableheader\">40 - " + numbers.ToString() + "</TH>\n"; 
             }
-            else if (numbers < 60)
+            else if (numbers <= 60)
             {
                 stmt += "<TH class=\"tableheader\">1 - 9</TH>\n";
                 stmt += "<TH class=\"tableheader\">10 - 19</TH>\n";
@@ -1832,7 +1832,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">30 - 39</TH>\n";
                 stmt += "<TH class=\"tableheader\">40 - " + numbers.ToString() + "</TH>\n";
             }
-            else if (numbers < 60)
+            else if (numbers <= 60)
             {
                 stmt += "<TH class=\"tableheader\">1 - 9</TH>\n";
                 stmt += "<TH class=\"tableheader\">10 - 19</TH>\n";

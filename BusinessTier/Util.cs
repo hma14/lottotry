@@ -100,7 +100,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.TexasCashFive] = 5;
             ColumnnsOfLottoDic[Database.DailyGrand] = 5;
             ColumnnsOfLottoDic[Database.DailyGrand_GrandNumber] = 1;
-            ColumnnsOfLottoDic[Database.Cash4Life] = 5;
+            ColumnnsOfLottoDic[Database.Cash4Life] = 6;
 
         }
 
@@ -382,7 +382,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.TexasCashFive] = 4;
             LottoNumberRangesDic[Database.DailyGrand] = 5;
             LottoNumberRangesDic[Database.DailyGrand_GrandNumber] = 1;
-            LottoNumberRangesDic[Database.Cash4Life] = 5;
+            LottoNumberRangesDic[Database.Cash4Life] = 6;
         }
 
         public static int getLottoNumberRanges(Database db)
