@@ -53,6 +53,7 @@ namespace DataAccessTier
         DailyGrand = 38,
         DailyGrand_GrandNumber = 39,
         Cash4Life = 40,
+        Cash4Life_CashBall = 41,
     }
 
 
