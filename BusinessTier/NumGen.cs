@@ -35,6 +35,7 @@ namespace BusinessTier
             databaseExecutionTime = createStat(db, startRow, targetRow);
 
             fregments = ScaleLength / numScales;
+            if (fregments == 0) fregments = 1;
             if (ScaleLength % fregments > 0)
             {
                 scale = ScaleLength / fregments + 1;
@@ -121,6 +122,7 @@ namespace BusinessTier
             database = db;
             //fregments = Convert.ToInt32(Convert.ToDouble((double)ScaleLength / (double)numScales) + 0.5);
             fregments = ScaleLength / numScales;
+            if (fregments == 0) fregments = 1;
             if (ScaleLength % fregments > 0)
             {
                 scale = ScaleLength / fregments + 1;

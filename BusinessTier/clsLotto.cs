@@ -921,6 +921,7 @@ namespace Lottotry.BusinessTier
 
             //int fragments = Convert.ToInt32(Convert.ToDouble((double)numgen.ScaleLength / (double)scale) + 0.5);
             int fragments = numgen.ScaleLength / scale;
+            if (fragments == 0) fragments = 1;
 
             string stmt = " ";
             stmt += Util.CreateHTML_Header("Lotto Statistics 3", db);
@@ -1195,6 +1196,7 @@ namespace Lottotry.BusinessTier
             dbExecTime += numgen.DatabaseExecutionTime;
 
             int fragments = numgen.ScaleLength / scale;
+            if (fragments == 0) fragments = 1;
 
             string stmt = " ";
 
