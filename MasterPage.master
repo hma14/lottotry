@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <meta name="author" content="LottoTry" />
     <meta name="keywords" content="Lottery, lottotry, lotto, online lotto, free lotto tool, loto, prediction, lotto pick, auto draw, winning number, lotto application" />
     <meta name="description" content="A lotto magic web site for try, forecast, guess and analysis to hit next draw of lottery numbers." />
@@ -25,10 +26,9 @@
     <script type="text/javascript" src="/js/backColor.js"></script>
     <%--<script type="text/javascript" src="/js/buttonHover.js"></script>--%>
     <%-- <script type="text/javascript" src="/js/highlight.js"></script>--%>
-    
 </head>
 <body>
-    <form id="form1" runat="server" >
+    <form id="form1" runat="server">
 
 
 
@@ -105,18 +105,18 @@
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">Lottery Links</a>
-                                                    <ul id="wider">                                                       
+                                                    <ul id="wider">
                                                         <li><a href="/LottoSites/BC49.aspx">BC/49</a></li>
                                                         <li><a href="/LottoSites/Lotto649.aspx">Canada 6/49 Lotto</a></li>
-                                                        <li><a href="/LottoSites/LottoMax.aspx">Lotto Max</a></li>                                                                                                              
+                                                        <li><a href="/LottoSites/LottoMax.aspx">Lotto Max</a></li>
                                                         <li><a href="/LottoSites/CaSuperlottoPlus.aspx">California SuperLotto Plus</a></li>
                                                         <li><a href="/LottoSites/ColoradoLotto.aspx">Colorado Lotto</a></li>
                                                         <li><a href="/LottoSites/ConnecticutLotto.aspx">Connecticut 6/44 Lotto</a></li>
                                                         <li><a href="/LottoSites/FloridaFantasy5.aspx">Florida Fantasy 5</a></li>
                                                         <li><a href="/LottoSites/LottoFlorida.aspx">Florida Lotto</a></li>
                                                         <li><a href="/LottoSites/LottoFloridaLucky.aspx">Florida Mega Money</a></li>
-                                                        <li><a href="/LottoSites/MegaMillions.aspx">Mega Millions</a></li>                                                       
-                                                        <li><a href="/LottoSites/NewJerseyPick6Lotto.aspx">New Jersey Pick 6 Lotto</a></li>                                                                                                               
+                                                        <li><a href="/LottoSites/MegaMillions.aspx">Mega Millions</a></li>
+                                                        <li><a href="/LottoSites/NewJerseyPick6Lotto.aspx">New Jersey Pick 6 Lotto</a></li>
                                                         <li><a href="/LottoSites/NYLotto.aspx">New York Lotto</a></li>
                                                         <li><a href="/LottoSites/NYSweetMillion.aspx">New York Sweet Million</a></li>
                                                         <li><a href="/LottoSites/OregonMegabucks.aspx">Oregon Megabucks</a></li>
@@ -224,9 +224,9 @@
 
 
                 <asp:ContentPlaceHolder ID="cphUserCounter" runat="server">
-                  
-                        <asp:Label ID="lblCounter" class="lblCounter" runat="server"  Visible="false"></asp:Label>
-                  
+
+                    <asp:Label ID="lblCounter" class="lblCounter" runat="server" Visible="false"></asp:Label>
+
 
                 </asp:ContentPlaceHolder>
                 <%--footer--%>
@@ -295,333 +295,333 @@
 
 </body>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        $(function () {
-            $('.LottoList li').mouseover(function () {
-                $('a', this).css("text-decoration", "underline").css("color", "white")
-            }).mouseout(function () {
-                $('a', this).css("text-decoration", "none").css("color", "yellow")
-            });
+    $(function () {
+        $('.LottoList li').mouseover(function () {
+            $('a', this).css("text-decoration", "underline").css("color", "white")
+        }).mouseout(function () {
+            $('a', this).css("text-decoration", "none").css("color", "yellow")
         });
+    });
 
 
-        // Set default tab for TabbedPanels
-        function setDefaultTab(tab) {
-            var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1", { defaultTab: tab });
+    // Set default tab for TabbedPanels
+    function setDefaultTab(tab) {
+        var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1", { defaultTab: tab });
 
-            TabbedPanels1['defaultTab'].value = tab;
-            TabbedPanels1.showPanel(tab);
+        TabbedPanels1['defaultTab'].value = tab;
+        TabbedPanels1.showPanel(tab);
 
-        }
+    }
 
-        // Menu bar
-        $(document).ready(function () {
-            //    $('#menu li').hover(function () {
-            //        $(this).find('ul>li').stop().fadeToggle(500);
-            //    });
-            //});         
-
-            InitMenu();
-        });
-
-        function InitMenu() {
-            $('.menu li').hover(function () {
-                $('ul:first', this).css({ visibility: "visible", display: "none" }).fadeIn(200).show();
-            }, function () {
-                $('ul:first', this).css({ visibility: "hidden" });
-            });
-        }
-
-        $(document).ready(function () {
-            var $item = $('#item1');
-
-            $item.click(function () {
-
-                setDefaultTab(2);
-            });
-        });
-
-      
-
-        // control of show/hide details of explaination of each selections
-
-        // First paragraph and second paragraph (normally hidden)
-        $(document).ready(function () {
-            var $firstPara = $('p:eq(1)');
-            $firstPara.hide();
-            $('a.more').click(function () {
-                $('p:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            // Third and fourth paragraph (fourth normally hidden)
-            var $firstPara = $('p:eq(3)');
-            //var $firstPara = $('ol:eq(1)');
-            $firstPara.hide();
-            $('a.more2').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(3)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                //$('ol:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            // And so on
-            var $firstPara = $('p:eq(5)');
-            $firstPara.hide();
-            $('a.more3').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(5)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            // And so on
-            var $firstPara = $('p:eq(7)');
-            $firstPara.hide();
-            $('a.more4').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(7)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            // And so on
-            var $firstPara = $('p:eq(9)');
-            $firstPara.hide();
-            $('a.more5').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(9)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            // And so on
-            var $firstPara = $('p:eq(11)');
-            $firstPara.hide();
-            $('a.more6').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(11)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-            // And so on
-            var $firstPara = $('p:eq(13)');
-            $firstPara.hide();
-            $('a.more7').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(13)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-            // And so on
-            var $firstPara = $('p:eq(15)');
-            $firstPara.hide();
-            $('a.more8').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(15)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-            // And so on
-            var $firstPara = $('p:eq(17)');
-            $firstPara.hide();
-            $('a.more9').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(17)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-            // And so on
-            var $firstPara = $('p:eq(19)');
-            $firstPara.hide();
-            $('a.more10').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(19)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-            var $firstPara = $('p:eq(21)');
-            $firstPara.hide();
-            $('a.more11').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(21)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-            var $firstPara = $('p:eq(39)');
-            $firstPara.hide();
-            $('a.more20').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('p:eq(39)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'details')
-                    $link.text('hide');
-                else
-                    $link.text('details');
-                return false;
-            });
-
-
-            // Control sidebar Drop Down Menus
-            //
-            var $menu = $('ul:eq(1)');
-            $menu.hide();
-            $('a.more40').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('ul:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'Guide Links') {
-                    $link.text('Click to Hide');
-
-                } else {
-                    $link.text('Guide Links');
-                }
-
-                return false;
-            });
-
-            // Video Clips
-            var $menu = $('ul:eq(3)');
-            $menu.hide();
-            $('a.more44').click(function () {
-                //$menu.slideToggle('slow');
-                $('ul:eq(3)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'Video Clips') {
-                    $link.text('Click to Hide')
-
-                } else {
-                    $link.text('Video Clips');
-                }
-                return false;
-            });
-
-            var $menu = $('ul:eq(5)');
-            $menu.hide();
-            $('a.more41').click(function () {
-                //$firstPara.slideToggle('slow');
-                $('ul:eq(5)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
-                var $link = $(this);
-                if ($link.text() == 'Lottery Links') {
-                    $link.text('Click to Hide')
-
-                } else {
-                    $link.text('Lottery Links');
-                }
-                return false;
-            });
-
-
-
-        });
-
-        //$(document).ready(function () {
-        //    $('.htmlcontent').mouseover(function () {
-        //        $(this).css({ "font-size": "120%", "border": "2px" });
-        //        $('.htmlcontent').mouseout(function () {
-        //            $(this).css({ "font-size": "100%" });
-        //        });
+    // Menu bar
+    $(document).ready(function () {
+        //    $('#menu li').hover(function () {
+        //        $(this).find('ul>li').stop().fadeToggle(500);
         //    });
-        //});
+        //});         
 
-        //$(document).ready(function () {
-        //    $('.htmlcontent').mouseover(function (e) {
-        //        $(this).css({ "background-color": "#FFF8C6", "font-size": "120%", "border": "2px", "border-style": "inset" });
-        //        $('.highlight').css({ "background-color": "#99C68E", "color": "Maroon", "font-size": "120%", "font-style": "Italic" });
-        //        $('h1').css({ "color": "#985813", "text-shadow": "#E5E4E2 0 -1px" })
-        //    });
+        InitMenu();
+    });
 
-        //    $('.htmlcontent').mouseout(function (e) {
-        //        //e.stopPropagation();                 
-        //        //$(this).css("background-color", "#99C68E").css("color", "#800517").css("font-style", "Normal");
-        //        $(this).css({ "background-color": "#99C68E", "font-size": "100%", "border": "0px" });
-        //        $('.highlight').css({ "background-color": "#5CB3FF", "color": "White", "font-style": "normal" });
-        //        $('h1').css({ "color": "#FAFAFA", "text-shadow": "#985813 0 -1px" })
-        //    });
-        //});
+    function InitMenu() {
+        $('.menu li').hover(function () {
+            $('ul:first', this).css({ visibility: "visible", display: "none" }).fadeIn(200).show();
+        }, function () {
+            $('ul:first', this).css({ visibility: "hidden" });
+        });
+    }
+
+    $(document).ready(function () {
+        var $item = $('#item1');
+
+        $item.click(function () {
+
+            setDefaultTab(2);
+        });
+    });
 
 
 
-        $(function () {
-            $('#optionalRow').blur(function () {
-                if ($('#optionalRow').value() == "") {
-                    $('#A2').fadeIn();
-                }
-                else {
-                    $('#A2').fadeOut();
-                }
-            });
+    // control of show/hide details of explaination of each selections
+
+    // First paragraph and second paragraph (normally hidden)
+    $(document).ready(function () {
+        var $firstPara = $('p:eq(1)');
+        $firstPara.hide();
+        $('a.more').click(function () {
+            $('p:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
         });
 
-        // Prevent copy/past to re-enter email textbox
+        // Third and fourth paragraph (fourth normally hidden)
+        var $firstPara = $('p:eq(3)');
+        //var $firstPara = $('ol:eq(1)');
+        $firstPara.hide();
+        $('a.more2').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(3)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            //$('ol:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+        // And so on
+        var $firstPara = $('p:eq(5)');
+        $firstPara.hide();
+        $('a.more3').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(5)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+        // And so on
+        var $firstPara = $('p:eq(7)');
+        $firstPara.hide();
+        $('a.more4').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(7)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+        // And so on
+        var $firstPara = $('p:eq(9)');
+        $firstPara.hide();
+        $('a.more5').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(9)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+        // And so on
+        var $firstPara = $('p:eq(11)');
+        $firstPara.hide();
+        $('a.more6').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(11)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+        // And so on
+        var $firstPara = $('p:eq(13)');
+        $firstPara.hide();
+        $('a.more7').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(13)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+        // And so on
+        var $firstPara = $('p:eq(15)');
+        $firstPara.hide();
+        $('a.more8').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(15)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+        // And so on
+        var $firstPara = $('p:eq(17)');
+        $firstPara.hide();
+        $('a.more9').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(17)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+        // And so on
+        var $firstPara = $('p:eq(19)');
+        $firstPara.hide();
+        $('a.more10').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(19)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+        var $firstPara = $('p:eq(21)');
+        $firstPara.hide();
+        $('a.more11').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(21)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+        var $firstPara = $('p:eq(39)');
+        $firstPara.hide();
+        $('a.more20').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('p:eq(39)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'details')
+                $link.text('hide');
+            else
+                $link.text('details');
+            return false;
+        });
+
+
+        // Control sidebar Drop Down Menus
         //
-        //$(function () {
-        //    $('input[id$=tbEmail]').bind('cut copy paste', function (e) {
-        //        e.preventDefault();
-        //        alert('You cannot ' + e.type + ' text!');
-        //    });
-        //});
-        //$(function () {
-        //    $('input[id$=tbEmail2]').bind('cut copy paste', function (e) {
-        //        e.preventDefault();
-        //        alert('You cannot ' + e.type + ' text!');
-        //    });
-        //});
+        var $menu = $('ul:eq(1)');
+        $menu.hide();
+        $('a.more40').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('ul:eq(1)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'Guide Links') {
+                $link.text('Click to Hide');
 
-        // Cancel buttons for disabling ReqiredValidateField
-        function disableReqiredValidation(id) {
-            var rfv = document.getElementById(id)
-            rfv.getAttribute("Enabled") = false
-            return false
-        }
+            } else {
+                $link.text('Guide Links');
+            }
+
+            return false;
+        });
+
+        // Video Clips
+        var $menu = $('ul:eq(3)');
+        $menu.hide();
+        $('a.more44').click(function () {
+            //$menu.slideToggle('slow');
+            $('ul:eq(3)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'Video Clips') {
+                $link.text('Click to Hide')
+
+            } else {
+                $link.text('Video Clips');
+            }
+            return false;
+        });
+
+        var $menu = $('ul:eq(5)');
+        $menu.hide();
+        $('a.more41').click(function () {
+            //$firstPara.slideToggle('slow');
+            $('ul:eq(5)').animate({ opacity: 'toggle', height: 'toggle' }, 'slow');
+            var $link = $(this);
+            if ($link.text() == 'Lottery Links') {
+                $link.text('Click to Hide')
+
+            } else {
+                $link.text('Lottery Links');
+            }
+            return false;
+        });
+
+
+
+    });
+
+    //$(document).ready(function () {
+    //    $('.htmlcontent').mouseover(function () {
+    //        $(this).css({ "font-size": "120%", "border": "2px" });
+    //        $('.htmlcontent').mouseout(function () {
+    //            $(this).css({ "font-size": "100%" });
+    //        });
+    //    });
+    //});
+
+    //$(document).ready(function () {
+    //    $('.htmlcontent').mouseover(function (e) {
+    //        $(this).css({ "background-color": "#FFF8C6", "font-size": "120%", "border": "2px", "border-style": "inset" });
+    //        $('.highlight').css({ "background-color": "#99C68E", "color": "Maroon", "font-size": "120%", "font-style": "Italic" });
+    //        $('h1').css({ "color": "#985813", "text-shadow": "#E5E4E2 0 -1px" })
+    //    });
+
+    //    $('.htmlcontent').mouseout(function (e) {
+    //        //e.stopPropagation();                 
+    //        //$(this).css("background-color", "#99C68E").css("color", "#800517").css("font-style", "Normal");
+    //        $(this).css({ "background-color": "#99C68E", "font-size": "100%", "border": "0px" });
+    //        $('.highlight').css({ "background-color": "#5CB3FF", "color": "White", "font-style": "normal" });
+    //        $('h1').css({ "color": "#FAFAFA", "text-shadow": "#985813 0 -1px" })
+    //    });
+    //});
+
+
+
+    $(function () {
+        $('#optionalRow').blur(function () {
+            if ($('#optionalRow').value() == "") {
+                $('#A2').fadeIn();
+            }
+            else {
+                $('#A2').fadeOut();
+            }
+        });
+    });
+
+    // Prevent copy/past to re-enter email textbox
+    //
+    //$(function () {
+    //    $('input[id$=tbEmail]').bind('cut copy paste', function (e) {
+    //        e.preventDefault();
+    //        alert('You cannot ' + e.type + ' text!');
+    //    });
+    //});
+    //$(function () {
+    //    $('input[id$=tbEmail2]').bind('cut copy paste', function (e) {
+    //        e.preventDefault();
+    //        alert('You cannot ' + e.type + ' text!');
+    //    });
+    //});
+
+    // Cancel buttons for disabling ReqiredValidateField
+    function disableReqiredValidation(id) {
+        var rfv = document.getElementById(id)
+        rfv.getAttribute("Enabled") = false
+        return false
+    }
 
 
 
@@ -642,25 +642,40 @@
         //    });
         //});
 
+</script>
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-453ES8TW70"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-453ES8TW70');
     </script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <%--Google Analytics--%>
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-10934632-5']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
 
 
 
-    <%--Site Tracking code--%>
+
+<%--Google Analytics--%>
+
+<%--<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10934632-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+
+
+    //Site Tracking code
 
         //var _gaq = _gaq || [];
         //_gaq.push(['_setAccount', 'UA-10934632-5']);
@@ -673,25 +688,24 @@
         //})();
 
 
-    <%-- Google Analytics tracking  --%>
+    //Google Analytics tracking 
 
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-10934632-5', 'auto');
-        ga('send', 'pageview');
+    ga('create', 'UA-10934632-5', 'auto');
+    ga('send', 'pageview');
 
-    </script>
-    <%--Google Translate--%>
-    <%--    <script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script>
+</script>--%>
+
+
+<%--Google Translate--%>
+<%--    <script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script>
     <script type="text/javascript">
         if (WIDGETBOX) WIDGETBOX.renderWidget('ff7a5da2-acf0-4cc7-bcb8-da43b00c9661');</script>
-    --%>
-
-
-    
+--%>
 </html>
