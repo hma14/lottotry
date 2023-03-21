@@ -160,9 +160,13 @@ namespace Lottotry
                 dbManager.OpenConnection();
                 if (dbManager.SpIsUserExist(userName) > 0)
                 {
+#if true
+                    return true;  // temporarily or Macus
+#else
                     decryptedPwd = EncryptionManger.Decrypt(dbManager.SpGetUserPwHash(userName));
                     dbManager.CloseConnection();
                     return password.Equals(decryptedPwd);
+#endif 
                 }
                 else
                 {

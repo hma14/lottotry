@@ -45,7 +45,7 @@ namespace BusinessTier
         /// </param>
         /// <param name="initVector">
         /// Initialization vector (or IV). This value is required to encrypt the
-        /// first block of plaintext data. For RijndaelManaged class IV must be 
+        /// first block of plaintext data. For AesManaged class IV must be 
         /// exactly 16 ASCII characters long.
         /// </param>
         /// <param name="keySize">
@@ -89,7 +89,9 @@ namespace BusinessTier
             byte[] keyBytes = password.GetBytes(keySize / 8);
 
             // Create uninitialized Rijndael encryption object.
-            RijndaelManaged symmetricKey = new RijndaelManaged();
+            AesManaged symmetricKey = new AesManaged();
+
+            symmetricKey.Padding = PaddingMode.Zeros;
 
             // It is reasonable to set encryption mode to Cipher Block Chaining
             // (CBC). Use default options for other symmetric key parameters.
@@ -155,7 +157,7 @@ namespace BusinessTier
         /// </param>
         /// <param name="initVector">
         /// Initialization vector (or IV). This value is required to encrypt the
-        /// first block of plaintext data. For RijndaelManaged class IV must be
+        /// first block of plaintext data. For AesManaged class IV must be
         /// exactly 16 ASCII characters long.
         /// </param>
         /// <param name="keySize">
@@ -206,7 +208,9 @@ namespace BusinessTier
             byte[] keyBytes = password.GetBytes(keySize / 8);
 
             // Create uninitialized Rijndael encryption object.
-            RijndaelManaged symmetricKey = new RijndaelManaged();
+            AesManaged symmetricKey = new AesManaged();
+
+            symmetricKey.Padding = PaddingMode.Zeros;
 
             // It is reasonable to set encryption mode to Cipher Block Chaining
             // (CBC). Use default options for other symmetric key parameters.
@@ -237,6 +241,7 @@ namespace BusinessTier
                 int decryptedByteCount = cryptoStream.Read(plainTextBytes,
                                                            0,
                                                            plainTextBytes.Length);
+
 
                 // Close both streams.
                 memoryStream.Close();

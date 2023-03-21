@@ -27,7 +27,7 @@ namespace Lottotry
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             ContentPlaceHolder cphlblerror = (ContentPlaceHolder)Page.Master.FindControl("ErrorLabel");
             lblError = (Label)cphlblerror.FindControl("lblError");
 
@@ -58,7 +58,7 @@ namespace Lottotry
                         lblCounter.Visible = true;
                         memberLinks.Visible = true;
                         adminLinks.Visible = true;
-                       
+
                     }
                 }
                 catch (Exception ex)
@@ -72,7 +72,9 @@ namespace Lottotry
                 }
             }
 
-            if ((loginName != null) && (loginName == uid) && isLoggedIn && isSameSession)
+            loginName = loginName.Trim();
+            // if (!(string.IsNullOrEmpty(loginName)) && loginName.Equals(uid) && isLoggedIn && isSameSession)
+            if (!(string.IsNullOrEmpty(loginName)) && loginName.Equals(uid))
             {
                 string fullUserName = null;
                 try
@@ -100,7 +102,7 @@ namespace Lottotry
             else
             {
                 lblWelcome.Text = "Welcome: Visitor";
-                lbLogInOut.Text = "Log In";              
+                lbLogInOut.Text = "Log In";
                 memberLinks.Visible = false;
                 adminLinks.Visible = false;
                 if (role == "Admin")

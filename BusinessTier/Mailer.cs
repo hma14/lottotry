@@ -13,34 +13,35 @@ namespace BusinessTier
 
     public class Emailer
     {
-        public static async Task<string> SendGridMailMethod(string to, string bcc,
-                                              string cc, string subject, string body)
+
+        public static async Task<string> SendGridMailMethod(string to, string bcc, string cc, string subject, string body)
         {
-            //String apiKey = Environment.GetEnvironmentVariable("SENDGRID_APIKEY", EnvironmentVariableTarget.User);
-            //String apiKey = "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";
-            String apiKey = ConfigurationManager.AppSettings["SENDGRID_APIKEY"];
-  
-            dynamic sg = new SendGridAPIClient(apiKey, "https://api.sendgrid.com");
+            var apiKey = ConfigurationManager.AppSettings["SENDGRID_APIKEY"];
+            var client = new SendGridClient(apiKey);
 
-            Email From = new Email("info@lottotry.com");
-            Email To = new Email(to);
-            SendGrid.Helpers.Mail.Content content = new SendGrid.Helpers.Mail.Content("text/html", body);
-            Mail mail = new Mail(From, subject, To, content);
+            var toEmail = new EmailAddress(to);
+            var fromEmail = new EmailAddress(ConfigurationManager.AppSettings["LOTTOTRY_FROM_IMAIL"]);
 
-            //mail.TemplateId = "13b8f94f-bcae-4ec6-b752-70d6cb59f932";
-            mail.Personalization[0].AddSubstitution("-name-", "www.lottotry.com");
-
+            var msg = MailHelper.CreateSingleEmail(
+                                                    fromEmail,
+                                                    toEmail,
+                                                    subject,
+                                                    null,
+                                                    body
+                                                  );
             try
             {
-                dynamic response = await sg.client.mail.send.post(requestBody: mail.Get());
+                var response = await client.SendEmailAsync(msg);
+                if (response.IsSuccessStatusCode)
+                    return null;
                 return response.StatusCode.ToString();
-                
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
 
         //public const string EmailSender = "info@lottotry.com";
         public static void LottoTryMailMethod(string to, string bcc,
@@ -75,17 +76,17 @@ namespace BusinessTier
             MailMessage mailMessage = new MailMessage();
             mailMessage.From
                         = new System.Net.Mail.MailAddress(from); // from
-            
+
             if (to != null)                                      // to
             {
                 mailMessage.To.Add(to);
             }
 
-            
+
 
 #if true
             mailMessage.Bcc.Add(mailMessage.From);              // bcc
-           
+
 #else
             mailMessage.Bcc.Add(from);
             mailMessage.Bcc.Add("henryma14@gmail.com");
@@ -99,16 +100,16 @@ namespace BusinessTier
             try
             {
                 myClient.Send(mailMessage);                // send it
-            } 
+            }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        
+
         // this method goes in the business layer
         public static string SendEmailFromGoDaddy(string subject, string body, string sender,
-                string recipient, string bcc,bool isHTML, string smtpUsername, string smtpPassword)
+                string recipient, string bcc, bool isHTML, string smtpUsername, string smtpPassword)
         {
             string msg = "";
 
@@ -125,7 +126,7 @@ namespace BusinessTier
                 }
                 mailMsg.Subject = subject;
                 mailMsg.Body = body;
-               
+
                 mailMsg.IsBodyHtml = isHTML;
 
                 SmtpClient smtp = new SmtpClient("m1pismtp01-v01.prod.mesa1.secureserver.net", 25);
@@ -144,7 +145,7 @@ namespace BusinessTier
             }
             return msg;   // If msg == null then the e-mail was sent without errors
         }
-    } 
+    }
 }
 
 

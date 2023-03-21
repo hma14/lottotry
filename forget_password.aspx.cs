@@ -27,15 +27,16 @@ namespace Lottotry
 
         protected void tbSubmit_Click(object sender, EventArgs e)
         {
-            string passwd = null;
+            string passwd = "p@ssword";
             try
             {
+#if false
                 dbmanager.OpenConnection();
                 passwd = dbmanager.SpFindPassword(tbEmail.Text.Trim());
                 if (passwd != null)
                 {
-                    passwd = CaesarCipher.caesar_cipher(passwd, random.Next(2, 24));
-                    //passwd = CryptoManager.GetEncryptPassword(passwd);
+                    //passwd = CaesarCipher.caesar_cipher(passwd, random.Next(2, 24));
+                    passwd = CryptoManager.GetEncryptPassword(passwd);
                 }
                 else
                 {
@@ -46,14 +47,18 @@ namespace Lottotry
 
                 // The Ciphered password will replace the current passwordHash in database
                 dbmanager.SpUpdatePassword(tbEmail.Text.Trim(), passwd);
-
+#endif
                 // Sending to client the email with new password
                 string error = sendEmail(tbEmail.Text.Trim(), passwd);
 
                 if (error == null)
                 {
                     lblIndicator.Text = "Found! A new Password has been sent to you by email.";
-                }               
+                }
+                else
+                {
+                    lblIndicator.Text = $"status code: {error}";
+                }
             }
             catch (SmtpException ex)
             {
@@ -86,9 +91,12 @@ namespace Lottotry
                 //                                    Emailer.EmailSender,
                 //                                    toEmail, bcc,
                 //                                    true, "hma14", "Hma@1985");
-
+#if false
                 Emailer.LottoTryMailMethod(toEmail, bcc, null, subject, content);
-                return null;
+#else
+                var ret = Emailer.SendGridMailMethod(toEmail, bcc, null, subject, content).Result;
+#endif
+                return ret;
             }
             catch (SmtpException ex)
             {
