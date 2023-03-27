@@ -154,19 +154,16 @@ namespace Lottotry
         protected bool AuthUser(string userName, string password)
         {
             DataAccessLayer dbManager = new DataAccessLayer();
-            string decryptedPwd = null;
             try
             {
                 dbManager.OpenConnection();
                 if (dbManager.SpIsUserExist(userName) > 0)
                 {
-#if true
-                    return true;  // temporarily or Macus
-#else
-                    decryptedPwd = EncryptionManger.Decrypt(dbManager.SpGetUserPwHash(userName));
+                    var encryptedPasswd = dbManager.SpGetUserPwHash(userName);
+                    var decryptedPasswd = CryptoManager.GetDecryptPassword(encryptedPasswd);
+                    decryptedPasswd = decryptedPasswd.Replace("\0", "");
                     dbManager.CloseConnection();
-                    return password.Equals(decryptedPwd);
-#endif 
+                    return password.Equals(decryptedPasswd);
                 }
                 else
                 {

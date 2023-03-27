@@ -633,7 +633,8 @@ namespace DataAccessTier
                              DateTime expiryDate,
                              bool isLoggedIn)
         {
-            string encryptedPwd = EncryptionManger.Encrypt(password);
+            //string encryptedPwd = EncryptionManger.Encrypt(password);
+            var encryptedPwd = CryptoManager.GetEncryptPassword(password);
             try
             {
                 using (SqlCommand sqlCmd = new SqlCommand("spRegisterUser", sqlConnection))
@@ -675,7 +676,8 @@ namespace DataAccessTier
                                     DateTime expiryDate,
                                     bool isLoggedIn)
         {
-            string encryptedPwd = EncryptionManger.Encrypt(password);
+            //string encryptedPwd = EncryptionManger.Encrypt(password);
+            var encryptedPwd = CryptoManager.GetEncryptPassword(password);
             try
             {
                 using (SqlCommand sqlCmd = new SqlCommand("spUpdateUser", sqlConnection))
@@ -713,7 +715,7 @@ namespace DataAccessTier
                                      string userEmail
                                     )
         {
-            string encryptedPwd = EncryptionManger.Encrypt(password);
+            var encryptedPwd = CryptoManager.GetEncryptPassword(password);
             try
             {
                 using (SqlCommand sqlCmd = new SqlCommand("spUpdateUserInfo", sqlConnection))
@@ -1205,9 +1207,9 @@ namespace DataAccessTier
                 throw;
             }
         }
-        public void SpUpdatePassword(string email, string oldPassword)
+        public void SpUpdatePassword(string email, string encryptedPwd)
         {
-            string encryptedPwd = CryptoManager.GetEncryptPassword(oldPassword);
+            //string encryptedPwd = CryptoManager.GetEncryptPassword(oldPassword);
             try
             {
                 using (SqlCommand cmd = new SqlCommand("spUpdatePassword", sqlConnection))

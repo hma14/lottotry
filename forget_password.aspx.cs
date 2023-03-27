@@ -27,29 +27,20 @@ namespace Lottotry
 
         protected void tbSubmit_Click(object sender, EventArgs e)
         {
-            string passwd = "p@ssword";
+            string passwd = "P@ssword";
             try
             {
-#if false
-                dbmanager.OpenConnection();
-                passwd = dbmanager.SpFindPassword(tbEmail.Text.Trim());
-                if (passwd != null)
-                {
-                    //passwd = CaesarCipher.caesar_cipher(passwd, random.Next(2, 24));
-                    passwd = CryptoManager.GetEncryptPassword(passwd);
-                }
-                else
-                {
-                    lblIndicator.Text = "No password found to match this email:  " + tbEmail.Text;
-                    
-                    return;
-                }
+                var encryptedPasswd = CryptoManager.GetEncryptPassword(passwd);
 
                 // The Ciphered password will replace the current passwordHash in database
-                dbmanager.SpUpdatePassword(tbEmail.Text.Trim(), passwd);
-#endif
+                dbmanager.SpUpdatePassword(tbEmail.Text.Trim(), encryptedPasswd);
+
+                var decryptedPasswd = CryptoManager.GetDecryptPassword(encryptedPasswd);
+
+                decryptedPasswd = decryptedPasswd.Replace("\0", "");
+
                 // Sending to client the email with new password
-                string error = sendEmail(tbEmail.Text.Trim(), passwd);
+                string error = sendEmail(tbEmail.Text.Trim(), decryptedPasswd);
 
                 if (error == null)
                 {
