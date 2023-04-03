@@ -119,7 +119,7 @@ namespace Lottotry.Admin
                         string error = sendEmail(tbEmail.Text.Trim(), tbUserid.Text.Trim());
 
 
-                        if (error.ToUpper() == "ACCEPTED")
+                        if (string.IsNullOrEmpty(error))
                         {
                             lblError.Text = "An email has been sent to your email account: <em>" + tbEmail.Text.Trim() + 
                                 "</em>. Please check your email to continue your registration!";
