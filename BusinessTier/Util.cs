@@ -66,7 +66,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.Lottery] = 7;
             ColumnnsOfLottoDic[Database.LottoMax] = 8;
             ColumnnsOfLottoDic[Database.BC49] = 7;
-            ColumnnsOfLottoDic[Database.FloridaLotto] = 7;
+            ColumnnsOfLottoDic[Database.FloridaLotto] = 6;
             ColumnnsOfLottoDic[Database.MegaMillions] = 5; 
             ColumnnsOfLottoDic[Database.MegaMillions_MegaBall] = 1; 
             ColumnnsOfLottoDic[Database.PowerBall] = 5; 
@@ -160,7 +160,7 @@ namespace BusinessTier
             BonusColNameDic[Database.Lottery] = "Bonus";
             BonusColNameDic[Database.LottoMax] = "Bonus";
             BonusColNameDic[Database.BC49] = "Bonus";
-            BonusColNameDic[Database.FloridaLotto] = "Bonus";
+            BonusColNameDic[Database.FloridaLotto] = null;
             BonusColNameDic[Database.FloridaLucky] = "LuckyBall";
             BonusColNameDic[Database.MegaMillions] = null;
             BonusColNameDic[Database.MegaMillions_MegaBall] = "MegaBall";

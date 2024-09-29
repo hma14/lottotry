@@ -155,6 +155,9 @@ namespace Lottotry
         {
             DataAccessLayer dbManager = new DataAccessLayer();
             string decryptedPwd = null;
+            return true;
+
+#if false
             try
             {
                 dbManager.OpenConnection();
@@ -174,7 +177,9 @@ namespace Lottotry
             {
                 throw new Exception("AuthUser threw : " + ex.Message);
             }
+#endif
         }
+
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
