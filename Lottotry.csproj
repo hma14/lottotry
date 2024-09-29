@@ -254,36 +254,6 @@
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.xml" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\readme.txt" />
     <Content Include="Register.aspx" />
-    <Content Include="SqlScripts\database_backup\AjaxPhotoAlbum.mdf" />
-    <Content Include="SqlScripts\database_backup\AjaxPhotoAlbum_log.ldf">
-      <DependentUpon>AjaxPhotoAlbum.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\CalendarDev.mdf" />
-    <Content Include="SqlScripts\database_backup\CalendarDev_log.ldf">
-      <DependentUpon>CalendarDev.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\CustomerFeedBack.mdf" />
-    <Content Include="SqlScripts\database_backup\CustomerFeedBack_log.ldf">
-      <DependentUpon>CustomerFeedBack.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\homework.mdf" />
-    <Content Include="SqlScripts\database_backup\homework_log.ldf">
-      <DependentUpon>homework.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\Interview.mdf" />
-    <Content Include="SqlScripts\database_backup\Interview_log.ldf">
-      <DependentUpon>Interview.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\Inventory.mdf" />
-    <Content Include="SqlScripts\database_backup\Inventory_log.ldf">
-      <DependentUpon>Inventory.mdf</DependentUpon>
-    </Content>
-    <Content Include="SqlScripts\database_backup\lottotry.mdf" />
-    <Content Include="SqlScripts\database_backup\lottotry_database_backup.sql" />
-    <Content Include="SqlScripts\database_backup\lottotry_database_backup2.sql" />
-    <Content Include="SqlScripts\database_backup\lottotry_log.ldf">
-      <DependentUpon>lottotry.mdf</DependentUpon>
-    </Content>
     <Content Include="SSL_Certificate\lottotry_iis_CSR.txt" />
     <Content Include="Statistics\AutoDraws.aspx" />
     <Content Include="Statistics_Videos\AutoDraws_video.aspx" />
@@ -1181,7 +1151,6 @@
     <None Include="Doc\Statistics7.pdf" />
     <None Include="Doc\Terms_and_Conditions.docx" />
     <None Include="Doc\Terms_and_Conditions.pdf" />
-    <None Include="SqlScripts\Create_Lotto_Table.sql" />
     <Content Include="images\login.ico" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1193,7 +1162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="bin\" />
+    <Folder Include="SqlScripts\database_backup\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Scripting">
