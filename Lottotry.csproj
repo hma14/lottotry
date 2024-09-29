@@ -224,7 +224,6 @@
     <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net35\AjaxMinTask.dll" />
     <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMin.dll" />
     <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMinTask.dll" />
-    <Content Include="packages\HtmlAgilityPack.1.4.6\HAPIcon.png" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.dll" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.pdb" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\Net20\HtmlAgilityPack.xml" />
@@ -252,7 +251,6 @@
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.dll" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.pdb" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.xml" />
-    <Content Include="packages\HtmlAgilityPack.1.4.6\readme.txt" />
     <Content Include="Register.aspx" />
     <Content Include="SSL_Certificate\lottotry_iis_CSR.txt" />
     <Content Include="Statistics\AutoDraws.aspx" />
@@ -317,7 +315,6 @@
     <Content Include="images\join_now.gif" />
     <Content Include="images\left_sidebar.png" />
     <Content Include="images\linkedin-icon.png" />
-    <Content Include="images\LottoTryLogo.png" />
     <Content Include="images\LottoTryLogo2.png" />
     <Content Include="images\LottoTry_Animation.gif" />
     <Content Include="images\Lotto_Animation.gif" />
@@ -396,18 +393,12 @@
     <Content Include="Privacy.aspx" />
     <Content Include="Receipt.aspx" />
     <Content Include="Admin\Register.aspx" />
-    <Content Include="packages\AjaxMin.4.97.4951.28483\AjaxMin.4.97.4951.28483.nupkg" />
-    <Content Include="packages\AjaxMin.4.97.4951.28483\AjaxMin.4.97.4951.28483.nuspec" />
     <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net35\AjaxMin.targets" />
     <Content Include="packages\AjaxMin.4.97.4951.28483\tools\net40\AjaxMin.targets" />
-    <Content Include="packages\HtmlAgilityPack.1.4.6\HtmlAgilityPack.1.4.6.nupkg" />
-    <Content Include="packages\HtmlAgilityPack.1.4.6\HtmlAgilityPack.1.4.6.nuspec" />
     <Content Include="packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.pri" />
-    <Content Include="packages\repositories.config" />
     <Content Include="MasterPage.master" />
     <Content Include="libman.json" />
     <None Include="packages.config" />
-    <Content Include="packages\HtmlAgilityPack.1.4.6\.signature.p7s" />
     <None Include="Properties\PublishProfiles\Lottotry-localhost-deploy.pubxml" />
     <None Include="Properties\PublishProfiles\LottotryAzure - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\LottotryAzure - Web Deploy %283%29.pubxml" />
@@ -468,27 +459,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Members\WSGetDrawNumbers.asmx" />
-    <Content Include="XML\bc49.xml" />
-    <Content Include="XML\ColoradoLotto.xml" />
-    <Content Include="XML\FloridaFantasy5.xml" />
-    <Content Include="XML\EuroMillions.xml" />
-    <Content Include="XML\EuroMillions_LuckyStars.xml" />
-    <Content Include="XML\FloridaLotto.xml" />
-    <Content Include="XML\Lottery.xml" />
-    <Content Include="XML\lotto649.xml" />
-    <Content Include="XML\LottoMax.xml" />
-    <Content Include="XML\MegaMillions.xml" />
-    <Content Include="XML\MegaMillions_MegaBall.xml" />
-    <Content Include="XML\NYLotto.xml" />
-    <Content Include="XML\NYSweetMillion.xml" />
-    <Content Include="XML\OZLotto.xml" />
-    <Content Include="XML\PowerBall.xml" />
-    <Content Include="XML\PowerBall_PowerBall.xml" />
-    <Content Include="XML\SevenLotto.xml" />
-    <Content Include="XML\SSQ.xml" />
-    <Content Include="XML\SSQ_Blue.xml" />
-    <Content Include="XML\SuperLotto.xml" />
-    <Content Include="XML\SuperLotto_Rear.xml" />
     <Content Include="SSL_Certificate\gd_iis_intermediates.p7b" />
     <Content Include="SSL_Certificate\lottotry.com.crt" />
   </ItemGroup>
@@ -1163,6 +1133,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="SqlScripts\database_backup\" />
+    <Folder Include="XML\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Scripting">
