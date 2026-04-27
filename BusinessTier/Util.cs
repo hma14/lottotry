@@ -12,7 +12,7 @@ namespace BusinessTier
     public class Util
     {
         public static Random rnd = new Random(DateTime.Now.Millisecond);
-        public const int MAX_ROWS = 50;
+        public const int MAX_ROWS = 52;
         public const string ONE_MONTH = "4.99";
         public const string SIX_MONTH = "24.99";
         public const string TWELVE_MONTH = "44.99";
@@ -352,7 +352,7 @@ namespace BusinessTier
         {
             // including bonus column
             LottoNumberRangesDic[Database.Lottery] = 5;
-            LottoNumberRangesDic[Database.LottoMax] = 5;
+            LottoNumberRangesDic[Database.LottoMax] = 6;
             LottoNumberRangesDic[Database.BC49] = 5;
             LottoNumberRangesDic[Database.FloridaLotto] = 6;
             LottoNumberRangesDic[Database.FloridaLucky] = 5;
@@ -401,7 +401,7 @@ namespace BusinessTier
         {
             // including bonus column
             TotalLottoNumbersDic[Database.Lottery] = 49;
-            TotalLottoNumbersDic[Database.LottoMax] = 50;
+            TotalLottoNumbersDic[Database.LottoMax] = 52;
             TotalLottoNumbersDic[Database.BC49] = 49;
             TotalLottoNumbersDic[Database.FloridaLotto] = 53;
             TotalLottoNumbersDic[Database.FloridaLucky] = 47;

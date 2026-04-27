@@ -80,7 +80,7 @@ namespace Lottotry.Members
                 scalesDdl.SelectedIndex = 6;
                 scalesDdl5.SelectedIndex = 6;
 
-                for (int i = 0; i <= 50; i++)
+                for (int i = 0; i <= 52; i++)
                 {
                     DistDdl.Items.Add(i.ToString());
                     DistDdl.Items[i].Text = i.ToString();
