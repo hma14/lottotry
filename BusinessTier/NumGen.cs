@@ -198,7 +198,10 @@ namespace BusinessTier
             while (reader.Read() == true)
             {
                 // Increase the internal distCnt for all numbers (1 - 49)
-                increment();
+                if (db == Database.FloridaPick3) 
+                    increment(true);
+                else
+                    increment();
                 int draw_no = reader.GetInt32(0);
                 string draw_date = reader.GetString(1);                     
                 int[] no = new int[cols];
@@ -233,7 +236,10 @@ namespace BusinessTier
             while (reader.Read())
             {
                 // Increase distance for all numbers, ex. 1 - 49
-                increment();
+                if (db == Database.FloridaPick3)
+                    increment(true);
+                else
+                    increment();
                 draw_no = (int)reader.GetSqlInt32(0);
                 draw_date = reader.GetString(1);
                 drawno.Add(draw_no);
@@ -251,9 +257,11 @@ namespace BusinessTier
             return dataAccessLayer.CloseConnection(reader);
         }
 
-        private void increment()
+        private void increment(bool isFloridaPicks = false)
         {
-            for (int i = 1; i < stat.Length; i++)
+            int i = 1;
+            if (isFloridaPicks) i = 0;
+            for (; i < stat.Length; i++)
             {
                 // stat[0] contains nothing
                 stat[i].incrementDist();

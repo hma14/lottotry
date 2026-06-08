@@ -202,7 +202,7 @@ namespace BusinessTier
         public int getNumFromList(Dictionary<int, int> dic, List<SubStatistics> list)
         {
             int idx = 0, count = 0;
-            while (count < list.Count)
+            while (count < list?.Count)
             {
                 idx = Util.rnd.Next(0, list.Count);
 

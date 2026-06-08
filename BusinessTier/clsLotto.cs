@@ -79,7 +79,6 @@ namespace Lottotry.BusinessTier
 
             // Draw table header
             stmt += "<TR>\n";
-
             for (int i = -1; i <= distanceRange; i++)
             {
                 if (i == -1)
@@ -160,7 +159,6 @@ namespace Lottotry.BusinessTier
                
 
                 stmt += "<TR>\n";
-
                 for (int i = -1; i <= distanceRange; i++)
                 {
                     if (i == -1)
@@ -204,7 +202,6 @@ namespace Lottotry.BusinessTier
             }
 
             stmt += "<TR>\n";
-
             for (int i = -1; i <= distanceRange; i++)
             {
                 if (i == -1)
@@ -1024,8 +1021,10 @@ namespace Lottotry.BusinessTier
             SubStatistics[] st = new SubStatistics[numgen.ScaleLength];
             st = numgen.Stat;
 
+            int i = -1;
+            
             // All numbers as scale
-            for (int i = -1; i < st.Length; i++)
+            for (; i < st.Length; i++)
             {
                 if (i == -1)
                 {
@@ -1039,7 +1038,7 @@ namespace Lottotry.BusinessTier
                 }
                 else
                 {
-                    stmt += "<TH class=\"tableheader\"><font color=\"#ff33ff\">" + i + "</font></TH>\n";
+                    stmt += "<TH class=\"tableheader\"><font color=\"#ffffff\">" + i + "</font></TH>\n";
                 }
             }
 
@@ -1056,8 +1055,15 @@ namespace Lottotry.BusinessTier
                 stmt += "<TR>\n";
 
                 stmt += "<TH><font color=\"#ff33ff\">" + j + "</font></TH>\n";
-
-                for (int i = 1; i < st.Length; i++)
+                i = 1;
+                int end = st.Length;
+                if (db == Database.FloridaPick3)
+                {
+                    i = 0;
+                    --end;
+                }
+                    
+                for (; i < end; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -1065,8 +1071,14 @@ namespace Lottotry.BusinessTier
                         break;
                     }
                 }
-
-                for (int i = 1; i < st.Length; i++)
+                i = 1;
+                end = st.Length;
+                if (db == Database.FloridaPick3)
+                {
+                    i = 0;
+                    --end;
+                }
+                for (; i < end; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -1153,8 +1165,10 @@ namespace Lottotry.BusinessTier
                 stmt += "</TR>\n";
             }
 
+
             // All numbers as scale
-            for (int i = -1; i < st.Length; i++)
+            i = -1;
+            for (; i < st.Length; i++)
             {
                 if (i == -1)
                 {
@@ -1168,7 +1182,7 @@ namespace Lottotry.BusinessTier
                 }
                 else
                 {
-                    stmt += "<TH class=\"tableheader\"><font color=\"#ff33ff\">" + i + "</font></TH>\n";
+                    stmt += "<TH class=\"tableheader\"><font color=\"#ffffff\">" + i + "</font></TH>\n";
                 }
             }
 
@@ -1375,8 +1389,14 @@ namespace Lottotry.BusinessTier
             st = numgen.Stat;
 
             stmt += "<TR>\n";
-
-            for (int i = 1; i < st.Length; i++)
+            int i = 1;
+            int end = st.Length;
+            if (db == Database.FloridaPick3)
+            {
+                i = 0;
+                --end;
+            }
+            for (; i < end; i++)
             {
                 if (st[i].RelativeDist == 0)
                 {
@@ -1387,10 +1407,14 @@ namespace Lottotry.BusinessTier
                     break;
                 }
             }
-
-
-
-            for (int i = 1; i < st.Length; i++)
+            i = 1;
+            end = st.Length;
+            if (db == Database.FloridaPick3)
+            {
+                i = 0;
+                --end;
+            }
+            for (; i < end; i++)
             {
                 if (st[i].RelativeDist == 0)
                 {
@@ -1401,7 +1425,7 @@ namespace Lottotry.BusinessTier
                 {
                     stmt += "<TD id=numbers>" + st[i].Num + "\n";
                     stmt += "( " + "<font id=tdRelativeDist>" + st[i].RelativeDist + "</font> )" + "</TD>\n";
-                    
+
                 }
             }
             stmt += "</TR>\n";

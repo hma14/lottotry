@@ -213,9 +213,11 @@
     <Content Include="images\OZSaturdayLotto.png" />
     <Content Include="images\OZTuesdayLotto.png" />
     <Content Include="images\OZWednesdayLotto.png" />
+    <Content Include="images\pick3-logo.png" />
     <Content Include="images\TexasCashFive.png" />
     <Content Include="images\tile-daily-grand-3x2.png" />
     <Content Include="LottoSites\CaSuperlottoPlus.aspx" />
+    <Content Include="LottoSites\FloridaPick3.aspx" />
     <Content Include="LottoSites\NewYorkTake5.aspx" />
     <Content Include="LottoSites\TexasCashFive.aspx" />
     <Content Include="LottoSites\NewJerseyPick6Lotto.aspx" />
@@ -529,6 +531,13 @@
     </Compile>
     <Compile Include="LottoSites\CaSuperlottoPlus.aspx.designer.cs">
       <DependentUpon>CaSuperlottoPlus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LottoSites\FloridaPick3.aspx.cs">
+      <DependentUpon>FloridaPick3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LottoSites\FloridaPick3.aspx.designer.cs">
+      <DependentUpon>FloridaPick3.aspx</DependentUpon>
     </Compile>
     <Compile Include="LottoSites\NewYorkTake5.aspx.cs">
       <DependentUpon>NewYorkTake5.aspx</DependentUpon>

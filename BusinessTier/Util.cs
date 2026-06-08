@@ -102,6 +102,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.DailyGrand_GrandNumber] = 1;
             ColumnnsOfLottoDic[Database.Cash4Life] = 5;
             ColumnnsOfLottoDic[Database.Cash4Life_CashBall] = 1;
+            ColumnnsOfLottoDic[Database.FloridaPick3] = 4;
 
         }
 
@@ -151,6 +152,7 @@ namespace BusinessTier
             ColumnnsOfLotto_no_bonusDic[Database.DailyGrand_GrandNumber] = 1;
             ColumnnsOfLotto_no_bonusDic[Database.Cash4Life] = 5;
             ColumnnsOfLotto_no_bonusDic[Database.Cash4Life_CashBall] = 1;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3] = 1;
 
         }
 
@@ -196,6 +198,7 @@ namespace BusinessTier
             BonusColNameDic[Database.DailyGrand_GrandNumber] = "Grand";
             BonusColNameDic[Database.Cash4Life] = null;
             BonusColNameDic[Database.Cash4Life_CashBall] = "CashBall";
+            BonusColNameDic[Database.FloridaPick3] = "FB";
         }
 
         public static string getBonusColName(Database db)
@@ -245,7 +248,7 @@ namespace BusinessTier
             LogoDic[Database.DailyGrand_GrandNumber] = "/images/tile-daily-grand-3x2.png";
             LogoDic[Database.Cash4Life] = "/images/c4l-game-pg-banner.jpg";
             LogoDic[Database.Cash4Life_CashBall] = "/images/c4l-game-pg-banner.jpg";
-
+            LogoDic[Database.FloridaPick3] = "/images/pick3-logo.png";
         }
 
         public static string getLottoImage(Database db)
@@ -295,7 +298,7 @@ namespace BusinessTier
             dic[Database.DailyGrand_GrandNumber] = "Statistics" + statisitcs.ToString() + "_DailyGrand_GrandNumber";
             dic[Database.Cash4Life] = "Statistics" + statisitcs.ToString() + "_Cash4Life";
             dic[Database.Cash4Life_CashBall] = "Statistics" + statisitcs.ToString() + "_Cash4Life_CashBall";
-
+            dic[Database.FloridaPick3] = "Statistics" + statisitcs.ToString() + "_FloridaPick3";
 
             return dic[db];
         }
@@ -341,6 +344,7 @@ namespace BusinessTier
             CacheFileDic[Database.DailyGrand_GrandNumber] = rootDir + "/DailyGrand.xml";
             CacheFileDic[Database.Cash4Life] = rootDir + "/Cash4Life.xml";
             CacheFileDic[Database.Cash4Life_CashBall] = rootDir + "/Cash4Life_CashBall.xml";
+            CacheFileDic[Database.FloridaPick3] = rootDir + "/FloridaPick3.xml";
         }
 
         public static string getCacheFile(Database db)
@@ -390,6 +394,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.DailyGrand_GrandNumber] = 1;
             LottoNumberRangesDic[Database.Cash4Life] = 6;  // 1 - 9, 10 - 19, 20 - 29, 30 - 39, 40 - 49, 50 - 60
             LottoNumberRangesDic[Database.Cash4Life_CashBall] = 1;
+            LottoNumberRangesDic[Database.FloridaPick3] = 4;
         }
 
         public static int getLottoNumberRanges(Database db)
@@ -439,6 +444,7 @@ namespace BusinessTier
             TotalLottoNumbersDic[Database.DailyGrand_GrandNumber] = 7;
             TotalLottoNumbersDic[Database.Cash4Life] = 60;
             TotalLottoNumbersDic[Database.Cash4Life_CashBall] = 4;
+            TotalLottoNumbersDic[Database.FloridaPick3] = 10;
         }
 
         public static int getTotalLottoNumbers(Database db)
