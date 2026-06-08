@@ -967,8 +967,11 @@ namespace Lottotry.BusinessTier
                         stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
                                 + st[i].Num
                                 + "</B></font>"
-                                + "<font color=\"#cc00cc\">("
+                                + "<font color=\"#cc00cc\" size=\"2\">("
                                 + st[i].SavedDist
+                                + ")"
+                                + "<font color=\"#00bfff\" size=\"2\">("
+                                + st[i].Cnt                              
                                 + ")</font></TD>\n";
                     }
                     else
@@ -976,7 +979,7 @@ namespace Lottotry.BusinessTier
                         stmt += "<TD><font color=\"#3366ff\">"
                                 + st[i].Num
                                 + "</font>("
-                                + "<font style=\"FONT-STYLE: italic\" color=\"#339900\">"
+                                + "<font style=\"FONT-STYLE: italic\" color=\"#339900\" size=\"2\">"
                                 + st[i].getDist(j)
                                 + ")</font></TD>\n";
                     }
