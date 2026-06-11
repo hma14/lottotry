@@ -1089,17 +1089,23 @@ namespace Lottotry.BusinessTier
                         {
                             stmt += "<TD bgcolor=\"#ff00ff\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ffbf00\"><B>"
                                     + st[i].Num
-                                    + "</B></font>"
-                                    + "<font color=\"#ffff00\" > (<B>"
+                                    + "</B></font><br />"
+                                    + "<font color=\"#ffff00\" size=\"2\"> (<B>"
                                     + st[i].SavedDist
+                                    + ")<br />"
+                                    + "<font color=\"#00bfff\" size=\"2\">("
+                                    + st[i].Cnt
                                     + "</B>)</font></TD>\n";
                         }
                         else {
                             stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
                                     + st[i].Num
-                                    + "</B></font>"
-                                    + "<font color=\"#cc00cc\">("
+                                    + "</B></font><br />"
+                                    + "<font color=\"#cc00cc\" size=\"2\">("
                                     + st[i].SavedDist
+                                    + ")<br />"
+                                    + "<font color=\"#00bfff\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                     }
@@ -1109,57 +1115,78 @@ namespace Lottotry.BusinessTier
                         if (st[i].RelativeDist % 7 == 0)
                         {
                             stmt += "<TD bgcolor=\"#ccff33\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else if (st[i].RelativeDist % 7 == 1)
                         {
                             stmt += "<TD bgcolor=\"#99cdff\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else if (st[i].RelativeDist % 7 == 2)
                         {
                             stmt += "<TD bgcolor=\"#cc99cc\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else if (st[i].RelativeDist % 7 == 3)
                         {
                             stmt += "<TD bgcolor=\"#ffcdff\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else if (st[i].RelativeDist % 7 == 4)
                         {
                             stmt += "<TD bgcolor=\"#ff99cc\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else if (st[i].RelativeDist % 7 == 5)
                         {
                             stmt += "<TD bgcolor=\"#cc9900\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
                         else
                         {
                             stmt += "<TD bgcolor=\"#ffcccc\"><font style=\"font-size: 12pt\" color=\"#003333\"><B>" + st[i].Num;
-                            stmt += "</B></font>("
-                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\">"
+                            stmt += "</B></font><br />("
+                                    + "<font style=\"FONT-STYLE: italic\" color=\"#6600cc\" size=\"2\">"
                                     + st[i].getDist(j)
+                                    + ")<br />"
+                                    + "<font color=\"#ff0000\" size=\"2\">("
+                                    + st[i].Cnt
                                     + ")</font></TD>\n";
                         }
 
