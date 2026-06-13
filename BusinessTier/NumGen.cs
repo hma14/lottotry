@@ -191,14 +191,21 @@ namespace BusinessTier
             {
                 stat[i] = new SubStatistics(i, 0, 0, " ", 0);
             }
+            var info = Util.GetDbInfo(db);
             DataAccessLayer dataAccessLayer = new DataAccessLayer();
-            SqlDataReader reader =
-                    dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow);
+            SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(info.DbId, startRow, targetRow, info.ColName);
+               
             int cols = Util.getColumnnsOfLotto(db);
             while (reader.Read() == true)
             {
                 // Increase the internal distCnt for all numbers (1 - 49)
-                if (db == Database.FloridaPick3) 
+                //if (db == Database.FloridaPick3
+                //    || db == Database.FloridaPick3Number1
+                //    || db == Database.FloridaPick3Number2
+                //    || db == Database.FloridaPick3Number3
+                //    || db == Database.FloridaPick3FB
+                //    )
+                if (info.ColName != "*")
                     increment(true);
                 else
                     increment();
@@ -260,8 +267,13 @@ namespace BusinessTier
         private void increment(bool isFloridaPicks = false)
         {
             int i = 1;
-            if (isFloridaPicks) i = 0;
-            for (; i < stat.Length; i++)
+            int end = stat.Length;
+            if (isFloridaPicks)
+            {
+                i = 0;
+                --end;
+            }
+            for (; i < end; i++)
             {
                 // stat[0] contains nothing
                 stat[i].incrementDist();

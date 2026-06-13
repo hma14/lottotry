@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Web;
 using System.Web.Caching;
+using System.Web.UI.WebControls;
 
 namespace Lottotry.Members
 {
@@ -142,9 +143,12 @@ namespace Lottotry.Members
                     DBDdl4.DataValueField = "id";
                     DBDdl4.DataBind();
 
+                    //DBDdl5.AppendDataBoundItems = true;
+
                     DBDdl5.DataSource = dt;
                     DBDdl5.DataTextField = "Name";
                     DBDdl5.DataValueField = "id";
+                    
                     DBDdl5.DataBind();
 
                     DBDdl6.DataSource = dt;
@@ -177,8 +181,21 @@ namespace Lottotry.Members
                     DBDdl13.DataValueField = "id";
                     DBDdl13.DataBind();
 
+                    AddFloridaPick3Items(DBDdl1);
+                    AddFloridaPick3Items(DBDdl2);
+                    AddFloridaPick3Items(DBDdl3);
+                    AddFloridaPick3Items(DBDdl4);
+                    AddFloridaPick3Items(DBDdl5);
+                    AddFloridaPick3Items(DBDdl6);
+                    AddFloridaPick3Items(DBDdl7);
+                    AddFloridaPick3Items(DBDdl8);
+                    AddFloridaPick3Items(DBDdl10);
+                    AddFloridaPick3Items(DBDdl12);
+                    AddFloridaPick3Items(DBDdl13);
+
+
 #endif
-                    setDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 1);
+                    setDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 13);
                    
                     setLoadLottoLogo((Database)int.Parse(DBDdl12.SelectedValue));
                     
@@ -194,6 +211,14 @@ namespace Lottotry.Members
                 }
             }
             
+        }
+
+        private void AddFloridaPick3Items(DropDownList ddl)
+        {
+            ddl.Items.Add(new ListItem("FloridaPick3Number1", "34"));
+            ddl.Items.Add(new ListItem("FloridaPick3Number2", "35"));
+            ddl.Items.Add(new ListItem("FloridaPick3Number3", "36"));
+            ddl.Items.Add(new ListItem("FloridaPick3Fb", "37"));
         }
 
         protected void setDBDropDownSelectedItem(int index)
@@ -497,6 +522,7 @@ namespace Lottotry.Members
             prevScale = scale;
 
             Database db = (Database)int.Parse(DBDdl5.SelectedItem.Value);
+
 
             this.Visible = false;
 

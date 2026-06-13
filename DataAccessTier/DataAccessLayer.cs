@@ -27,14 +27,14 @@ namespace DataAccessTier
         EuroMillions,
         EuroMillions_LuckyStars,
         OZLottoTue,
-        SSQ, 
+        SSQ,
         SSQ_Blue,
         SevenLotto,
         SuperLotto,
         SuperLotto_Rear,
         NYSweetMillion,
         ColoradoLotto,
-        FloridaLucky,
+        FloridaMega,
         EuroJackpot,
         EuroJackpot_Euros,
         GermanLotto,
@@ -49,12 +49,11 @@ namespace DataAccessTier
         NewJerseyPick6Lotto,
         OregonMegabucks,
         FloridaPick3,
-        NewYorkTake5 = 35,
-        TexasCashFive = 37,
-        DailyGrand = 38,
-        DailyGrand_GrandNumber = 39,
-        Cash4Life = 40,
-        Cash4Life_CashBall = 41,
+        FloridaPick3Number1,
+        FloridaPick3Number2,
+        FloridaPick3Number3,
+        FloridaPick3FB,        
+
     }
 
 
@@ -203,7 +202,7 @@ namespace DataAccessTier
 
         }
 
-        public SqlDataReader SelectAllOnRangeOfDrawNo(Database dbMode, int startRow, int targetRow)
+        public SqlDataReader SelectAllOnRangeOfDrawNo(Database dbMode, int startRow, int targetRow, string colName = "*")
         {
             try
             {
@@ -213,6 +212,7 @@ namespace DataAccessTier
                     cmd.Parameters.AddWithValue("@db", dbMode);
                     cmd.Parameters.AddWithValue("@start", startRow);
                     cmd.Parameters.AddWithValue("@end", targetRow);
+                    cmd.Parameters.AddWithValue("@colName", colName);
                     if (cmd.Connection.State == ConnectionState.Closed)
                     {
                         cmd.Connection.Open();

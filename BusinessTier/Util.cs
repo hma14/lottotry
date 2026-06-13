@@ -84,7 +84,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.SuperLotto_Rear] = 2;
             ColumnnsOfLottoDic[Database.NYSweetMillion] = 6;
             ColumnnsOfLottoDic[Database.ColoradoLotto] = 6;
-            ColumnnsOfLottoDic[Database.FloridaLucky] = 5;
+            //ColumnnsOfLottoDic[Database.FloridaLucky] = 5;
             ColumnnsOfLottoDic[Database.GermanLotto] = 7;
             ColumnnsOfLottoDic[Database.BritishLotto] = 7;
             ColumnnsOfLottoDic[Database.OZLottoSat] = 8;
@@ -96,12 +96,16 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.CaSuperlottoPlus_Mega] = 1;
             ColumnnsOfLottoDic[Database.NewJerseyPick6Lotto] = 6;
             ColumnnsOfLottoDic[Database.OregonMegabucks] = 6;
-            ColumnnsOfLottoDic[Database.NewYorkTake5] = 5;
-            ColumnnsOfLottoDic[Database.TexasCashFive] = 5;
-            ColumnnsOfLottoDic[Database.DailyGrand] = 5;
-            ColumnnsOfLottoDic[Database.DailyGrand_GrandNumber] = 1;
-            ColumnnsOfLottoDic[Database.Cash4Life] = 5;
-            ColumnnsOfLottoDic[Database.Cash4Life_CashBall] = 1;
+            //ColumnnsOfLottoDic[Database.NewYorkTake5] = 5;
+            //ColumnnsOfLottoDic[Database.TexasCashFive] = 5;
+            //ColumnnsOfLottoDic[Database.DailyGrand] = 5;
+            //ColumnnsOfLottoDic[Database.DailyGrand_GrandNumber] = 1;
+            //ColumnnsOfLottoDic[Database.Cash4Life] = 5;
+            //ColumnnsOfLottoDic[Database.Cash4Life_CashBall] = 1;
+            ColumnnsOfLottoDic[Database.FloridaPick3Number1] = 1;
+            ColumnnsOfLottoDic[Database.FloridaPick3Number2] = 1;
+            ColumnnsOfLottoDic[Database.FloridaPick3Number3] = 1;
+            ColumnnsOfLottoDic[Database.FloridaPick3FB] = 1;
             ColumnnsOfLottoDic[Database.FloridaPick3] = 4;
 
         }
@@ -117,7 +121,7 @@ namespace BusinessTier
             ColumnnsOfLotto_no_bonusDic[Database.LottoMax] = 7;
             ColumnnsOfLotto_no_bonusDic[Database.BC49] = 6;
             ColumnnsOfLotto_no_bonusDic[Database.FloridaLotto] = 6;
-            ColumnnsOfLotto_no_bonusDic[Database.FloridaLucky] = 4;
+            //ColumnnsOfLotto_no_bonusDic[Database.FloridaLucky] = 4;
             ColumnnsOfLotto_no_bonusDic[Database.MegaMillions] = 5; 
             ColumnnsOfLotto_no_bonusDic[Database.MegaMillions_MegaBall] = 1; 
             ColumnnsOfLotto_no_bonusDic[Database.PowerBall] = 5;
@@ -146,13 +150,17 @@ namespace BusinessTier
             ColumnnsOfLotto_no_bonusDic[Database.CaSuperlottoPlus_Mega] = 1;
             ColumnnsOfLotto_no_bonusDic[Database.NewJerseyPick6Lotto] = 6;
             ColumnnsOfLotto_no_bonusDic[Database.OregonMegabucks] = 6;
-            ColumnnsOfLotto_no_bonusDic[Database.NewYorkTake5] = 5;
-            ColumnnsOfLotto_no_bonusDic[Database.TexasCashFive] = 5;
-            ColumnnsOfLotto_no_bonusDic[Database.DailyGrand] = 5;
-            ColumnnsOfLotto_no_bonusDic[Database.DailyGrand_GrandNumber] = 1;
-            ColumnnsOfLotto_no_bonusDic[Database.Cash4Life] = 5;
-            ColumnnsOfLotto_no_bonusDic[Database.Cash4Life_CashBall] = 1;
-            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3] = 1;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3] = 3;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3Number1] = 1;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3Number2] = 1;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3Number3] = 1;
+            ColumnnsOfLotto_no_bonusDic[Database.FloridaPick3FB] = 1;
+            //ColumnnsOfLotto_no_bonusDic[Database.NewYorkTake5] = 5;
+            //ColumnnsOfLotto_no_bonusDic[Database.TexasCashFive] = 5;
+            //ColumnnsOfLotto_no_bonusDic[Database.DailyGrand] = 5;
+            //ColumnnsOfLotto_no_bonusDic[Database.DailyGrand_GrandNumber] = 1;
+            //ColumnnsOfLotto_no_bonusDic[Database.Cash4Life] = 5;
+            //ColumnnsOfLotto_no_bonusDic[Database.Cash4Life_CashBall] = 1;
 
         }
 
@@ -163,7 +171,7 @@ namespace BusinessTier
             BonusColNameDic[Database.LottoMax] = "Bonus";
             BonusColNameDic[Database.BC49] = "Bonus";
             BonusColNameDic[Database.FloridaLotto] = null;
-            BonusColNameDic[Database.FloridaLucky] = "LuckyBall";
+            //BonusColNameDic[Database.FloridaLucky] = "LuckyBall";
             BonusColNameDic[Database.MegaMillions] = null;
             BonusColNameDic[Database.MegaMillions_MegaBall] = "MegaBall";
             BonusColNameDic[Database.PowerBall] = null;
@@ -192,13 +200,16 @@ namespace BusinessTier
             BonusColNameDic[Database.CaSuperlottoPlus_Mega] = "Mega";
             BonusColNameDic[Database.NewJerseyPick6Lotto] = null;
             BonusColNameDic[Database.OregonMegabucks] = null;
-            BonusColNameDic[Database.NewYorkTake5] = null;
-            BonusColNameDic[Database.TexasCashFive] = null;
-            BonusColNameDic[Database.DailyGrand] = null;
-            BonusColNameDic[Database.DailyGrand_GrandNumber] = "Grand";
-            BonusColNameDic[Database.Cash4Life] = null;
-            BonusColNameDic[Database.Cash4Life_CashBall] = "CashBall";
-            BonusColNameDic[Database.FloridaPick3] = "FB";
+            BonusColNameDic[Database.FloridaPick3Number1] = null;
+            BonusColNameDic[Database.FloridaPick3Number2] = null;
+            BonusColNameDic[Database.FloridaPick3Number3] = null;
+            BonusColNameDic[Database.FloridaPick3FB] = null;
+            //BonusColNameDic[Database.NewYorkTake5] = null;
+            //BonusColNameDic[Database.TexasCashFive] = null;
+            //BonusColNameDic[Database.DailyGrand] = null;
+            //BonusColNameDic[Database.DailyGrand_GrandNumber] = "Grand";
+            //BonusColNameDic[Database.Cash4Life] = null;
+            //BonusColNameDic[Database.Cash4Life_CashBall] = "CashBall";
         }
 
         public static string getBonusColName(Database db)
@@ -213,7 +224,7 @@ namespace BusinessTier
             LogoDic[Database.LottoMax] = "/images/Lottomax.png";
             LogoDic[Database.BC49] = "/images/bc49.png";
             LogoDic[Database.FloridaLotto] = "/images/FloridaLotto.png";
-            LogoDic[Database.FloridaLucky] = "/images/FloridaLuckyMoney.jpg";
+            //LogoDic[Database.FloridaLucky] = "/images/FloridaLuckyMoney.jpg";
             LogoDic[Database.MegaMillions] = "/images/MegaMillions.png";
             LogoDic[Database.MegaMillions_MegaBall] = "/images/MegaMillions.png";
             LogoDic[Database.PowerBall] = "/images/Powerball.png";
@@ -242,12 +253,16 @@ namespace BusinessTier
             LogoDic[Database.CaSuperlottoPlus_Mega] = "/images/CaliforniaSuperlotto.png";
             LogoDic[Database.NewJerseyPick6Lotto] = "/images/NewJerseyPick6Lotto.png";
             LogoDic[Database.OregonMegabucks] = "/images/OregonMegabucks.png";
-            LogoDic[Database.NewYorkTake5] = "/images/NewYorkTake5.png";
-            LogoDic[Database.TexasCashFive] = "/images/TexasCashFive.png";
-            LogoDic[Database.DailyGrand] = "/images/tile-daily-grand-3x2.png";
-            LogoDic[Database.DailyGrand_GrandNumber] = "/images/tile-daily-grand-3x2.png";
-            LogoDic[Database.Cash4Life] = "/images/c4l-game-pg-banner.jpg";
-            LogoDic[Database.Cash4Life_CashBall] = "/images/c4l-game-pg-banner.jpg";
+            //LogoDic[Database.NewYorkTake5] = "/images/NewYorkTake5.png";
+            //LogoDic[Database.TexasCashFive] = "/images/TexasCashFive.png";
+            //LogoDic[Database.DailyGrand] = "/images/tile-daily-grand-3x2.png";
+            //LogoDic[Database.DailyGrand_GrandNumber] = "/images/tile-daily-grand-3x2.png";
+            //LogoDic[Database.Cash4Life] = "/images/c4l-game-pg-banner.jpg";
+            //LogoDic[Database.Cash4Life_CashBall] = "/images/c4l-game-pg-banner.jpg";
+            LogoDic[Database.FloridaPick3Number1] = "/images/pick3-logo.png";
+            LogoDic[Database.FloridaPick3Number2] = "/images/pick3-logo.png";
+            LogoDic[Database.FloridaPick3Number3] = "/images/pick3-logo.png";
+            LogoDic[Database.FloridaPick3FB] = "/images/pick3-logo.png";
             LogoDic[Database.FloridaPick3] = "/images/pick3-logo.png";
         }
 
@@ -278,7 +293,7 @@ namespace BusinessTier
             dic[Database.SuperLotto_Rear] = "Statistics" + statisitcs.ToString() + "_SuperLotto_Rear";
             dic[Database.NYSweetMillion] = "Statistics" + statisitcs.ToString() + "_NYSweetMillion";
             dic[Database.ColoradoLotto] = "Statistics" + statisitcs.ToString() + "_ColoradoLotto";
-            dic[Database.FloridaLucky] = "Statistics" + statisitcs.ToString() + "_FloridaLucky";
+            //dic[Database.FloridaLucky] = "Statistics" + statisitcs.ToString() + "_FloridaLucky";
             dic[Database.EuroJackpot] = "Statistics" + statisitcs.ToString() + "_EuroJackpot";
             dic[Database.EuroJackpot_Euros] = "Statistics" + statisitcs.ToString() + "_EuroJackpot_Euros";
             dic[Database.GermanLotto] = "Statistics" + statisitcs.ToString() + "_GermanLotto";
@@ -292,12 +307,16 @@ namespace BusinessTier
             dic[Database.CaSuperlottoPlus_Mega] = "Statistics" + statisitcs.ToString() + "_CaSuperlottoPlus_Mega";
             dic[Database.NewJerseyPick6Lotto] = "Statistics" + statisitcs.ToString() + "_NewJerseyPick6Lotto";
             dic[Database.OregonMegabucks] = "Statistics" + statisitcs.ToString() + "_OregonMegabucks";
-            dic[Database.NewYorkTake5] = "Statistics" + statisitcs.ToString() + "_NewYorkTake5";
-            dic[Database.TexasCashFive] = "Statistics" + statisitcs.ToString() + "_TexasCashFive";
-            dic[Database.DailyGrand] = "Statistics" + statisitcs.ToString() + "_DailyGrand";
-            dic[Database.DailyGrand_GrandNumber] = "Statistics" + statisitcs.ToString() + "_DailyGrand_GrandNumber";
-            dic[Database.Cash4Life] = "Statistics" + statisitcs.ToString() + "_Cash4Life";
-            dic[Database.Cash4Life_CashBall] = "Statistics" + statisitcs.ToString() + "_Cash4Life_CashBall";
+            //dic[Database.NewYorkTake5] = "Statistics" + statisitcs.ToString() + "_NewYorkTake5";
+            //dic[Database.TexasCashFive] = "Statistics" + statisitcs.ToString() + "_TexasCashFive";
+            //dic[Database.DailyGrand] = "Statistics" + statisitcs.ToString() + "_DailyGrand";
+            //dic[Database.DailyGrand_GrandNumber] = "Statistics" + statisitcs.ToString() + "_DailyGrand_GrandNumber";
+            //dic[Database.Cash4Life] = "Statistics" + statisitcs.ToString() + "_Cash4Life";
+            //dic[Database.Cash4Life_CashBall] = "Statistics" + statisitcs.ToString() + "_Cash4Life_CashBall";
+            dic[Database.FloridaPick3Number1] = "Statistics" + statisitcs.ToString() + "_FloridaPick3Number1";
+            dic[Database.FloridaPick3Number2] = "Statistics" + statisitcs.ToString() + "_FloridaPick3Number2";
+            dic[Database.FloridaPick3Number3] = "Statistics" + statisitcs.ToString() + "_FloridaPick3Number3";
+            dic[Database.FloridaPick3FB] = "Statistics" + statisitcs.ToString() + "_FloridaPick3FB";
             dic[Database.FloridaPick3] = "Statistics" + statisitcs.ToString() + "_FloridaPick3";
 
             return dic[db];
@@ -324,7 +343,7 @@ namespace BusinessTier
             CacheFileDic[Database.SuperLotto_Rear] = rootDir + "/SuperLotto.xml";
             CacheFileDic[Database.NYSweetMillion] = rootDir + "/NYSweetMillion.xml";
             CacheFileDic[Database.ColoradoLotto] = rootDir + "/ColoradoLotto.xml";
-            CacheFileDic[Database.FloridaLucky] = rootDir + "/FloridaLucky.xml";
+            //CacheFileDic[Database.FloridaLucky] = rootDir + "/FloridaLucky.xml";
             CacheFileDic[Database.EuroJackpot] = rootDir + "/EuroJackpot.xml";
             CacheFileDic[Database.EuroJackpot_Euros] = rootDir + "/EuroJackpot_Euros.xml";
             CacheFileDic[Database.GermanLotto] = rootDir + "/GermanLotto.xml";
@@ -338,12 +357,16 @@ namespace BusinessTier
             CacheFileDic[Database.CaSuperlottoPlus_Mega] = rootDir + "/CaSuperlottoPlus_Mega.xml";
             CacheFileDic[Database.NewJerseyPick6Lotto] = rootDir + "/NewJerseyPick6Lotto.xml";
             CacheFileDic[Database.OregonMegabucks] = rootDir + "/OregonMegabucks.xml";
-            CacheFileDic[Database.NewYorkTake5] = rootDir + "/NewYorkTake5.xml";
-            CacheFileDic[Database.TexasCashFive] = rootDir + "/TexasCashFive.xml";
-            CacheFileDic[Database.DailyGrand] = rootDir + "/DailyGrand.xml";
-            CacheFileDic[Database.DailyGrand_GrandNumber] = rootDir + "/DailyGrand.xml";
-            CacheFileDic[Database.Cash4Life] = rootDir + "/Cash4Life.xml";
-            CacheFileDic[Database.Cash4Life_CashBall] = rootDir + "/Cash4Life_CashBall.xml";
+            //CacheFileDic[Database.NewYorkTake5] = rootDir + "/NewYorkTake5.xml";
+            //CacheFileDic[Database.TexasCashFive] = rootDir + "/TexasCashFive.xml";
+            //CacheFileDic[Database.DailyGrand] = rootDir + "/DailyGrand.xml";
+            //CacheFileDic[Database.DailyGrand_GrandNumber] = rootDir + "/DailyGrand.xml";
+            //CacheFileDic[Database.Cash4Life] = rootDir + "/Cash4Life.xml";
+            //CacheFileDic[Database.Cash4Life_CashBall] = rootDir + "/Cash4Life_CashBall.xml";
+            CacheFileDic[Database.FloridaPick3Number1] = rootDir + "/FloridaPick3Number1.xml";
+            CacheFileDic[Database.FloridaPick3Number2] = rootDir + "/FloridaPick3Number2.xml";
+            CacheFileDic[Database.FloridaPick3Number3] = rootDir + "/FloridaPick3Number3.xml";
+            CacheFileDic[Database.FloridaPick3FB] = rootDir + "/FloridaPick3FB.xml";
             CacheFileDic[Database.FloridaPick3] = rootDir + "/FloridaPick3.xml";
         }
 
@@ -359,7 +382,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.LottoMax] = 6;
             LottoNumberRangesDic[Database.BC49] = 5;
             LottoNumberRangesDic[Database.FloridaLotto] = 6;
-            LottoNumberRangesDic[Database.FloridaLucky] = 5;
+            //LottoNumberRangesDic[Database.FloridaLucky] = 5;
             LottoNumberRangesDic[Database.MegaMillions] = 8;  
             LottoNumberRangesDic[Database.MegaMillions_MegaBall] = 2;  
             LottoNumberRangesDic[Database.PowerBall] = 6;
@@ -388,12 +411,16 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.CaSuperlottoPlus_Mega] = 3;
             LottoNumberRangesDic[Database.NewJerseyPick6Lotto] = 5;
             LottoNumberRangesDic[Database.OregonMegabucks] = 5;
-            LottoNumberRangesDic[Database.NewYorkTake5] = 4;
-            LottoNumberRangesDic[Database.TexasCashFive] = 4;
-            LottoNumberRangesDic[Database.DailyGrand] = 5;
-            LottoNumberRangesDic[Database.DailyGrand_GrandNumber] = 1;
-            LottoNumberRangesDic[Database.Cash4Life] = 6;  // 1 - 9, 10 - 19, 20 - 29, 30 - 39, 40 - 49, 50 - 60
-            LottoNumberRangesDic[Database.Cash4Life_CashBall] = 1;
+            //LottoNumberRangesDic[Database.NewYorkTake5] = 4;
+            //LottoNumberRangesDic[Database.TexasCashFive] = 4;
+            //LottoNumberRangesDic[Database.DailyGrand] = 5;
+            //LottoNumberRangesDic[Database.DailyGrand_GrandNumber] = 1;
+            //LottoNumberRangesDic[Database.Cash4Life] = 6;  // 1 - 9, 10 - 19, 20 - 29, 30 - 39, 40 - 49, 50 - 60
+            //LottoNumberRangesDic[Database.Cash4Life_CashBall] = 1;
+            LottoNumberRangesDic[Database.FloridaPick3Number1] = 1;
+            LottoNumberRangesDic[Database.FloridaPick3Number2] = 1;
+            LottoNumberRangesDic[Database.FloridaPick3Number3] = 1;
+            LottoNumberRangesDic[Database.FloridaPick3FB] = 1;
             LottoNumberRangesDic[Database.FloridaPick3] = 4;
         }
 
@@ -409,7 +436,7 @@ namespace BusinessTier
             TotalLottoNumbersDic[Database.LottoMax] = 52;
             TotalLottoNumbersDic[Database.BC49] = 49;
             TotalLottoNumbersDic[Database.FloridaLotto] = 53;
-            TotalLottoNumbersDic[Database.FloridaLucky] = 47;
+            //TotalLottoNumbersDic[Database.FloridaLucky] = 47;
             TotalLottoNumbersDic[Database.MegaMillions] = 75;
             TotalLottoNumbersDic[Database.MegaMillions_MegaBall] = 25; // Now changed to 1-15, used to be 1-46
             TotalLottoNumbersDic[Database.PowerBall] = 69;
@@ -438,12 +465,16 @@ namespace BusinessTier
             TotalLottoNumbersDic[Database.CaSuperlottoPlus_Mega] = 27;
             TotalLottoNumbersDic[Database.NewJerseyPick6Lotto] = 49;
             TotalLottoNumbersDic[Database.OregonMegabucks] = 48;
-            TotalLottoNumbersDic[Database.NewYorkTake5] = 39;
-            TotalLottoNumbersDic[Database.TexasCashFive] = 39;
-            TotalLottoNumbersDic[Database.DailyGrand] = 49;
-            TotalLottoNumbersDic[Database.DailyGrand_GrandNumber] = 7;
-            TotalLottoNumbersDic[Database.Cash4Life] = 60;
-            TotalLottoNumbersDic[Database.Cash4Life_CashBall] = 4;
+            //TotalLottoNumbersDic[Database.NewYorkTake5] = 39;
+            //TotalLottoNumbersDic[Database.TexasCashFive] = 39;
+            //TotalLottoNumbersDic[Database.DailyGrand] = 49;
+            //TotalLottoNumbersDic[Database.DailyGrand_GrandNumber] = 7;
+            //TotalLottoNumbersDic[Database.Cash4Life] = 60;
+            //TotalLottoNumbersDic[Database.Cash4Life_CashBall] = 4;
+            TotalLottoNumbersDic[Database.FloridaPick3Number1] = 10;
+            TotalLottoNumbersDic[Database.FloridaPick3Number2] = 10;
+            TotalLottoNumbersDic[Database.FloridaPick3Number3] = 10;
+            TotalLottoNumbersDic[Database.FloridaPick3FB] = 10;
             TotalLottoNumbersDic[Database.FloridaPick3] = 10;
         }
 
@@ -882,7 +913,7 @@ namespace BusinessTier
             }
             stmt += "<TH bgcolor=\"#FFFFF0\"></TH>";
             for (int i = colStart; i <= colEnd; i++)
-            {
+            {               
                 stmt += "<TH bgcolor=\"#FFFFF0\"><font color=\"#F6358A\">" + i.ToString() + "</TH>";
                 if (dic[i])
                 {
@@ -925,6 +956,63 @@ namespace BusinessTier
         }
 
 
+        private static string displayTableRow4Picks(Dictionary<int, bool> dic,
+                                       Dictionary<int, SubStatistics> statDic,
+                                       Dictionary<int, bool> tmpDic,
+                                       ref int numCount,
+                                       int colStart, int colEnd)
+        {
+            string stmt = "";
+            if (colStart > 1)
+            {
+                stmt += "<TR>\n";
+            }
+            stmt += "<TH bgcolor=\"#FFFFF0\"></TH>";
+            for (int i = colStart; i <= colEnd; i++)
+            {
+                stmt += "<TH bgcolor=\"#FFFFF0\"><font color=\"#F6358A\">" + i.ToString() + "</TH>";
+                if (dic[i + 1])
+                {
+                    numCount++;
+                }
+            }
+            stmt += "</TR>\n";
+            stmt += "<TR>\n";
+            stmt += "<TD><font color=\"#ffffff\">" + numCount.ToString() + "</TD>";
+            if (colStart == 0)
+            {
+                stmt += "<TD>" + null + "</TD>";
+            }
+
+            for (int i = colStart; i <= colEnd; i++)
+            {
+                if (dic[i+1] && statDic[i+1] != null)
+                {
+                    if (tmpDic[i])
+                    {
+
+                        stmt += "<TD width=\"50\"> <FONT style=\"FONT-STYLE: italic; font-weight:bold\" color=\"#FF0000\">"
+                            + i.ToString() + "<br />(R=" + statDic[i + 1].RelativeDist.ToString() + ")"
+                            + "<br />(S=" + statDic[i + 1].SavedDist.ToString() + ")</TD>";
+                    }
+                    else
+                    {
+                        stmt += "<TD width=\"50\"> <FONT style=\"FONT-STYLE: italic; font-weight:bold\" color=\"#FFFFF0\">"
+                            + i.ToString() + "<br />(R=" + statDic[i + 1].RelativeDist.ToString() + ")"
+                            + "<br />(S=" + statDic[i + 1].SavedDist.ToString() + ")</TD>";
+                    }
+                }
+                else
+                {
+                    stmt += "<TD>" + null + "</TD>";
+                }
+            }
+            stmt += "</TR>";
+
+            return stmt;
+        }
+
+
         public static string DisplayPotentialNumbers(Dictionary<int, bool> dic, int[] arr, List<SubStatistics> list, Database db, int len)
         {
             string stmt = "";
@@ -939,7 +1027,13 @@ namespace BusinessTier
             Dictionary<int, bool> tmpDic = new Dictionary<int, bool>();
             Dictionary<int, SubStatistics> statDic = new Dictionary<int, SubStatistics>();
 
-            for (int i = 0; i <= len; ++i)
+
+            int end = len;
+            if (Util.IsDbInPicks(db))
+            {
+                --end;
+            }
+            for (int i = 0; i <= end; ++i)
             {
                 tmpDic[i] = false;
                 statDic[i] = null;
@@ -956,9 +1050,13 @@ namespace BusinessTier
 
             int numCount = 0;
             int totalNumbers = Util.getTotalLottoNumbers(db);
-
+            if (Util.IsDbInPicks(db))
+            {
+                // Numbers 0 - 9
+                stmt += displayTableRow4Picks(dic, statDic, tmpDic, ref numCount, 0, --totalNumbers);
+            }
             // Numbers 1 - 9
-            if (totalNumbers < 10)
+            else if (totalNumbers < 10)
             {
                 // Numbers 1 - 9
                 stmt += displayTableRow(dic, statDic, tmpDic, ref numCount, 1, totalNumbers);
@@ -1027,7 +1125,7 @@ namespace BusinessTier
                 // Numbers 50 - 59
                 stmt += displayTableRow(dic, statDic, tmpDic, ref numCount, 50, totalNumbers);
 
-             }
+            }
 
             else if (totalNumbers < 70)
             {
@@ -1424,6 +1522,45 @@ namespace BusinessTier
             string height = ConfigurationManager.AppSettings["DocHeight"];
             lottolinks.Attributes.Add("width", width);
             lottolinks.Attributes.Add("height", height);
+        }
+
+        public static(Database DbId, string ColName)  GetDbInfo(Database db)
+        {
+            switch (db)
+            {
+                case (Database)34:
+                    return ((Database)33, "Number1");
+                case (Database)35:
+                    return ((Database)33, "Number2");
+                case (Database)36:
+                    return ((Database)33, "Number3");
+                case (Database)37:
+                    return ((Database)33, "Fb");
+                default:
+                    return (db, "*");
+            }
+        }
+
+        public static Database MapDbTable(Database db)
+        {
+            switch (db)
+            {
+                case (Database)34:
+                    return (Database)33;
+                case (Database)35:
+                    return (Database)33;
+                case (Database)36:
+                    return (Database)33;
+                case (Database)37:
+                    return (Database)33;
+                default:
+                    return db;
+            }
+        }
+
+        public static bool IsDbInPicks(Database db)
+        {
+            return (db > Database.FloridaPick3 && db <= Database.FloridaPick3FB);
         }
     }
 }

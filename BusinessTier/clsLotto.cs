@@ -54,8 +54,9 @@ namespace Lottotry.BusinessTier
             this.db = db;
             fromSite = from;
             databaseExecutionTime = 0;
-            
-            lastRow = dataAccessLayer.GetLastRow(db);
+
+            Database database = Util.MapDbTable(db);
+            lastRow = dataAccessLayer.GetLastRow(database);
         }
 
         public long DatabaseExecutionTime
@@ -549,8 +550,8 @@ namespace Lottotry.BusinessTier
             }
             else if (db == Database.SevenLotto)
                 stmt += "<TH>Special</TH>\n";
-            else if (db == Database.FloridaLucky)
-                stmt += "<TH>Lucky Ball</TH>\n";
+            //else if (db == Database.FloridaLucky)
+            //    stmt += "<TH>Lucky Ball</TH>\n";
             else
             {
                 if (cols > cols_no_bonus)
@@ -613,8 +614,8 @@ namespace Lottotry.BusinessTier
             }
             else if (db == Database.SevenLotto)
                 stmt += "<TH>Special</TH>\n";
-            else if (db == Database.FloridaLucky)
-                stmt += "<TH>Lucky Ball</TH>\n";
+            //else if (db == Database.FloridaLucky)
+            //    stmt += "<TH>Lucky Ball</TH>\n";
             else
             {
                 if (cols > cols_no_bonus)
@@ -908,6 +909,7 @@ namespace Lottotry.BusinessTier
             if (target == 0)
             {
                 target = lastRow;
+
             }
             if (start == 0)
             {
@@ -966,22 +968,25 @@ namespace Lottotry.BusinessTier
                     {
                         stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
                                 + st[i].Num
-                                + "</B></font>"
+                                + "</B></font><br />"
                                 + "<font color=\"#cc00cc\" size=\"2\">("
                                 + st[i].SavedDist
-                                + ")"
+                                + ")<br />"
                                 + "<font color=\"#00bfff\" size=\"2\">("
                                 + st[i].Cnt                              
-                                + ")</font></TD>\n";
+                                + ")</font></TD>";
                     }
                     else
                     {
                         stmt += "<TD><font color=\"#3366ff\">"
                                 + st[i].Num
-                                + "</font>("
+                                + "</font><br />("
                                 + "<font style=\"FONT-STYLE: italic\" color=\"#339900\" size=\"2\">"
                                 + st[i].getDist(j)
-                                + ")</font></TD>\n";
+                                + ")<br />"
+                                + "<font color=\"#00bfff\" size=\"2\">("
+                                + st[i].Cnt
+                                + ")</font></TD>";
                     }
                 }
                 stmt += "</TR>\n";
@@ -1025,9 +1030,15 @@ namespace Lottotry.BusinessTier
             st = numgen.Stat;
 
             int i = -1;
-            
+            int end = st.Length;
+            if (Util.IsDbInPicks(db))
+            {
+                i = -2;
+                --end;
+            }
+
             // All numbers as scale
-            for (; i < st.Length; i++)
+            for (; i < end; i++)
             {
                 if (i == -1)
                 {
@@ -1059,13 +1070,12 @@ namespace Lottotry.BusinessTier
 
                 stmt += "<TH><font color=\"#ff33ff\">" + j + "</font></TH>\n";
                 i = 1;
-                int end = st.Length;
-                if (db == Database.FloridaPick3)
+                end = st.Length;
+                if (Util.IsDbInPicks(db))
                 {
                     i = 0;
                     --end;
-                }
-                    
+                }                 
                 for (; i < end; i++)
                 {
                     if (st[i].RelativeDist == 0)
@@ -1076,7 +1086,7 @@ namespace Lottotry.BusinessTier
                 }
                 i = 1;
                 end = st.Length;
-                if (db == Database.FloridaPick3)
+                if (Util.IsDbInPicks(db))
                 {
                     i = 0;
                     --end;
@@ -1421,7 +1431,7 @@ namespace Lottotry.BusinessTier
             stmt += "<TR>\n";
             int i = 1;
             int end = st.Length;
-            if (db == Database.FloridaPick3)
+            if (Util.IsDbInPicks(db))
             {
                 i = 0;
                 --end;
@@ -1431,15 +1441,15 @@ namespace Lottotry.BusinessTier
                 if (st[i].RelativeDist == 0)
                 {
                     stmt += "<TH style=\"color:#ff00ff\">" 
-                        + st[i].DrawNumber.ToString() + "</TH>\n";
+                        + st[i].DrawNumber.ToString() + "</TH>";
                     stmt += "<TH style=\"color:#ff00ff;width=120px;font-size:small;\">" 
-                        + st[i].DDate + "</TH>\n";
+                        + st[i].DDate + "</TH>";
                     break;
                 }
             }
             i = 1;
             end = st.Length;
-            if (db == Database.FloridaPick3)
+            if (Util.IsDbInPicks(db))
             {
                 i = 0;
                 --end;
@@ -1448,13 +1458,21 @@ namespace Lottotry.BusinessTier
             {
                 if (st[i].RelativeDist == 0)
                 {
-                    stmt += "<TD id=tdRelativeDist0 class=drawNumber>" + st[i].Num + "\n";
-                    stmt += "( " + "<font id=relativeDist0>" + st[i].SavedDist + "</font> )" + "</TD>\n";
+                    stmt += "<TD id=tdRelativeDist0 class=drawNumber>" + st[i].Num + "<br />";
+                    stmt += "(" + "<font id=relativeDist0>" + st[i].SavedDist + "</font>)"
+                        + "<br />"
+                        + "<font color=\"#00bfff\" size=\"2\">("
+                        + st[i].Cnt
+                        + ")</TD>";
                 }
                 else
                 {
-                    stmt += "<TD id=numbers>" + st[i].Num + "\n";
-                    stmt += "( " + "<font id=tdRelativeDist>" + st[i].RelativeDist + "</font> )" + "</TD>\n";
+                    stmt += "<TD id=numbers>" + st[i].Num + "<br />";
+                    stmt += "(" + "<font id=tdRelativeDist>" + st[i].RelativeDist + "</font>)" 
+                        +"<br />"
+                        + "<font color=\"#00bfff\" size=\"2\">("
+                        + st[i].Cnt
+                        + ")</TD>";
 
                 }
             }

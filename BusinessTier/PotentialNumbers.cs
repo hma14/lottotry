@@ -38,6 +38,10 @@ namespace BusinessTier
         {
             dataAccessLayer = new DataAccessLayer();
             lastRow = dataAccessLayer.GetLastRow(database);
+            if (lastRow == 0)
+            {
+                lastRow = dataAccessLayer.GetLastRow(Util.MapDbTable(database));
+            }
             fromSite = from;
             db = database;
         }
@@ -130,12 +134,11 @@ namespace BusinessTier
                                           int numVeryCold, int veryColdMin, int veryHot
                                          )
         {
-
             if (target == 0)
             {
-                target = lastRow + 1;
+                target = lastRow;
             }
-            numgen = new NumGen(db, target - 1);
+            numgen = new NumGen(db, target);
             //databaseExecutionTime = numgen.DatabaseExecutionTime;
 
 
@@ -444,7 +447,8 @@ namespace BusinessTier
             try
             {
                 dataAccessLayer.OpenConnection();
-                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow);
+                var database = Util.MapDbTable(db);
+                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(database, startRow, targetRow);
 
                 int i = 0;
                 while (reader.Read() && i < range)
@@ -670,7 +674,7 @@ namespace BusinessTier
             try
             {
                 dataAccessLayer.OpenConnection();
-                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow);
+                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow, "*");
 
                 int i = 0;
                 while (reader.Read() && i < range)
