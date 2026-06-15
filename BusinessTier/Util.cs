@@ -200,10 +200,11 @@ namespace BusinessTier
             BonusColNameDic[Database.CaSuperlottoPlus_Mega] = "Mega";
             BonusColNameDic[Database.NewJerseyPick6Lotto] = null;
             BonusColNameDic[Database.OregonMegabucks] = null;
-            BonusColNameDic[Database.FloridaPick3Number1] = null;
-            BonusColNameDic[Database.FloridaPick3Number2] = null;
-            BonusColNameDic[Database.FloridaPick3Number3] = null;
-            BonusColNameDic[Database.FloridaPick3FB] = null;
+            BonusColNameDic[Database.FloridaPick3] = "FB";
+            BonusColNameDic[Database.FloridaPick3Number1] = "Number1";
+            BonusColNameDic[Database.FloridaPick3Number2] = "Number2";
+            BonusColNameDic[Database.FloridaPick3Number3] = "Number3";
+            BonusColNameDic[Database.FloridaPick3FB] = "FB";
             //BonusColNameDic[Database.NewYorkTake5] = null;
             //BonusColNameDic[Database.TexasCashFive] = null;
             //BonusColNameDic[Database.DailyGrand] = null;
@@ -751,11 +752,12 @@ namespace BusinessTier
             return false;
         }
 
-        public static bool amongNumbers(Dictionary<int, bool> targetDic, int[] arr)
+        public static bool amongNumbers(Dictionary<int, bool> targetDic, int[] arr, bool isPicks = false)
         {
             for (int i = 0; i < arr.Length; ++i)
             {
                 int key = arr[i];
+                if (isPicks) ++key;
                 if (!targetDic[key])
                 {
                     return false;
@@ -853,7 +855,7 @@ namespace BusinessTier
             // end of google analytic
             stmt += "</head>\n<body>\n";
             stmt += "<CENTER>\n";
-            stmt += "<h3>" + title + "   ";
+            stmt += "<h3>" + title + "  -  <font style=\"FONT-STYLE: italic; font-weight:bold\" color=\"#FF0000\">" + Enum.GetName(typeof(Database), db) + "</font> ";
             if (!NoLogo)
                 stmt += Util.LottoLogos(db);
             stmt += "</CENTER>\n";
@@ -1472,7 +1474,15 @@ namespace BusinessTier
             stmt += "<TR style=\"color:#FFFFFF; background-color:#CC0000\">";
             for (int i = 0; i < drawNumArray.Length; ++i)
             {
-                stmt += "<TH >No. " + (i + 1).ToString() + "</TH>";
+                if (Util.IsDbInPicks(db) || db == Database.FloridaPick3)
+                {
+                    stmt += "<TH >No. " + i.ToString() + "</TH>";
+                }
+                else
+                {
+                    stmt += "<TH >No. " + (i + 1).ToString() + "</TH>";
+                }
+                    
             }
             stmt += "<TH>Sum</TH>";
             stmt += "<TH>Odds/Evens</TH>";
@@ -1560,7 +1570,7 @@ namespace BusinessTier
 
         public static bool IsDbInPicks(Database db)
         {
-            return (db > Database.FloridaPick3 && db <= Database.FloridaPick3FB);
+            return (db >= Database.FloridaPick3 && db <= Database.FloridaPick3FB);
         }
     }
 }

@@ -198,13 +198,6 @@ namespace BusinessTier
             int cols = Util.getColumnnsOfLotto(db);
             while (reader.Read() == true)
             {
-                // Increase the internal distCnt for all numbers (1 - 49)
-                //if (db == Database.FloridaPick3
-                //    || db == Database.FloridaPick3Number1
-                //    || db == Database.FloridaPick3Number2
-                //    || db == Database.FloridaPick3Number3
-                //    || db == Database.FloridaPick3FB
-                //    )
                 if (info.ColName != "*")
                     increment(true);
                 else
@@ -233,8 +226,9 @@ namespace BusinessTier
 
         private long createNums(Database db, int startRow, int targetRow)
         {
+            var info = Util.GetDbInfo(db);
             DataAccessLayer dataAccessLayer = new DataAccessLayer();
-            SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow);
+            SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(info.DbId, startRow, targetRow, info.ColName);
             int draw_no;
             string draw_date;
             int[] no = new int[Util.MAX_NUMBERS];
@@ -243,7 +237,7 @@ namespace BusinessTier
             while (reader.Read())
             {
                 // Increase distance for all numbers, ex. 1 - 49
-                if (db == Database.FloridaPick3)
+                if (Util.IsDbInPicks(db))
                     increment(true);
                 else
                     increment();

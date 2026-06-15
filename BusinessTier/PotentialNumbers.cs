@@ -101,7 +101,8 @@ namespace BusinessTier
                 }
 
                 // Test if the target draw numbers are among the random generated numbers
-                if (Util.amongNumbers(GeneratedDic, drawNumArray))
+                bool isPicks = Util.IsDbInPicks(db);
+                if (Util.amongNumbers(GeneratedDic, drawNumArray, isPicks))
                 {
                     return displayPotentialNumbers(counter, GeneratedDic, drawNumArray, GeneratedList, numgen.ScaleLength);
                 }
@@ -448,7 +449,8 @@ namespace BusinessTier
             {
                 dataAccessLayer.OpenConnection();
                 var database = Util.MapDbTable(db);
-                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(database, startRow, targetRow);
+                var info = Util.GetDbInfo(db);
+                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(database, startRow, targetRow, info.ColName);
 
                 int i = 0;
                 while (reader.Read() && i < range)
@@ -673,8 +675,9 @@ namespace BusinessTier
 
             try
             {
+                var info = Util.GetDbInfo(db);
                 dataAccessLayer.OpenConnection();
-                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow, "*");
+                SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(db, startRow, targetRow, info.ColName);
 
                 int i = 0;
                 while (reader.Read() && i < range)

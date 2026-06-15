@@ -1730,7 +1730,7 @@ namespace Lottotry.BusinessTier
                 drawDateArray[ii] = (string)ddate.Current;
                 for (int i = 0; i < num.Length; i++)
                 {
-                    if (num[i] >= 1 && num[i] < 10)
+                    if (num[i] >= 0 && num[i] < 10)
                     {
                         arr[ii][0]++;
                     }
@@ -1784,7 +1784,11 @@ namespace Lottotry.BusinessTier
                 + "<TH class=\"tableheader\">Draw No.</TH>\n"
                 + "<TH class=\"tableheader\">Draw Date</TH>\n";
              
-            if (numbers < 10)
+            if (Util.IsDbInPicks(db))
+            {
+                stmt += "<TH class=\"tableheader\">0 - " + (numbers-1).ToString() + "</TH>\n";
+            }
+            else if (numbers < 10)
             {
                 stmt += "<TH class=\"tableheader\">1 - " + numbers.ToString() + "</TH>\n";
             }
@@ -1846,12 +1850,18 @@ namespace Lottotry.BusinessTier
             }
             stmt += "</TR>\n";
 
+            int end = arr[0].Length;
+            if (Util.IsDbInPicks(db))
+            {
+                end = 1;
+            }
+
             for (int i = arr.Length - 1; i >= 0; i--)
             {
                 stmt += "<TR>\n"
                     + "<TD style=\"color:#ff00ff\">" + (targetRow--) + "</font></TD>\n"
                     + "<TD style=\"color:#ff00ff; width:120px;\">" + ddate[i] + "</font></TD>\n";
-                for (int j = 0; j < arr[i].Length; j++)
+                for (int j = 0; j < end; j++)
                 {
                     if (arr[i][j] != 0)
                     {
@@ -1871,6 +1881,7 @@ namespace Lottotry.BusinessTier
                 }
                 stmt += "</TR>\n";
             }
+            
 
             stmt += "<TR>\n"
                 + "<TH class=\"tableheader\">Draw No.</TH>\n"
@@ -1936,6 +1947,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">60 - 69</TH>\n";
                 stmt += "<TH class=\"tableheader\">70 - " + numbers.ToString() + "</TH>\n";
             }
+            
             stmt += "</TR></TABLE>\n"
                 + "<A href=" + fromSite + ">Back</A>\n";
             stmt += Util.CreateHTML_Tail();
