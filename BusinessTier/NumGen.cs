@@ -186,7 +186,15 @@ namespace BusinessTier
 
         public long createStat(Database db, int startRow, int targetRow)
         {
-            stat = new SubStatistics[ScaleLength + 1];
+            if (Util.IsDbInPicks(db))
+            {
+                stat = new SubStatistics[ScaleLength];
+            }
+            else
+            {
+                stat = new SubStatistics[ScaleLength + 1];
+            }
+                
             for (int i = 0; i < stat.Length; i++)
             {
                 stat[i] = new SubStatistics(i, 0, 0, " ", 0);
@@ -198,7 +206,7 @@ namespace BusinessTier
             int cols = Util.getColumnnsOfLotto(db);
             while (reader.Read() == true)
             {
-                if (info.ColName != "*")
+                if (Util.IsDbInPicks(db))
                     increment(true);
                 else
                     increment();
@@ -261,13 +269,11 @@ namespace BusinessTier
         private void increment(bool isFloridaPicks = false)
         {
             int i = 1;
-            int end = stat.Length;
             if (isFloridaPicks)
             {
                 i = 0;
-                --end;
             }
-            for (; i < end; i++)
+            for (; i < stat.Length; i++)
             {
                 // stat[0] contains nothing
                 stat[i].incrementDist();

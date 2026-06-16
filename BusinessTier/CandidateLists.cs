@@ -42,14 +42,15 @@ namespace BusinessTier
         protected List<SubStatistics> candidateNumList;
         protected List<SubStatistics> uniqueCandidateNumList;
 
-        public CandidateLists(NumGen numGen) : this(20, 1, 5, 5, 5, 9, 9, 15, 20, 15, 9, 15, 3, 20, 3, numGen) { }
+        public CandidateLists(NumGen numGen, bool isPics) : this(20, 1, 5, 5, 5, 9, 9, 15, 20, 15, 9, 15, 3, 20, 3, numGen, isPics) { }
 
         public CandidateLists(int nHot, int hotMin, int hotMax,
                                 int nSemiHot, int semiHotMin, int semiHotMax,
                                 int nCold, int coldMin, int coldMax,
                                 int nSemiCold, int semiColdMin, int semiColdMax,
                                 int nVeryCold, int veryC,
-                                int nVeryHot
+                                int nVeryHot,
+                                bool isPics = false
                              )
         {
             HOT_MAX_SELECTED = nHot;
@@ -74,7 +75,8 @@ namespace BusinessTier
                                 int nCold, int coldMin, int coldMax,
                                 int nSemiCold, int semiColdMin, int semiColdMax,
                                 int nVeryCold, int veryC,
-                                int nVeryHot, NumGen numGen
+                                int nVeryHot, NumGen numGen,
+                                bool isPics = false
                              )
         {
             HOT_MAX_SELECTED = nHot;
@@ -92,10 +94,10 @@ namespace BusinessTier
             VERY_COLD_MAX_SELECTED = nVeryCold;
             veryCold = veryC;
             VERY_HOT_MAX_SELECTED = nVeryHot;
-            genLists(numGen);
+            genLists(numGen, isPics);
         }
 
-        virtual protected void genLists(NumGen numGen)
+        virtual protected void genLists(NumGen numGen, bool isPics = false)
         {
             hotNumList = new List<SubStatistics>();
             semiHotNumList = new List<SubStatistics>();
@@ -108,7 +110,14 @@ namespace BusinessTier
             randNumList = new List<SubStatistics>();
 
             SubStatistics[] stat = numGen.Stat;
-            for (int i = 1; i <= numGen.ScaleLength; ++i)
+            int i = 1;
+            int end = numGen.ScaleLength;
+            if (isPics)
+            {
+                i = 0;
+                --end;
+            }
+            for (; i <= end; ++i)
             {
                 if (stat[i].RelativeDist > semiHotRangeMin && stat[i].RelativeDist <= semiHotRangeMax)
                 {
@@ -135,10 +144,17 @@ namespace BusinessTier
                     veryColdNumList.Add(stat[i]);
                 }
             }
-
-            for (int i = 0; i < RAND_GEN_NUM; ++i)
+            i = 0;
+            int randMax = numGen.ScaleLength + 1;
+            int seed = 1;
+            if (isPics)
             {
-                randNumList.Add( stat[ RandomNumber(1, numGen.ScaleLength + 1) ] );
+                --randMax;
+                seed = 0;
+            }
+            for (; i < RAND_GEN_NUM; ++i)
+            {
+                randNumList.Add( stat[ RandomNumber(seed, randMax) ] );
             }
         }
 

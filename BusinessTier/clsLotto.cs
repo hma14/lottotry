@@ -937,12 +937,18 @@ namespace Lottotry.BusinessTier
             st = numgen.Stat;
 
             stmt += createFreqBand(fragments);
-
+                
             for (int j = start; j <= target; j++)
             {
                 numgen = new NumGen(db, 0, j, scale);
                 dbExecTime += numgen.DatabaseExecutionTime;
                 st = numgen.Stat;
+
+                int i = 1;
+                if (Util.IsDbInPicks(db))
+                {
+                    --i;
+                }
 
                 // Sort st with Frequency
                 bubbleSort(st);
@@ -951,9 +957,9 @@ namespace Lottotry.BusinessTier
 
                 stmt += "<TH style=\"color:#ff33ff; font-size:small\">" + j + "</font></TH>\n";
 
-
+                
                 // Only for output draw date for this table row
-                for (int i = 1; i < st.Length; i++)
+                for (; i < st.Length; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -961,8 +967,12 @@ namespace Lottotry.BusinessTier
                         break;
                     }
                 }
-
-                for (int i = 1; i < st.Length; i++)
+                i = 1;
+                if (Util.IsDbInPicks(db))
+                {
+                    --i;
+                }
+                for (; i < st.Length; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -1033,10 +1043,8 @@ namespace Lottotry.BusinessTier
             int end = st.Length;
             if (Util.IsDbInPicks(db))
             {
-                i = -2;
-                --end;
+                end++;
             }
-
             // All numbers as scale
             for (; i < end; i++)
             {
@@ -1070,13 +1078,11 @@ namespace Lottotry.BusinessTier
 
                 stmt += "<TH><font color=\"#ff33ff\">" + j + "</font></TH>\n";
                 i = 1;
-                end = st.Length;
                 if (Util.IsDbInPicks(db))
                 {
                     i = 0;
-                    --end;
                 }                 
-                for (; i < end; i++)
+                for (; i < st.Length; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -1085,13 +1091,11 @@ namespace Lottotry.BusinessTier
                     }
                 }
                 i = 1;
-                end = st.Length;
                 if (Util.IsDbInPicks(db))
                 {
                     i = 0;
-                    --end;
                 }
-                for (; i < end; i++)
+                for (; i < st.Length; i++)
                 {
                     if (st[i].RelativeDist == 0)
                     {
@@ -1208,7 +1212,12 @@ namespace Lottotry.BusinessTier
 
             // All numbers as scale
             i = -1;
-            for (; i < st.Length; i++)
+            end = st.Length;
+            if (Util.IsDbInPicks(db))
+            {
+                end++;
+            }
+            for (; i < st.Length + 1; i++)
             {
                 if (i == -1)
                 {
@@ -1887,7 +1896,11 @@ namespace Lottotry.BusinessTier
                 + "<TH class=\"tableheader\">Draw No.</TH>\n"
                 + "<TH class=\"tableheader\">Draw Date</TH>\n";
 
-            if (numbers < 10)
+            if (Util.IsDbInPicks(db))
+            {
+                stmt += "<TH class=\"tableheader\">0 - " + (numbers - 1).ToString() + "</TH>\n";
+            }
+            else if (numbers < 10)
             {
                 stmt += "<TH class=\"tableheader\">1 - " + numbers.ToString() + "</TH>\n";
             }

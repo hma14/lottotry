@@ -735,9 +735,15 @@ namespace BusinessTier
             }
         }
 
-        public static void initDictionary(Dictionary<int, bool> dic, int len)
+        public static void initDictionary(Dictionary<int, bool> dic, int len, bool isPicks = false)
         {
-            for (int i = 1; i <= len; ++i)
+            int i = 1;
+            if (isPicks)
+            {
+                i = 0;
+                --len;
+            }
+            for (; i <= len; ++i)
             {
                 dic[i] = false;
             }
@@ -973,7 +979,7 @@ namespace BusinessTier
             for (int i = colStart; i <= colEnd; i++)
             {
                 stmt += "<TH bgcolor=\"#FFFFF0\"><font color=\"#F6358A\">" + i.ToString() + "</TH>";
-                if (dic[i + 1])
+                if (dic[i])
                 {
                     numCount++;
                 }
@@ -988,20 +994,20 @@ namespace BusinessTier
 
             for (int i = colStart; i <= colEnd; i++)
             {
-                if (dic[i+1] && statDic[i+1] != null)
+                if (dic[i] && statDic[i] != null)
                 {
                     if (tmpDic[i])
                     {
 
                         stmt += "<TD width=\"50\"> <FONT style=\"FONT-STYLE: italic; font-weight:bold\" color=\"#FF0000\">"
-                            + i.ToString() + "<br />(R=" + statDic[i + 1].RelativeDist.ToString() + ")"
-                            + "<br />(S=" + statDic[i + 1].SavedDist.ToString() + ")</TD>";
+                            + i.ToString() + "<br />(R=" + statDic[i].RelativeDist.ToString() + ")"
+                            + "<br />(S=" + statDic[i].SavedDist.ToString() + ")</TD>";
                     }
                     else
                     {
                         stmt += "<TD width=\"50\"> <FONT style=\"FONT-STYLE: italic; font-weight:bold\" color=\"#FFFFF0\">"
-                            + i.ToString() + "<br />(R=" + statDic[i + 1].RelativeDist.ToString() + ")"
-                            + "<br />(S=" + statDic[i + 1].SavedDist.ToString() + ")</TD>";
+                            + i.ToString() + "<br />(R=" + statDic[i].RelativeDist.ToString() + ")"
+                            + "<br />(S=" + statDic[i].SavedDist.ToString() + ")</TD>";
                     }
                 }
                 else
@@ -1474,7 +1480,7 @@ namespace BusinessTier
             stmt += "<TR style=\"color:#FFFFFF; background-color:#CC0000\">";
             for (int i = 0; i < drawNumArray.Length; ++i)
             {
-                if (Util.IsDbInPicks(db) || db == Database.FloridaPick3)
+                if (Util.IsDbInPicks(db))
                 {
                     stmt += "<TH >No. " + i.ToString() + "</TH>";
                 }

@@ -148,7 +148,8 @@ namespace BusinessTier
                                                 numCold, coldMin, coldMax,
                                                 numSemiCold, semiColdMin, semiColdMax,
                                                 numVeryCold, veryColdMin, veryHot,
-                                                numgen
+                                                numgen,
+                                                Util.IsDbInPicks(db)
                                               );
 
             GeneratedList = new List<SubStatistics>();
@@ -159,7 +160,7 @@ namespace BusinessTier
 
         }
 
-        public string PredictNextDraws(int sumMin, int sumMax, int odds)
+        public string PredictNextDraws(int sumMin, int sumMax, int odds, bool isPicks = false)
         {
             int drawLength = Util.getColumnnsOfLotto_no_bonus(db);
 
@@ -167,7 +168,7 @@ namespace BusinessTier
             int[] drawNumArray = new int[drawLength];
 
             Dictionary<int, bool> GeneratedDic = new Dictionary<int, bool>();
-            Util.initDictionary(GeneratedDic, numgen.ScaleLength);
+            Util.initDictionary(GeneratedDic, numgen.ScaleLength, isPicks);
 
             for (int j = 0; j < GeneratedList.Count; ++j)
             {
@@ -304,7 +305,7 @@ namespace BusinessTier
                 throw;
             }
 
-            CandidateLists candidateList = new CandidateLists(numgen);
+            CandidateLists candidateList = new CandidateLists(numgen, false);
             Dictionary<int, bool> GeneratedDic = new Dictionary<int, bool>();
             string stmt = "";
 

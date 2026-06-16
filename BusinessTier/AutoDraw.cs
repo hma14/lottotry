@@ -77,12 +77,12 @@ namespace BusinessTier
             //    target -= 1;
             //    numgen = new NumGen(db, target); // based on last draw's statistics
             //}
-            genLists(numgen);
+            genLists(numgen, Util.IsDbInPicks(db));
         }
 
-        protected override void genLists(NumGen numGen)
+        protected override void genLists(NumGen numGen, bool isPics = false)
         {
-            base.genLists(numGen);
+            base.genLists(numGen, isPics);
             onesList = new List<SubStatistics>();
             tensList = new List<SubStatistics>();
             twentiesList = new List<SubStatistics>();
@@ -189,10 +189,16 @@ namespace BusinessTier
         }
 
 
-        private void initDictionary(Dictionary<int, bool> dic)
+        private void initDictionary(Dictionary<int, bool> dic, bool isPics = false)
         {
-
-            for (int i = 1; i <= numgen.ScaleLength; ++i)
+            int i = 1;
+            int end = numgen.ScaleLength;
+            if (isPics)
+            {
+                i = 0;
+                --end;
+            }
+            for (; i <= end; ++i)
             {
                 dic[i] = false;
             }
@@ -267,7 +273,7 @@ namespace BusinessTier
 
 
             Dictionary<int, bool> GeneratedDic = new Dictionary<int, bool>();
-            initDictionary(GeneratedDic);
+            initDictionary(GeneratedDic, Util.IsDbInPicks(db));
 
             for (int j = 0; j < GeneratedList.Count; ++j)
             {

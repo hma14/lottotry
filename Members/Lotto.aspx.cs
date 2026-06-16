@@ -1202,7 +1202,7 @@ namespace Lottotry.Members
                                         numVeryCold, veryColdMin, veryHot
                                         );
 
-                string stmt = pn.PredictNextDraws(sumMin, sumMax, odds);
+                string stmt = pn.PredictNextDraws(sumMin, sumMax, odds, Util.IsDbInPicks(db));
                 output.Visible = true;
                 output.Text = stmt;
             }
