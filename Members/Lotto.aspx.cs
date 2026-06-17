@@ -328,13 +328,25 @@ namespace Lottotry.Members
 
             this.Visible = false;
             long dbExecTime = 0;
+            string stmt = string.Empty;
             try
             {
                 lotto = new BusinessTier.clsLotto(db, fromSite);
-                string stmt = lotto.createHTML_ScaleDistMatrix(target,
-                                                               dist,
-                                                               scale,
-                                                               out dbExecTime);
+                if (Util.IsDbInPicks(db))
+                {
+                    stmt = lotto.createHTML_ScaleDistMatrix4Picks(target,
+                                                                dist,
+                                                                scale,
+                                                                out dbExecTime);
+                }
+                else
+                {
+                    stmt = lotto.createHTML_ScaleDistMatrix(target,
+                                                            dist,
+                                                            scale,
+                                                            out dbExecTime);
+                }
+                    
 
                 stopWatch.Stop();
                 if (HttpContext.Current.User.Identity.Name.Equals("hma14"))

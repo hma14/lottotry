@@ -106,7 +106,7 @@ namespace BusinessTier
             ColumnnsOfLottoDic[Database.FloridaPick3Number2] = 1;
             ColumnnsOfLottoDic[Database.FloridaPick3Number3] = 1;
             ColumnnsOfLottoDic[Database.FloridaPick3FB] = 1;
-            ColumnnsOfLottoDic[Database.FloridaPick3] = 4;
+            ColumnnsOfLottoDic[Database.FloridaPick3] = 3;
 
         }
 
@@ -200,7 +200,7 @@ namespace BusinessTier
             BonusColNameDic[Database.CaSuperlottoPlus_Mega] = "Mega";
             BonusColNameDic[Database.NewJerseyPick6Lotto] = null;
             BonusColNameDic[Database.OregonMegabucks] = null;
-            BonusColNameDic[Database.FloridaPick3] = "FB";
+            BonusColNameDic[Database.FloridaPick3] = null;
             BonusColNameDic[Database.FloridaPick3Number1] = "Number1";
             BonusColNameDic[Database.FloridaPick3Number2] = "Number2";
             BonusColNameDic[Database.FloridaPick3Number3] = "Number3";
@@ -422,7 +422,7 @@ namespace BusinessTier
             LottoNumberRangesDic[Database.FloridaPick3Number2] = 1;
             LottoNumberRangesDic[Database.FloridaPick3Number3] = 1;
             LottoNumberRangesDic[Database.FloridaPick3FB] = 1;
-            LottoNumberRangesDic[Database.FloridaPick3] = 4;
+            LottoNumberRangesDic[Database.FloridaPick3] = 3;
         }
 
         public static int getLottoNumberRanges(Database db)

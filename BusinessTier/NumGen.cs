@@ -55,8 +55,8 @@ namespace BusinessTier
                 {
                     sdm[i][j] = new ArrayList();
                 }
-            }
-            genScaleDistMatrix(dist);
+            }                
+            genScaleDistMatrix(dist, Util.IsDbInPicks(db));
         }
 
         public int ScaleLength
@@ -293,92 +293,109 @@ namespace BusinessTier
         }
 
 
-        private void genScaleDistMatrix(int dist)
+        private void genScaleDistMatrix(int dist, bool isPicks = false)
         {
 
             Util.bubbleSort(stat); // sort statistics on Frequency
             int s = 0;
-
-            for (int i = 1; i < stat.Length; i++)
+            int i = 1;
+            if (isPicks)
             {
-                if (i <= fregments)
+                i = 0;
+                for (; i < stat.Length; i++)
                 {
-                    s = 1;
-                }
-                else if (i <= 2 * fregments)
-                {
-                    s = 2;
-                }
-                else if (i <= 3 * fregments)
-                {
-                    s = 3;
-                }
-                else if (i <= 4 * fregments)
-                {
-                    s = 4;
-                }
-                else if (i <= 5 * fregments)
-                {
-                    s = 5;
-                }
-                else if (i <= 6 * fregments)
-                {
-                    s = 6;
-                }
-                else if (i <= 7 * fregments)
-                {
-                    s = 7;
-                }
-                else if (i <= 8 * fregments)
-                {
-                    s = 8;
-                }
-                else if (i <= 9 * fregments)
-                {
-                    s = 9;
-                }
-                else if (i <= 10 * fregments)
-                {
-                    s = 10;
-                }
-                else if (i <= 11 * fregments)
-                {
-                    s = 11;
-                }
-                else if (i <= 12 * fregments)
-                {
-                    s = 12;
-                }
-                else if (i <= 13 * fregments)
-                {
-                    s = 13;
-                }
-                else if (i <= 14 * fregments)
-                {
-                    s = 14;
-                }
-                else if (i <= 15 * fregments)
-                {
-                    s = 15;
-                }
-                else if (i <= 16 * fregments)
-                {
-                    s = 16;
-                }
-                else if (i <= 17 * fregments)
-                {
-                    s = 17;
-                }
-                else
-                {
-                    s = 18;
-                }
+                    s = i;
+                    int d = stat[i].RelativeDist;
 
-                int d = stat[i].RelativeDist;
-
-                if (d < dist)
+                    if (d < dist)
+                    {
+                        sdm[d][s].Add(stat[i].Num);
+                    }
+                }
+            } 
+            else {
+                i = 1;
+                for (; i < stat.Length; i++)
                 {
-                    sdm[d][s].Add(stat[i].Num);
+                    if (i <= fregments)
+                    {
+                        s = 1;
+                    }
+                    else if (i <= 2 * fregments)
+                    {
+                        s = 2;
+                    }
+                    else if (i <= 3 * fregments)
+                    {
+                        s = 3;
+                    }
+                    else if (i <= 4 * fregments)
+                    {
+                        s = 4;
+                    }
+                    else if (i <= 5 * fregments)
+                    {
+                        s = 5;
+                    }
+                    else if (i <= 6 * fregments)
+                    {
+                        s = 6;
+                    }
+                    else if (i <= 7 * fregments)
+                    {
+                        s = 7;
+                    }
+                    else if (i <= 8 * fregments)
+                    {
+                        s = 8;
+                    }
+                    else if (i <= 9 * fregments)
+                    {
+                        s = 9;
+                    }
+                    else if (i <= 10 * fregments)
+                    {
+                        s = 10;
+                    }
+                    else if (i <= 11 * fregments)
+                    {
+                        s = 11;
+                    }
+                    else if (i <= 12 * fregments)
+                    {
+                        s = 12;
+                    }
+                    else if (i <= 13 * fregments)
+                    {
+                        s = 13;
+                    }
+                    else if (i <= 14 * fregments)
+                    {
+                        s = 14;
+                    }
+                    else if (i <= 15 * fregments)
+                    {
+                        s = 15;
+                    }
+                    else if (i <= 16 * fregments)
+                    {
+                        s = 16;
+                    }
+                    else if (i <= 17 * fregments)
+                    {
+                        s = 17;
+                    }
+                    else
+                    {
+                        s = 18;
+                    }
+
+                    int d = stat[i].RelativeDist;
+
+                    if (d < dist)
+                    {
+                        sdm[d][s].Add(stat[i].Num);
+                    }
                 }
             }
         }

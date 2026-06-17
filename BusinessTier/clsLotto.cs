@@ -670,7 +670,7 @@ namespace Lottotry.BusinessTier
             int start = 1;
             dbExecTime = 0;
             stmt += createLongDistTable(dist, scale, start, target, db, ref dbExecTime);
-            stmt += createShortDistTable(dist, scale, start, target, db, ref  dbExecTime);
+            stmt += createShortDistTable(dist, scale, start, target, db, ref dbExecTime);
 
             stmt += createAllNumTable(dist, scale, start, target, db, ref dbExecTime);
 
@@ -678,6 +678,29 @@ namespace Lottotry.BusinessTier
 
             return stmt;
         }
+        public string createHTML_ScaleDistMatrix4Picks(
+                                                         int target,
+                                                         int dist,
+                                                         int scale,
+                                                         out long dbExecTime)
+        {
+            string stmt = " ";
+            stmt += Util.CreateHTML_Header("Lotto Statistics 5", db);
+
+            int start = 1;
+            dbExecTime = 0;
+            stmt += createLongDistTable(dist, scale, start, target, db, ref dbExecTime);
+            stmt += createShortDistTable(dist, scale, start, target, db, ref dbExecTime);
+
+            stmt += createAllNumTable(dist, scale, start, target, db, ref dbExecTime);
+
+            stmt += createDistScaleTable(dist, scale, start, target, db, ref dbExecTime);
+
+            return stmt;
+        }
+
+
+
 
         private string createLongDistTable(int dist, int scale, int start, int target, Database db, ref long dbExecTime)
         {
@@ -1403,93 +1426,114 @@ namespace Lottotry.BusinessTier
 
             stmt += "<TR>";
 
-
-
-            // Mark the 49 numbers as scales (default is 7) with different colors 
-            // for each scale
-            for (int i = 0; i < st.Length; i++)
+            int i = 0;
+            if (Util.IsDbInPicks(db))
             {
+                i = -1;
+                for (; i < st.Length; i++)
+                {
 
-                if (i == 0)
-                {
-                    stmt += "<TH>Scales</TH>";
-                    continue;
+                    if (i == -1)
+                    {
+                        stmt += "<TH>Scales</TH>";
+                        continue;
+                    }
+                    stmt += "<TH bgcolor=\"ffff66\">" + i + "</TH>";
                 }
+            }
+            else
+            {
+                // Mark the 49 numbers as scales (default is 7) with different colors 
+                // for each scale
+                for (; i < st.Length; i++)
+                {
 
-                if (i <= fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffff66\">" + 1 + "</TH>";
-                }
-                else if (i <= 2 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffcccc\">" + 2 + "</TH>";
-                }
-                else if (i <= 3 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ccff33\">" + 3 + "</TH>";
-                }
-                else if (i <= 4 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ff99ff\">" + 4 + "</TH>";
-                }
-                else if (i <= 5 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"33cc99\">" + 5 + "</TH>";
-                }
-                else if (i <= 6 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffcc00\">" + 6 + "</TH>";
-                }
-                else if (i <= 7 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"cccc33\">" + 7 + "</TH>"; ;
-                }
-                else if (i <= 8 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffff66\">" + 8 + "</TH>";
-                }
-                else if (i <= 9 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffcccc\">" + 9 + "</TH>";
-                }
-                else if (i <= 10 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ccff33\">" + 10 + "</TH>";
-                }
-                else if (i <= 11 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ff99ff\">" + 11 + "</TH>";
-                }
-                else if (i <= 12 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"33cc99\">" + 12 + "</TH>";
-                }
-                else if (i <= 13 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffcc00\">" + 13 + "</TH>";
-                }
-                else if (i <= 14 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"cccc33\">" + 14 + "</TH>";
-                }
-                else if (i <= 15 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffff66\">" + 15 + "</TH>";
-                }
-                else if (i <= 16 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ffcccc\">" + 16 + "</TH>";
-                }
-                else if (i <= 17 * fragments)
-                {
-                    stmt += "<TH bgcolor=\"ccff33\">" + 17 + "</TH>";
+                    if (i == 0)
+                    {
+                        stmt += "<TH>Scales</TH>";
+                        continue;
+                    }
+                    if (i <= fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffff66\">" + 1 + "</TH>";
+                    }
+                    else if (i <= 2 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffcccc\">" + 2 + "</TH>";
+                    }
+                    else if (i <= 3 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ccff33\">" + 3 + "</TH>";
+                    }
+                    else if (i <= 4 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ff99ff\">" + 4 + "</TH>";
+                    }
+                    else if (i <= 5 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"33cc99\">" + 5 + "</TH>";
+                    }
+                    else if (i <= 6 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffcc00\">" + 6 + "</TH>";
+                    }
+                    else if (i <= 7 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"cccc33\">" + 7 + "</TH>"; ;
+                    }
+                    else if (i <= 8 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffff66\">" + 8 + "</TH>";
+                    }
+                    else if (i <= 9 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffcccc\">" + 9 + "</TH>";
+                    }
+                    else if (i <= 10 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ccff33\">" + 10 + "</TH>";
+                    }
+                    else if (i <= 11 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ff99ff\">" + 11 + "</TH>";
+                    }
+                    else if (i <= 12 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"33cc99\">" + 12 + "</TH>";
+                    }
+                    else if (i <= 13 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffcc00\">" + 13 + "</TH>";
+                    }
+                    else if (i <= 14 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"cccc33\">" + 14 + "</TH>";
+                    }
+                    else if (i <= 15 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffff66\">" + 15 + "</TH>";
+                    }
+                    else if (i <= 16 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ffcccc\">" + 16 + "</TH>";
+                    }
+                    else if (i <= 17 * fragments)
+                    {
+                        stmt += "<TH bgcolor=\"ccff33\">" + 17 + "</TH>";
+                    }
                 }
             }
             stmt += "</TR><TR>";
-
-            for (int i = 0; i < st.Length; i++)
+            i = 0;
+            int a1 = 0;
+            if (Util.IsDbInPicks(db))
             {
-                if (i == 0)
+                i = -1;
+                a1 = -1;
+            }
+            for (; i < st.Length; i++)
+            {
+                if (i == a1)
                 {
                     stmt += "<TH>Number</TH>";
                     continue;
@@ -1506,9 +1550,16 @@ namespace Lottotry.BusinessTier
                 }
             }
             stmt += "</TR><TR>";
-            for (int i = 0; i < st.Length; i++)
+            i = 0;
+            a1 = 0;
+            if (Util.IsDbInPicks(db))
             {
-                if (i == 0)
+                i = -1;
+                a1 = -1;
+            }
+                for (; i < st.Length; i++)
+            {
+                if (i == a1)
                 {
                     stmt += "<TD><B>Frequency</B></TD>";
                     continue;
@@ -1519,9 +1570,16 @@ namespace Lottotry.BusinessTier
 
             }
             stmt += "</TR><TR>";
-            for (int i = 0; i < st.Length; i++)
+            i = 0;
+            a1 = 0;
+            if (Util.IsDbInPicks(db))
             {
-                if (i == 0)
+                i = -1;
+                a1 = -1;
+            }
+            for (; i < st.Length; i++)
+            {
+                if (i == a1)
                 {
                     stmt += "<TD><B>Distance</B></TD>";
                     continue;
@@ -1674,12 +1732,22 @@ namespace Lottotry.BusinessTier
                 + "<TR>"
                 + "<TH>Dist\\Scale</TH>";
 
-
-            for (int i = 1; i <= numgen.Scale; i++)
+            int i = 1;
+            int end = numgen.Scale;
+            if (Util.IsDbInPicks(db))
             {
-
-                switch (i)
+                i = 0;
+                --end;
+            }
+            for (; i <= end; i++)
+            {
+                if (i == 0 && Util.IsDbInPicks(db))
                 {
+                    stmt += "<TH width=\"80\" bgcolor=\"ff99ff\">" + i + "</TH>";
+                    continue;
+                }
+                switch (i)
+                {                  
                     case 1:
                         stmt += "<TH width=\"80\" bgcolor=\"ffff66\">" + i + "</TH>";
                         break;
@@ -1759,12 +1827,23 @@ namespace Lottotry.BusinessTier
             }
             stmt += "</TR>";
 
+            
             for (int d = 0; d < dist; d++)
             {
                 stmt += "<TR>";
-                for (int s = 0; s <= numgen.Scale; s++)
+
+                int s = 0;
+                end = numgen.Scale;
+                int a1 = 0;
+                if (Util.IsDbInPicks(db))
                 {
-                    if (s == 0)
+                    s = -1;
+                    --end;
+                    a1 = -1;
+                }
+                for (; s <= end; s++)
+                {
+                    if (s == a1)
                     {
                         stmt += "<TD  align=\"center\"><font style=\"FONT-STYLE: italic\" color=\"#ff0033\"><B>" + (d) + "</B></font></TD>";
                     }
