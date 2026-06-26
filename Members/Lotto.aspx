@@ -295,6 +295,8 @@ function resetDDL(nodeId) {
                 <li class="TabbedPanelsTab" tabindex="8">Stat 6</li>
                 <li class="TabbedPanelsTab" tabindex="9">Stat 7</li>
                 <li class="TabbedPanelsTab" tabindex="10">Chart</li>
+                <li class="TabbedPanelsTab" tabindex="11">Lotto Reduction</li>
+
             </ul>
             <div class="TabbedPanelsContentGroup">
                 <%--Predict Draws--%>
@@ -1667,6 +1669,7 @@ function resetDDL(nodeId) {
                         </Triggers>
                     </asp:UpdatePanel>
                 </div>
+
                 <%--Chart--%>
                 <div class="TabbedPanelsContent">
                     <p>
@@ -1741,6 +1744,76 @@ function resetDDL(nodeId) {
                         </Triggers>
                     </asp:UpdatePanel>
                 </div>
+
+                  <%--Lotto Reductions--%>
+                <div class="TabbedPanelsContent">
+                    <p>
+                        This function provides reduction modes on choosing lotto tickets: <a class="more11" href="#">details</a>
+                    </p>
+                    <p>to be contructed</p>
+                    <asp:UpdatePanel ID="UpdatePanel20" runat="server" UpdateMode="Always">
+                        <ContentTemplate>
+                  
+                            <div class="tblUserInput" >                            
+                                <h3>Lotto Reduction</h3>
+
+                            <div>
+                                ENTER TICKETS:
+                            </div>
+
+                            <asp:TextBox
+                                ID="txtTickets"
+                                runat="server"
+                                TextMode="MultiLine"
+                                Rows="30"
+                                Width="100%" style="box-sizing:border-box;"  >
+                          
+                            </asp:TextBox>
+
+                            <br /><br />
+
+                            <asp:RadioButtonList
+                                ID="rblReductionType"
+                                runat="server"
+                                RepeatDirection="Horizontal"
+                                RepeatLayout="Table"
+                                AutoPostBack="true" >
+
+                                <asp:ListItem Value="Random" Selected="True">
+                                    Random Reduction
+                                </asp:ListItem>
+
+                                <asp:ListItem Value="Systemic">
+                                    Systemic Reduction
+                                </asp:ListItem>
+
+                                <asp:ListItem Value="Smart">
+                                    Smart Reduction
+                                </asp:ListItem>
+
+                            </asp:RadioButtonList>
+
+                            <br />
+
+                            Tickets To Play:
+
+                            <asp:TextBox
+                                ID="txtTicketCount"
+                                runat="server"
+                                Width="60px">
+                            </asp:TextBox>
+
+                            <br /><br />
+                            <div style="text-align:right; margin-top:10px;">
+                                <asp:Button
+                                    ID="btnProduceTickets"
+                                    runat="server"
+                                    Text="PRODUCE TICKETS" class="buttonGen"  SkinID="buttonSkin" Width="200" />
+                                </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                </div>
             </div>
             <%--TabbedPanelsContentGroup--%>
         </div>
@@ -1803,6 +1876,10 @@ function resetDDL(nodeId) {
                 </Triggers>
             </asp:UpdatePanel>
         </div>
+
+      
+
+
         <script type="text/javascript">
 	<!--
     //function getURLParam(strParamName) {

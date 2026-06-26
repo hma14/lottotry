@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lottotry.Members {
-    
-    
-    public partial class Lotto {
-        
+namespace Lottotry.Members
+{
+
+
+    public partial class Lotto
+    {
+
         /// <summary>
         /// ToolkitScriptManager1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
-        
+
         /// <summary>
         /// UpdateProgress1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
-        
+
         /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
+
         /// <summary>
         /// AutoCompleteExtender1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
-        
+
         /// <summary>
         /// tbTargetDraw4 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetDraw4;
-        
+
         /// <summary>
         /// DBDdl12 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl12;
-        
+
         /// <summary>
         /// submit12 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit12;
-        
+
         /// <summary>
         /// CalibrateGen control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CalibrateGen;
-        
+
         /// <summary>
         /// ImagePredict control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImagePredict;
-        
+
         /// <summary>
         /// UpdatePanel14 control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel14;
-        
+
         /// <summary>
         /// ConfigForm1 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Lottotry.Controls.ConfigForm ConfigForm1;
-        
+
         /// <summary>
         /// UpdatePanel4 control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel4;
-        
+
         /// <summary>
         /// AutoCompleteExtender2 control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
-        
+
         /// <summary>
         /// tbTargetDraw8 control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetDraw8;
-        
+
         /// <summary>
         /// DBDdl8 control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl8;
-        
+
         /// <summary>
         /// submit8 control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit8;
-        
+
         /// <summary>
         /// CalibrateAutoDraw control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CalibrateAutoDraw;
-        
+
         /// <summary>
         /// ImageAuto control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageAuto;
-        
+
         /// <summary>
         /// UpdatePanel6 control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel6;
-        
+
         /// <summary>
         /// AutoDrawConfig1 control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Lottotry.Controls.AutoDrawConfig AutoDrawConfig1;
-        
+
         /// <summary>
         /// UpdatePanel5 control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel5;
-        
+
         /// <summary>
         /// AutoCompleteExtender3 control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender3;
-        
+
         /// <summary>
         /// tbTargetDraw10 control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetDraw10;
-        
+
         /// <summary>
         /// DBDdl10 control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl10;
-        
+
         /// <summary>
         /// submit10 control.
         /// </summary>
@@ -236,7 +238,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit10;
-        
+
         /// <summary>
         /// CalibratePotential control.
         /// </summary>
@@ -245,7 +247,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CalibratePotential;
-        
+
         /// <summary>
         /// ImagePotential control.
         /// </summary>
@@ -254,7 +256,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImagePotential;
-        
+
         /// <summary>
         /// UpdatePanel7 control.
         /// </summary>
@@ -263,7 +265,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel7;
-        
+
         /// <summary>
         /// ConfigForm2 control.
         /// </summary>
@@ -272,7 +274,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Lottotry.Controls.ConfigForm ConfigForm2;
-        
+
         /// <summary>
         /// UpdatePanel8 control.
         /// </summary>
@@ -281,7 +283,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel8;
-        
+
         /// <summary>
         /// AutoCompleteExtender4 control.
         /// </summary>
@@ -290,7 +292,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender4;
-        
+
         /// <summary>
         /// tbStartRow control.
         /// </summary>
@@ -299,7 +301,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow;
-        
+
         /// <summary>
         /// AutoCompleteExtender5 control.
         /// </summary>
@@ -308,7 +310,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender5;
-        
+
         /// <summary>
         /// tbTargetRow control.
         /// </summary>
@@ -317,7 +319,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow;
-        
+
         /// <summary>
         /// DBDdl1 control.
         /// </summary>
@@ -326,7 +328,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl1;
-        
+
         /// <summary>
         /// submit1 control.
         /// </summary>
@@ -335,7 +337,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit1;
-        
+
         /// <summary>
         /// UpdatePanel9 control.
         /// </summary>
@@ -344,7 +346,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel9;
-        
+
         /// <summary>
         /// AutoCompleteExtender6 control.
         /// </summary>
@@ -353,7 +355,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender6;
-        
+
         /// <summary>
         /// tbStartRow4 control.
         /// </summary>
@@ -362,7 +364,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow4;
-        
+
         /// <summary>
         /// AutoCompleteExtender7 control.
         /// </summary>
@@ -371,7 +373,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender7;
-        
+
         /// <summary>
         /// tbTargetRow4 control.
         /// </summary>
@@ -380,7 +382,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow4;
-        
+
         /// <summary>
         /// DistDdl4 control.
         /// </summary>
@@ -389,7 +391,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DistDdl4;
-        
+
         /// <summary>
         /// DBDdl4 control.
         /// </summary>
@@ -398,7 +400,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl4;
-        
+
         /// <summary>
         /// submit4 control.
         /// </summary>
@@ -407,7 +409,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit4;
-        
+
         /// <summary>
         /// UpdatePanel10 control.
         /// </summary>
@@ -416,7 +418,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel10;
-        
+
         /// <summary>
         /// AutoCompleteExtender8 control.
         /// </summary>
@@ -425,7 +427,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender8;
-        
+
         /// <summary>
         /// tbStartRow5 control.
         /// </summary>
@@ -434,7 +436,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow5;
-        
+
         /// <summary>
         /// AutoCompleteExtender9 control.
         /// </summary>
@@ -443,7 +445,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender9;
-        
+
         /// <summary>
         /// tbTargetRow5 control.
         /// </summary>
@@ -452,7 +454,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow5;
-        
+
         /// <summary>
         /// scalesDdl5 control.
         /// </summary>
@@ -461,7 +463,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList scalesDdl5;
-        
+
         /// <summary>
         /// DBDdl5 control.
         /// </summary>
@@ -470,7 +472,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl5;
-        
+
         /// <summary>
         /// submit5 control.
         /// </summary>
@@ -479,7 +481,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit5;
-        
+
         /// <summary>
         /// UpdatePanel11 control.
         /// </summary>
@@ -488,7 +490,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel11;
-        
+
         /// <summary>
         /// AutoCompleteExtender10 control.
         /// </summary>
@@ -497,7 +499,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender10;
-        
+
         /// <summary>
         /// tbStartRow6 control.
         /// </summary>
@@ -506,7 +508,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow6;
-        
+
         /// <summary>
         /// AutoCompleteExtender11 control.
         /// </summary>
@@ -515,7 +517,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender11;
-        
+
         /// <summary>
         /// tbTargetRow6 control.
         /// </summary>
@@ -524,7 +526,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow6;
-        
+
         /// <summary>
         /// DBDdl6 control.
         /// </summary>
@@ -533,7 +535,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl6;
-        
+
         /// <summary>
         /// submit6 control.
         /// </summary>
@@ -542,7 +544,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit6;
-        
+
         /// <summary>
         /// UpdatePanel12 control.
         /// </summary>
@@ -551,7 +553,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel12;
-        
+
         /// <summary>
         /// AutoCompleteExtender12 control.
         /// </summary>
@@ -560,7 +562,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender12;
-        
+
         /// <summary>
         /// tbTarget control.
         /// </summary>
@@ -569,7 +571,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTarget;
-        
+
         /// <summary>
         /// DistDdl control.
         /// </summary>
@@ -578,7 +580,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DistDdl;
-        
+
         /// <summary>
         /// scalesDdl control.
         /// </summary>
@@ -587,7 +589,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList scalesDdl;
-        
+
         /// <summary>
         /// DBDdl2 control.
         /// </summary>
@@ -596,7 +598,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl2;
-        
+
         /// <summary>
         /// submit2 control.
         /// </summary>
@@ -605,7 +607,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit2;
-        
+
         /// <summary>
         /// UpdatePanel13 control.
         /// </summary>
@@ -614,7 +616,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel13;
-        
+
         /// <summary>
         /// AutoCompleteExtender13 control.
         /// </summary>
@@ -623,7 +625,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender13;
-        
+
         /// <summary>
         /// tbStartRow3 control.
         /// </summary>
@@ -632,7 +634,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow3;
-        
+
         /// <summary>
         /// AutoCompleteExtender14 control.
         /// </summary>
@@ -641,7 +643,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender14;
-        
+
         /// <summary>
         /// tbTargetRow3 control.
         /// </summary>
@@ -650,7 +652,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow3;
-        
+
         /// <summary>
         /// rangeDdl control.
         /// </summary>
@@ -659,7 +661,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList rangeDdl;
-        
+
         /// <summary>
         /// DBDdl3 control.
         /// </summary>
@@ -668,7 +670,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl3;
-        
+
         /// <summary>
         /// submit3 control.
         /// </summary>
@@ -677,7 +679,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit3;
-        
+
         /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
@@ -686,7 +688,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
-        
+
         /// <summary>
         /// AutoCompleteExtender15 control.
         /// </summary>
@@ -695,7 +697,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender15;
-        
+
         /// <summary>
         /// tbStartRow7 control.
         /// </summary>
@@ -704,7 +706,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow7;
-        
+
         /// <summary>
         /// AutoCompleteExtender16 control.
         /// </summary>
@@ -713,7 +715,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender16;
-        
+
         /// <summary>
         /// tbTargetRow7 control.
         /// </summary>
@@ -722,7 +724,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow7;
-        
+
         /// <summary>
         /// DBDdl7 control.
         /// </summary>
@@ -731,7 +733,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl7;
-        
+
         /// <summary>
         /// submit7 control.
         /// </summary>
@@ -740,7 +742,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit7;
-        
+
         /// <summary>
         /// UpdatePanel15 control.
         /// </summary>
@@ -749,7 +751,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel15;
-        
+
         /// <summary>
         /// AutoCompleteExtender17 control.
         /// </summary>
@@ -758,7 +760,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender17;
-        
+
         /// <summary>
         /// tbStartRow13 control.
         /// </summary>
@@ -767,7 +769,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbStartRow13;
-        
+
         /// <summary>
         /// AutoCompleteExtender18 control.
         /// </summary>
@@ -776,7 +778,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender18;
-        
+
         /// <summary>
         /// tbTargetRow13 control.
         /// </summary>
@@ -785,7 +787,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbTargetRow13;
-        
+
         /// <summary>
         /// DBDdl13 control.
         /// </summary>
@@ -794,7 +796,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DBDdl13;
-        
+
         /// <summary>
         /// submit13 control.
         /// </summary>
@@ -803,7 +805,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit13;
-        
+
         /// <summary>
         /// ImageChart control.
         /// </summary>
@@ -812,7 +814,52 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageChart;
-        
+
+        /// <summary>
+        /// UpdatePanel20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel20;
+
+        /// <summary>
+        /// txtTickets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTickets;
+
+        /// <summary>
+        /// rblReductionType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblReductionType;
+
+        /// <summary>
+        /// txtTicketCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTicketCount;
+
+        /// <summary>
+        /// btnProduceTickets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProduceTickets;
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -821,7 +868,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// output control.
         /// </summary>
@@ -830,7 +877,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label output;
-        
+
         /// <summary>
         /// UpdatePanel16 control.
         /// </summary>
@@ -839,7 +886,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel16;
-        
+
         /// <summary>
         /// Chart1 control.
         /// </summary>
@@ -848,7 +895,7 @@ namespace Lottotry.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
-        
+
         /// <summary>
         /// lblError control.
         /// </summary>

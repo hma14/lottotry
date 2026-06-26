@@ -22,7 +22,7 @@ namespace Lottotry.Members
         DataAccessLayer dataAccess = new DataAccessLayer();
         TimeSpan SlidingExpiration = TimeSpan.FromDays(1);
         AutoDraw autoDraw = null;
-        
+
         PotentialNumbers pn = null;
         PotentialNumbers potent = null;
         static bool potentialDrawCacheNeedUpdate = true;
@@ -42,8 +42,8 @@ namespace Lottotry.Members
             output.Text = "";
             output.Visible = false;
             uid = HttpContext.Current.User.Identity.Name;
-            
- 
+
+
             //Add jQuery function
             tbTargetDraw4.Attributes.Add("onclick", "highLightBackColor();");
             tbTargetDraw8.Attributes.Add("onclick", "highLightBackColor();");
@@ -55,7 +55,7 @@ namespace Lottotry.Members
             tbStartRow6.Attributes.Add("onclick", "highLightBackColor();");
             tbStartRow7.Attributes.Add("onclick", "highLightBackColor();");
 
-            
+
 
             Chart1.Visible = false;
             if (!this.IsPostBack)  // Only do below on first time the page is loaded.
@@ -65,7 +65,7 @@ namespace Lottotry.Members
 
                 Util.InitLogoDic();
                 Util.InitColumnnsOfLotto_no_bonus();
-                Util.InitColumnnsOfLotto(); 
+                Util.InitColumnnsOfLotto();
                 Util.InitBonusColName();
                 Util.InitCacheFile(rootDir);
                 Util.InitLottoNumberRanges();
@@ -94,15 +94,15 @@ namespace Lottotry.Members
                 DistDdl.SelectedIndex = 30;
                 DistDdl4.SelectedIndex = 10;
 
-                
+
 
                 // Fill All DropDownList
                 try
                 {
 
                     dataAccess.OpenConnection();
-                    
-                   
+
+
 #if false
                     SqlDataReader reader = dataAccess.SpGetLottoName();
                     while (reader.Read())
@@ -122,7 +122,7 @@ namespace Lottotry.Members
 #else
                     int dummy = 1;
                     DataTable dt = dataAccess.SpGetLottoName(dummy);
-                    
+
                     DBDdl1.DataSource = dt;
                     DBDdl1.DataTextField = "Name";
                     DBDdl1.DataValueField = "id";
@@ -148,7 +148,7 @@ namespace Lottotry.Members
                     DBDdl5.DataSource = dt;
                     DBDdl5.DataTextField = "Name";
                     DBDdl5.DataValueField = "id";
-                    
+
                     DBDdl5.DataBind();
 
                     DBDdl6.DataSource = dt;
@@ -196,10 +196,10 @@ namespace Lottotry.Members
 
 #endif
                     setDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 13);
-                   
+
                     setLoadLottoLogo((Database)int.Parse(DBDdl12.SelectedValue));
-                    
-                    
+
+
                 }
                 catch (SqlException ex)
                 {
@@ -210,7 +210,7 @@ namespace Lottotry.Members
                     dataAccess.CloseConnection();
                 }
             }
-            
+
         }
 
         private void AddFloridaPick3Items(DropDownList ddl)
@@ -251,14 +251,14 @@ namespace Lottotry.Members
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             Session["DefaultTabbedPanel"] = 3;
-          
+
 
             dataAccess.OpenConnection();
             if (!dataAccess.SpIsSameSession(uid, Session.SessionID) || !dataAccess.SpIsLoggedIn(uid))
             {
-               dataAccess.CloseConnection();             
+                dataAccess.CloseConnection();
 
-               Response.Redirect("/memberLogin.aspx");
+                Response.Redirect("/memberLogin.aspx");
             }
             dataAccess.CloseConnection();
 
@@ -271,7 +271,7 @@ namespace Lottotry.Members
             }
             Database db = (Database)int.Parse(DBDdl1.SelectedItem.Value);
             //setDBDropDownSelectedItem(DBDdl1.SelectedIndex);
-            
+
             if (tbStartRow.Text != "")
             {
                 start = int.Parse(tbStartRow.Text);
@@ -313,7 +313,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
             int target = 0;
             if (tbTarget.Text != "")
@@ -322,7 +322,7 @@ namespace Lottotry.Members
             }
             Database db = (Database)int.Parse(DBDdl2.SelectedItem.Value);
             //setDBDropDownSelectedItem(DBDdl2.SelectedIndex);
-           
+
             int dist = int.Parse(DistDdl.SelectedItem.Value);
             int scale = int.Parse(scalesDdl.SelectedItem.Value);
 
@@ -346,7 +346,7 @@ namespace Lottotry.Members
                                                             scale,
                                                             out dbExecTime);
                 }
-                    
+
 
                 stopWatch.Stop();
                 if (HttpContext.Current.User.Identity.Name.Equals("hma14"))
@@ -376,7 +376,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
             int start = 0;
             int target = 0;
@@ -426,7 +426,7 @@ namespace Lottotry.Members
                     stat6CacheNeedUpdate = false;
                 }
                 catch (Exception exp)
-                {                   
+                {
                     Response.Write(exp.Message);
                 }
             }
@@ -440,7 +440,7 @@ namespace Lottotry.Members
             {
                 stmt += string.Format("<p class='dbexectime'>Database execution time: {0} ms</p>", dbExecTime);
                 stmt += string.Format("<p class='dbexectime'>Round trip execution time: {0} ms</p>", stopWatch.Elapsed.Milliseconds);
-                
+
             }
             Response.Write(stmt);
         }
@@ -458,7 +458,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
             int start = 0;
             int target = 0;
@@ -486,7 +486,7 @@ namespace Lottotry.Members
                 {
                     stmt += string.Format("<p class='dbexectime'>Database execution time: {0} ms</p>", dbExecTime);
                     stmt += string.Format("<p class='dbexectime'>Round trip execution time: {0} ms</p>", stopWatch.Elapsed.Milliseconds);
-                
+
                 }
                 Response.Write(stmt);
             }
@@ -509,7 +509,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
 
             int start = 0;
@@ -599,7 +599,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
 
             int start = 0;
@@ -678,7 +678,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
 
             int start = 0, target = 0;
@@ -694,7 +694,7 @@ namespace Lottotry.Members
             //setDBDropDownSelectedItem(DBDdl7.SelectedIndex);
 
             this.Visible = false;
-   
+
             //CacheDependency dependency = new CacheDependency(Util.getCacheFile(db));
             string stmt = "";
             long dbExecTime = 0;
@@ -754,7 +754,7 @@ namespace Lottotry.Members
                 Response.Redirect("/memberLogin.aspx");
             }
 
-            
+
             dataAccess.CloseConnection();
             int target = 0;
             int numHot, hotMin, hotMax,
@@ -887,7 +887,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
             int target = 0;
             int numHot, hotMin, hotMax,
@@ -916,7 +916,7 @@ namespace Lottotry.Members
             sumMax = int.Parse(ConfigForm2.TbSumMax);
             odds = int.Parse(ConfigForm2.TbOdds);
 
-            
+
 
 
             if (tbTargetDraw10.Text != "")
@@ -935,7 +935,7 @@ namespace Lottotry.Members
             string cachedPotentialDraw = "CachedPotentialDraw";
             try
             {
-                if (Cache[cachedPotentialDraw] == null || potentialDrawCacheNeedUpdate )
+                if (Cache[cachedPotentialDraw] == null || potentialDrawCacheNeedUpdate)
                 {
 
                     potent = new PotentialNumbers(db, fromSite);
@@ -1161,7 +1161,7 @@ namespace Lottotry.Members
                 Response.Redirect("~/memberLogin.aspx");
             }
 
-            
+
 
             dataAccess.CloseConnection();
             int target = 0;
@@ -1194,10 +1194,10 @@ namespace Lottotry.Members
             if (tbTargetDraw4.Text != "")
             {
                 target = int.Parse(tbTargetDraw4.Text);
-            }         
+            }
 
             Database db = (Database)int.Parse(DBDdl12.SelectedItem.Value);
-           
+
 
             output.Visible = true;
             output.Text = "";
@@ -1238,7 +1238,7 @@ namespace Lottotry.Members
                 dataAccess.CloseConnection();
                 Response.Redirect("~/memberLogin.aspx");
             }
-            
+
             dataAccess.CloseConnection();
 
             int start = 0, target = 0;
@@ -1251,10 +1251,10 @@ namespace Lottotry.Members
                 target = int.Parse(tbTargetRow13.Text.Trim());
             }
             Database db = (Database)int.Parse(DBDdl13.SelectedItem.Value);
-            
+
             //CacheDependency dependency = new CacheDependency(Util.getCacheFile(db));
 
-            int num = Util.retrieveNumFromMethodName(System.Reflection.MethodBase.GetCurrentMethod().Name);           
+            int num = Util.retrieveNumFromMethodName(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string cacheKey = Util.getCacheName(db, num);
 
             Dictionary<int, int> freq = new Dictionary<int, int>();
@@ -1264,7 +1264,7 @@ namespace Lottotry.Members
                 try
                 {
                     PotentialNumbers pn = new PotentialNumbers(db, fromSite);
-                    
+
                     freq = pn.getChartData(db, start, target);
 
                     if (Cache[cacheKey] != null)
@@ -1302,7 +1302,7 @@ namespace Lottotry.Members
             for (int i = 0; i < freq.Count; ++i)
             {
                 var row = table.NewRow();
-                
+
                 row["Freq"] = freq[i];
 
                 if (totalLottoNumbers > Util.SMALL_LOTTO_NUMBERS && columnNumbers > Util.SMALL_COLUMN_NUMBERS)
@@ -1371,7 +1371,7 @@ namespace Lottotry.Members
         }
 
 
-        
+
 
 #if false
         protected void scalesDdl5_SelectedIndexChanged(object sender, EventArgs e)
@@ -1388,14 +1388,14 @@ namespace Lottotry.Members
             ConfigForm2.setSumMinMax(db);
         }
 
-       
+
 
         protected void tbTargetDraw8_TextChanged(object sender, EventArgs e)
         {
             AutoDrawConfig1.AutoDrawCacheNeedUpdate = true;
         }
 
-        
+
 
         protected void tbTargetDraw10_TextChanged(object sender, EventArgs e)
         {
@@ -1586,7 +1586,7 @@ namespace Lottotry.Members
 
         protected void tbStartRow13_TextChanged(object sender, EventArgs e)
         {
-            chartCacheNeedUpdate = true;           
+            chartCacheNeedUpdate = true;
         }
 
         protected void tbTargetRow13_TextChanged(object sender, EventArgs e)
@@ -1594,9 +1594,12 @@ namespace Lottotry.Members
             chartCacheNeedUpdate = true;
         }
 
-       
 
+        protected void btnProduceTickets_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
-
 
