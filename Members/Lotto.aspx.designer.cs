@@ -834,13 +834,31 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.TextBox txtTickets;
 
         /// <summary>
-        /// rblReductionType control.
+        /// rbRandom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblReductionType;
+        protected global::System.Web.UI.WebControls.RadioButton rbRandom;
+
+        /// <summary>
+        /// rbSystemic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbSystemic;
+
+        /// <summary>
+        /// rbSmart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbSmart;
 
         /// <summary>
         /// txtTicketCount control.

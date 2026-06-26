@@ -37,6 +37,21 @@
         {
             width: 100px;
         }
+        .radioButton{
+            margin-right:5px;
+        }
+        label
+        {
+            color:#0f1013ba;
+        }
+        .legend
+        {
+            margin-left:25px;
+            margin-bottom:10px;
+            color:blueviolet;
+            font-size:small;
+                
+        }
     </style>
     <script type="text/javascript" language="javascript">
 
@@ -1757,59 +1772,66 @@ function resetDDL(nodeId) {
                             <div class="tblUserInput" >                            
                                 <h3>Lotto Reduction</h3>
 
-                            <div>
-                                ENTER TICKETS:
-                            </div>
-
-                            <asp:TextBox
-                                ID="txtTickets"
-                                runat="server"
-                                TextMode="MultiLine"
-                                Rows="30"
-                                Width="100%" style="box-sizing:border-box;"  >
-                          
-                            </asp:TextBox>
-
-                            <br /><br />
-
-                            <asp:RadioButtonList
-                                ID="rblReductionType"
-                                runat="server"
-                                RepeatDirection="Horizontal"
-                                RepeatLayout="Table"
-                                AutoPostBack="true" >
-
-                                <asp:ListItem Value="Random" Selected="True">
-                                    Random Reduction
-                                </asp:ListItem>
-
-                                <asp:ListItem Value="Systemic">
-                                    Systemic Reduction
-                                </asp:ListItem>
-
-                                <asp:ListItem Value="Smart">
-                                    Smart Reduction
-                                </asp:ListItem>
-
-                            </asp:RadioButtonList>
-
-                            <br />
-
-                            Tickets To Play:
-
-                            <asp:TextBox
-                                ID="txtTicketCount"
-                                runat="server"
-                                Width="60px">
-                            </asp:TextBox>
-
-                            <br /><br />
-                            <div style="text-align:right; margin-top:10px;">
-                                <asp:Button
-                                    ID="btnProduceTickets"
+                            
+                            <div style="margin:10px;">
+                                <label>
+                                    ENTER TICKETS:
+                                </label>
+                                <asp:TextBox  
+                                    ID="txtTickets"
                                     runat="server"
+                                    TextMode="MultiLine"
+                                    Rows="30"
+                                    Width="100%" style="box-sizing:border-box; margin-bottom:20px;" >
+                          
+                                </asp:TextBox>
+
+                              
+
+                                <asp:RadioButton ID="rbRandom"
+                                    runat="server"
+                                    GroupName="Reduction"
+                                    Text="Random Reduction"
+                                    Checked="true" />
+
+                                <div class="legend">
+                                    Randomly selects the requested number of tickets.
+                                </div>
+
+                                <asp:RadioButton ID="rbSystemic"
+                                    runat="server"
+                                    GroupName="Reduction"
+                                    Text="Systemic Reduction" />
+
+                                <div class="legend">
+                                    Removes tickets according to a fixed interval.
+                                </div>
+
+                                <asp:RadioButton ID="rbSmart"
+                                    runat="server"
+                                    GroupName="Reduction"
+                                    Text="Smart Reduction" />
+
+                                <div class="legend">
+                                    Uses recent draw history and ticket analysis.
+                                </div>
+
+                                <br />
+
+                                <label>Tickets To Play:
+                                    <asp:TextBox
+                                        ID="txtTicketCount"
+                                        runat="server"
+                                        Width="60px">
+                                    </asp:TextBox>
+                                </label>
+                                <div style="text-align:right; margin-top:10px;">
+                                    <asp:Button
+                                        ID="btnProduceTickets"
+                                        runat="server"
                                     Text="PRODUCE TICKETS" class="buttonGen"  SkinID="buttonSkin" Width="200" />
                                 </div>
+                            </div>
                         </ContentTemplate>
                     </asp:UpdatePanel>
 
