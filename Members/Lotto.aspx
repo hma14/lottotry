@@ -98,155 +98,176 @@
 			    $find('<%=AutoCompleteExtender17.ClientID %>').set_contextKey($get("<%=DBDdl13.ClientID %>").value);
 			    $find('<%=AutoCompleteExtender18.ClientID %>').set_contextKey($get("<%=DBDdl13.ClientID %>").value);
 			}
+        }
+
+        //  Non-AJAX spinner
+        $(function () {
+            $('.buttons').click(function () {
+                $('#spinner').show();
+            });
+        });
+
+        function resetDDL(nodeId) {
+            if (nodeId == "DBDdl12") {
+
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+                //$get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl10") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+                // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl1") {
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+                $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl2") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+                // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl3") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+                //  $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl4") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+                // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl5") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+                // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
+            }
+            else if (nodeId == "DBDdl6") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+                $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
+            }
+
+            else if (nodeId == "DBDdl7") {
+                $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			            // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
+			        }
+
+			        else if (nodeId == "DBDdl8") {
+			            $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			            // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
+			        }
+			        else if (nodeId == "DBDdl13") {
+			            $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			            // $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
+			        }
+
+        }
 
 
-}
 
-//  Non-AJAX spinner
-$(function () {
-    $('.buttons').click(function () {
-        $('#spinner').show();
-    });
-});
+        function reductionChanged() {
 
-function resetDDL(nodeId) {
-    if (nodeId == "DBDdl12") {
+            if (document.getElementById('<%= rbRandom.ClientID %>').checked) {
+                document.getElementById('divTicketCount').style.display = '';
+                document.getElementById('divDeleteLines').style.display = 'none';
+                document.getElementById('divNumStats').style.display = 'none';
+            }
+            else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
+                document.getElementById('divTicketCount').style.display = 'none';
+                document.getElementById('divNumStats').style.display = 'none';
+                document.getElementById('divDeleteLines').style.display = '';
+            }
+            else {
+                document.getElementById('divNumStats').style.display = '';
+                document.getElementById('divTicketCount').style.display = 'none';
+                document.getElementById('divDeleteLines').style.display = 'none';
+            }
+        }
 
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-        //$get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl12.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl10") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-        // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl10.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl1") {
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-        $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl1.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl2") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-        // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl2.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl3") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-        //  $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl3.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl4") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-        // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl4.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl5") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-        // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl5.ClientID %>").value;
-    }
-    else if (nodeId == "DBDdl6") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-        $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl6.ClientID %>").value;
-    }
-
-    else if (nodeId == "DBDdl7") {
-        $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			    // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl7.ClientID %>").value;
-			}
-
-			else if (nodeId == "DBDdl8") {
-			    $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			    // $get("<%=DBDdl13.ClientID %>").value = $get("<%=DBDdl8.ClientID %>").value;
-			}
-			else if (nodeId == "DBDdl13") {
-			    $get("<%=DBDdl1.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl2.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl3.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl4.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl5.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl6.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl7.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl8.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    $get("<%=DBDdl10.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			    // $get("<%=DBDdl12.ClientID %>").value = $get("<%=DBDdl13.ClientID %>").value;
-			}
-
-}
+        //window.onload = reductionChanged;
 
 
 
@@ -1791,8 +1812,9 @@ function resetDDL(nodeId) {
                                 <asp:RadioButton ID="rbRandom"
                                     runat="server"
                                     GroupName="Reduction"
-                                    Text="Random Reduction"
-                                    Checked="true" />
+                                    Text=" Random Reduction"
+                                    Checked="true" 
+                                    onclick="reductionChanged();" />
 
                                 <div class="legend">
                                     Randomly selects the requested number of tickets.
@@ -1801,7 +1823,8 @@ function resetDDL(nodeId) {
                                 <asp:RadioButton ID="rbSystemic"
                                     runat="server"
                                     GroupName="Reduction"
-                                    Text="Systemic Reduction" />
+                                    Text=" Systemic Reduction" 
+                                    onclick="reductionChanged();" />
 
                                 <div class="legend">
                                     Removes tickets according to a fixed interval.
@@ -1810,21 +1833,62 @@ function resetDDL(nodeId) {
                                 <asp:RadioButton ID="rbSmart"
                                     runat="server"
                                     GroupName="Reduction"
-                                    Text="Smart Reduction" />
+                                    Text=" Smart Reduction" 
+                                    onclick="reductionChanged();" />
 
                                 <div class="legend">
                                     Uses recent draw history and ticket analysis.
                                 </div>
 
                                 <br />
+                                <hr />
+                                <br />
 
-                                <label>Tickets To Play:
+                                <div id="divTicketCount">
+                                    Tickets To Play:
                                     <asp:TextBox
                                         ID="txtTicketCount"
                                         runat="server"
-                                        Width="60px">
-                                    </asp:TextBox>
-                                </label>
+                                        Width="60px" />
+                                </div>
+
+                                <div id="divDeleteLines" style="display:none;">
+                                    Delete Every
+                                    <asp:TextBox
+                                        ID="txtDeleteLines"
+                                        runat="server"
+                                        Width="60px" />
+                                    Lines
+                                </div>
+
+                                <div id="divNumStats" style="display:none;">
+                                    Select numbers of :
+                                    <asp:TextBox
+                                        ID="TextBox1"
+                                        runat="server"
+                                        Width="60px" />
+                                    Hot, 
+                                    <asp:TextBox
+                                        ID="TextBox2"
+                                        runat="server"
+                                        Width="60px" />
+                                    Cold,
+                                    <asp:TextBox
+                                        ID="TextBox3"
+                                        runat="server"
+                                        Width="60px" />
+                                    Warm
+                                    <br /><label> Based on number's distance value. For example
+                                    <ul>
+                                      <li>Hot: distance < 5</li> 
+                                      <li>Varm: 5 <= distance < 10</li> 
+                                      <li>Cold: distance >= 10</li> 
+                                    </ul>
+                                      <br />Note: the total numbers cannot beyond current lotto's numbers. 
+                                        </label>
+                                </div> 
+                                
+
                                 <div style="text-align:right; margin-top:10px;">
                                     <asp:Button
                                         ID="btnProduceTickets"
