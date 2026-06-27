@@ -1878,14 +1878,15 @@
                                         runat="server"
                                         Width="60px" />
                                     Warm
-                                    <br /><label> Based on number's distance value. For example
-                                    <ul>
-                                      <li>Hot: distance < 5</li> 
-                                      <li>Varm: 5 <= distance < 10</li> 
-                                      <li>Cold: distance >= 10</li> 
-                                    </ul>
-                                      <br />Note: the total numbers cannot beyond current lotto's numbers. 
-                                        </label>
+                                    <br />
+                                    <label> Based on number's distance value. For example
+                                        <ul>
+                                          <li>Hot: distance < 5</li> 
+                                          <li>Varm: 5 <= distance < 10</li> 
+                                          <li>Cold: distance >= 10</li> 
+                                        </ul>
+                                        <br />Note: the total numbers cannot beyond current lotto's numbers. 
+                                    </label>
                                 </div> 
                                 
 
