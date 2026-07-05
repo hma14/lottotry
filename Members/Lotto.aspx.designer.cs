@@ -825,6 +825,24 @@ namespace Lottotry.Members
         protected global::System.Web.UI.UpdatePanel UpdatePanel20;
 
         /// <summary>
+        /// lblGeneratedCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGeneratedCount;
+
+        /// <summary>
+        /// lblResultCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultCount;
+
+        /// <summary>
         /// txtTickets control.
         /// </summary>
         /// <remarks>
@@ -832,6 +850,15 @@ namespace Lottotry.Members
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTickets;
+
+        /// <summary>
+        /// txtResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtResults;
 
         /// <summary>
         /// rbRandom control.
@@ -877,6 +904,15 @@ namespace Lottotry.Members
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDeleteLines;
+
+        /// <summary>
+        /// txtKeepLines control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKeepLines;
 
         /// <summary>
         /// TextBox1 control.

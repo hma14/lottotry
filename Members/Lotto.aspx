@@ -246,30 +246,96 @@
 
         }
 
+        function resetInputs() {
+            document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
+            document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
+            document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
+        }
 
+        function clearReductionInputs() {
+
+            document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
+            document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
+            document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
+        }
 
         function reductionChanged() {
+
+            //clearReductionInputs()
 
             if (document.getElementById('<%= rbRandom.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = '';
                 document.getElementById('divDeleteLines').style.display = 'none';
+                document.getElementById('divKeepLines').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
+
+                
             }
             else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = '';
+                document.getElementById('divKeepLines').style.display = '';
+
+                
             }
             else {
                 document.getElementById('divNumStats').style.display = '';
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = 'none';
+                document.getElementById('divKeepLines').style.display = 'none';
             }
         }
 
-        //window.onload = reductionChanged;
+        //window.addEventListener("load", reductionChanged);
+
+        //Sys.Application.add_load(reductionChanged);
 
 
+        function generateLottoTickets(numbersPerDraw, maxNumber) {
+
+            var ticketCount =
+                parseInt(document.getElementById("rngTicketCount").value);
+
+            var allTickets = [];
+
+            for (var i = 0; i < ticketCount; i++) {
+
+                var nums = [];
+
+                while (nums.length < numbersPerDraw) {
+
+                    var n = Math.floor(Math.random() * maxNumber) + 1;
+
+                    //if (nums.indexOf(n) == -1)
+                    //    nums.push(n);
+                    if (!nums.includes(n)) {
+                        nums.push(n);
+                    }
+                }
+
+                nums.sort(function (a, b) {
+                    return a - b;
+                });
+
+                var line = nums.map(function (n) {
+                    return ("0" + n).slice(-2);
+                }).join(" ");
+
+                allTickets.push(line);
+            }
+
+            document.getElementById("<%= txtTickets.ClientID %>").value =
+                allTickets.join("\n");
+            document.getElementById("<%=lblGeneratedCount.ClientID %>").innerText = allTickets.length;
+        }
+
+        function updateTicketCount() {
+
+            var count = document.getElementById("rngTicketCount").value;
+
+            document.getElementById("lblTicketCount").innerHTML = count;
+        }
 
     </script>
 </asp:Content>
@@ -1781,7 +1847,7 @@
                     </asp:UpdatePanel>
                 </div>
 
-                  <%--Lotto Reductions--%>
+                <%--Lotto Reductions--%>
                 <div class="TabbedPanelsContent">
                     <p>
                         This function provides reduction modes on choosing lotto tickets: <a class="more11" href="#">details</a>
@@ -1790,24 +1856,83 @@
                     <asp:UpdatePanel ID="UpdatePanel20" runat="server" UpdateMode="Always">
                         <ContentTemplate>
                   
-                            <div class="tblUserInput" >                            
+                            <div class="tblUserInput" >   
                                 <h3>Lotto Reduction</h3>
-
+                               
                             
                             <div style="margin:10px;">
-                                <label>
-                                    ENTER TICKETS:
-                                </label>
-                                <asp:TextBox  
-                                    ID="txtTickets"
-                                    runat="server"
-                                    TextMode="MultiLine"
-                                    Rows="30"
-                                    Width="100%" style="box-sizing:border-box; margin-bottom:20px;" >
-                          
-                                </asp:TextBox>
+                                <div>
+                                    <h5>
+                                        ENTER TICKETS:
+                                    </h5>
+                                     <div  style="text-align:right;margin:10px;">
+                                         <input  type="button"
+                                                 value="Generate Florida Fantasy 5 Tickets"
+                                                 onclick="generateLottoTickets(5, 36);"  class="buttonGen_long" />
+                                         <input  type="button"
+                                                 value="Generate Florida Lotto Tickets"
+                                                 onclick="generateLottoTickets(6, 53);"  class="buttonGen_long" />
+                                                                             
+                                         <div style="margin:10px 0;">
 
-                              
+                                            Number of Tickets:
+                                            <span id="lblTicketCount">20</span>
+
+                                            <br />
+
+                                            <input type="range"
+                                                    id="rngTicketCount"
+                                                    min="10"
+                                                    max="100"
+                                                    step="5"
+                                                    value="20"
+                                                    oninput="updateTicketCount();"  class="buttonGen_long"  />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <table style="width:100%; border-collapse:collapse;">
+                                    <tr>
+                                        <th style="width:50%; text-align:left; padding-bottom:8px;">
+                                            Generated Tickets
+                                            (<asp:Label ID="lblGeneratedCount" runat="server" Text="0" />)
+                                        </th>
+                                        <th style="width:50%; text-align:left; padding-bottom:8px;">
+                                            Reduction Results                                           
+                                            (<asp:Label ID="lblResultCount" runat="server" Text="0" />)
+                                        </th>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-right:10px; vertical-align:top;">
+
+                                            <asp:TextBox
+                                                ID="txtTickets"
+                                                runat="server"
+                                                TextMode="MultiLine"
+                                                Rows="25"
+                                                Width="100%"
+                                                style="box-sizing:border-box;">
+                                            </asp:TextBox>
+
+                                        </td>
+
+                                        <td style="padding-left:10px; vertical-align:top;">
+
+                                            <asp:TextBox
+                                                ID="txtResults"
+                                                runat="server"
+                                                TextMode="MultiLine"
+                                                Rows="25"
+                                                Width="100%"
+                                                ReadOnly="true"
+                                                style="box-sizing:border-box;">
+                                            </asp:TextBox>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                               
 
                                 <asp:RadioButton ID="rbRandom"
                                     runat="server"
@@ -1844,7 +1969,7 @@
                                 <hr />
                                 <br />
 
-                                <div id="divTicketCount">
+                                <div id="divTicketCount" style="margin-bottom:10px;">
                                     Tickets To Play:
                                     <asp:TextBox
                                         ID="txtTicketCount"
@@ -1852,14 +1977,24 @@
                                         Width="60px" />
                                 </div>
 
-                                <div id="divDeleteLines" style="display:none;">
+                                <div id="divDeleteLines" style="display:none; margin-bottom:10px;">
                                     Delete Every
                                     <asp:TextBox
                                         ID="txtDeleteLines"
                                         runat="server"
                                         Width="60px" />
                                     Lines
+                                    <span>OR</span> 
+                                    Keep Every
+                                    <asp:TextBox
+                                        ID="txtKeepLines"
+                                        runat="server"
+                                        Width="60px" />
+                                    Lines
                                 </div>
+                                <input  type="button"
+                                    value="Reset Inputs"
+                                    onclick="resetInputs();"  class="buttonGen_long" />
 
                                 <div id="divNumStats" style="display:none;">
                                     Select numbers of :
@@ -1894,7 +2029,7 @@
                                     <asp:Button
                                         ID="btnProduceTickets"
                                         runat="server"
-                                    Text="PRODUCE TICKETS" class="buttonGen"  SkinID="buttonSkin" Width="200" />
+                                    Text="PRODUCE TICKETS" class="buttonGen"  SkinID="buttonSkin" OnClick="btnProduceTickets_Click" Width="200" />
                                 </div>
                             </div>
                         </ContentTemplate>

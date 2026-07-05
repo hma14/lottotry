@@ -7,8 +7,10 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
 using System.Web;
 using System.Web.Caching;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Lottotry.Members
@@ -1595,10 +1597,115 @@ namespace Lottotry.Members
         }
 
 
+        private List<string> RandomReduction(
+                    List<string> tickets,
+                    int keepCount)
+        {
+            Random rnd = new Random();
+
+            return tickets
+                .OrderBy(x => rnd.Next())
+                .Take(keepCount)
+                .ToList();
+        }
+
+        private List<string> SystemicReduction_keep(
+            List<string> tickets,
+            int keepEvery)
+        {
+            List<string> res = new List<string>();
+            for (int i = 0; i < tickets.Count; i++)
+            {
+                if (i % keepEvery == 0)
+                {
+                    res.Add(tickets[i]);
+                }
+            }
+            return res;
+        }
+        private List<string> SystemicReduction_delete(
+            List<string> tickets,
+            int deleteEvery)
+        {
+            List<string> res = new List<string>();
+            for (int i = 0; i < tickets.Count; i++)
+            {
+                if (i % deleteEvery != 0)
+                {
+                    res.Add(tickets[i]);
+                }
+            }
+            return res;
+        }
+
+        private List<string> SmartReduction(
+            List<string> tickets,
+            int keepCount)
+        {
+            return null;
+        }
+
+        private List<string> RandomReduction_Fisher_Yates_shuffle(
+            List<string> tickets, 
+            int keepCount)
+        {
+            Random rnd = new Random();
+
+            // Make a copy so we don't modify the original list
+            List<string> shuffled = new List<string>(tickets);
+
+            for (int i = shuffled.Count - 1; i > 0; i--)
+            {
+                int j = rnd.Next(i + 1);
+
+                (shuffled[j], shuffled[i]) = (shuffled[i], shuffled[j]);             
+            }
+
+            return shuffled.Take(keepCount).ToList();
+        }
+
         protected void btnProduceTickets_Click(object sender, EventArgs e)
         {
+            List<string> tickets = txtTickets.Text
+                .Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
 
+            List<string> result;
 
+            if (rbRandom.Checked)
+            {
+#if false
+                result = RandomReduction(tickets, int.Parse(txtTicketCount.Text));
+#else
+                result = RandomReduction_Fisher_Yates_shuffle(tickets, int.Parse(txtTicketCount.Text));
+#endif
+            }
+            else if (rbSystemic.Checked)
+            {
+                if(txtDeleteLines.Text != "")
+                {
+                    result = SystemicReduction_delete(tickets, int.Parse(txtDeleteLines.Text));
+                }
+                else
+                {
+                    result = SystemicReduction_keep(tickets, int.Parse(txtKeepLines.Text));
+                }                  
+            }
+            else
+            {
+                result = SmartReduction(tickets, int.Parse(txtTicketCount.Text));
+            }
+            lblGeneratedCount.Text = tickets.Count.ToString();
+            lblResultCount.Text = result.Count.ToString();
+
+            txtResults.Text = string.Join(Environment.NewLine, result);
+
+            ScriptManager.RegisterStartupScript(
+                this,
+                GetType(),
+                "ReductionChanged",
+                "reductionChanged();",
+                true);
         }
     }
 }
