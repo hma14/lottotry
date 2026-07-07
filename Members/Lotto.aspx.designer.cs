@@ -33,6 +33,15 @@ namespace Lottotry.Members
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
 
         /// <summary>
+        /// liLottoReduction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLottoReduction;
+
+        /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
@@ -816,13 +825,22 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.Image ImageChart;
 
         /// <summary>
-        /// UpdatePanel20 control.
+        /// pnlLottoReduction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel20;
+        protected global::System.Web.UI.UpdatePanel pnlLottoReduction;
+
+        /// <summary>
+        /// hfTicketCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfTicketCount;
 
         /// <summary>
         /// lblGeneratedCount control.

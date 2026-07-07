@@ -73,6 +73,13 @@ namespace Lottotry.Members
                 Util.InitLottoNumberRanges();
                 Util.InitTotalLottoNumbers();
 
+                bool canUseReduction =
+                uid.Equals("hma14", StringComparison.OrdinalIgnoreCase) ||
+                uid.Equals("admin", StringComparison.OrdinalIgnoreCase);
+
+                pnlLottoReduction.Visible = canUseReduction;
+                liLottoReduction.Visible = canUseReduction;
+
 
                 for (int i = 1; i <= 15; i++)
                 {
@@ -1703,8 +1710,9 @@ namespace Lottotry.Members
             ScriptManager.RegisterStartupScript(
                 this,
                 GetType(),
-                "ReductionChanged",
-                "reductionChanged();",
+                "RefreshReductionUI",
+                //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                "refreshReductionUI();",
                 true);
         }
     }

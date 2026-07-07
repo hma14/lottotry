@@ -262,7 +262,7 @@
         function reductionChanged() {
 
             //clearReductionInputs()
-
+            
             if (document.getElementById('<%= rbRandom.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = '';
                 document.getElementById('divDeleteLines').style.display = 'none';
@@ -331,12 +331,22 @@
         }
 
         function updateTicketCount() {
-
+           
             var count = document.getElementById("rngTicketCount").value;
 
             document.getElementById("lblTicketCount").innerHTML = count;
+            document.getElementById("<%= hfTicketCount.ClientID %>").value = count;
         }
 
+        function refreshReductionUI() {
+            var hiddenValue = document.getElementById("<%= hfTicketCount.ClientID %>").value;
+            document.getElementById('rngTicketCount').value = hiddenValue;
+
+            updateTicketCount();
+            reductionChanged();
+            //updateResultCount();
+            //setStatus("Ready");
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="cphcontent" runat="server">
@@ -397,7 +407,11 @@
                 <li class="TabbedPanelsTab" tabindex="8">Stat 6</li>
                 <li class="TabbedPanelsTab" tabindex="9">Stat 7</li>
                 <li class="TabbedPanelsTab" tabindex="10">Chart</li>
-                <li class="TabbedPanelsTab" tabindex="11">Lotto Reduction</li>
+                <li ID="liLottoReduction" runat="server" class="TabbedPanelsTab" tabindex="11">Lotto Reduction</li>
+
+<%--                <% if (HttpContext.Current.User.Identity.Name.Equals("hma14")) { %>
+                    <li ID="liLottoReduction" runat="server" class="TabbedPanelsTab" tabindex="11">Lotto Reduction</li>
+                <% } %>--%>
 
             </ul>
             <div class="TabbedPanelsContentGroup">
@@ -1853,7 +1867,7 @@
                         This function provides reduction modes on choosing lotto tickets: <a class="more11" href="#">details</a>
                     </p>
                     <p>to be contructed</p>
-                    <asp:UpdatePanel ID="UpdatePanel20" runat="server" UpdateMode="Always">
+                    <asp:UpdatePanel ID="pnlLottoReduction" runat="server" UpdateMode="Always">
                         <ContentTemplate>
                   
                             <div class="tblUserInput" >   
@@ -1879,7 +1893,7 @@
                                             <span id="lblTicketCount">20</span>
 
                                             <br />
-
+                                            <asp:HiddenField ID="hfTicketCount" runat="server" Value="20" />
                                             <input type="range"
                                                     id="rngTicketCount"
                                                     min="10"
@@ -1932,7 +1946,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                               
+                                <br />
 
                                 <asp:RadioButton ID="rbRandom"
                                     runat="server"
@@ -1994,7 +2008,7 @@
                                 </div>
                                 <input  type="button"
                                     value="Reset Inputs"
-                                    onclick="resetInputs();"  class="buttonGen_long" />
+                                    onclick="resetInputs();"  class="buttonGen" />
 
                                 <div id="divNumStats" style="display:none;">
                                     Select numbers of :
@@ -2036,6 +2050,7 @@
                     </asp:UpdatePanel>
 
                 </div>
+
             </div>
             <%--TabbedPanelsContentGroup--%>
         </div>
