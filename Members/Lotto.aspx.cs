@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.Caching;
@@ -73,9 +74,10 @@ namespace Lottotry.Members
                 Util.InitLottoNumberRanges();
                 Util.InitTotalLottoNumbers();
 
+                // Control Lotto Reduction visibility based on users
                 bool canUseReduction =
                 uid.Equals("hma14", StringComparison.OrdinalIgnoreCase) ||
-                uid.Equals("admin", StringComparison.OrdinalIgnoreCase);
+                uid.Equals("stella", StringComparison.OrdinalIgnoreCase);
 
                 pnlLottoReduction.Visible = canUseReduction;
                 liLottoReduction.Visible = canUseReduction;

@@ -347,6 +347,8 @@
             //updateResultCount();
             //setStatus("Ready");
         }
+
+
     </script>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="cphcontent" runat="server">
@@ -1988,7 +1990,9 @@
                                     <asp:TextBox
                                         ID="txtTicketCount"
                                         runat="server"
-                                        Width="60px" />
+                                        Width="60px" 
+                                        onclick="resetInputs();" 
+                                        />
                                 </div>
 
                                 <div id="divDeleteLines" style="display:none; margin-bottom:10px;">
@@ -1996,21 +2000,22 @@
                                     <asp:TextBox
                                         ID="txtDeleteLines"
                                         runat="server"
-                                        Width="60px" />
+                                        Width="60px"
+                                        onclick="resetInputs();"
+                                        />
                                     Lines
                                     <span>OR</span> 
                                     Keep Every
                                     <asp:TextBox
                                         ID="txtKeepLines"
                                         runat="server"
-                                        Width="60px" />
+                                        Width="60px" 
+                                        onclick="resetInputs();" 
+                                        />
                                     Lines
-                                </div>
-                                <input  type="button"
-                                    value="Reset Inputs"
-                                    onclick="resetInputs();"  class="buttonGen" />
 
-                                <div id="divNumStats" style="display:none;">
+                                </div>
+                                <div  id="divNumStats" style="display:none; margin-bottom:10px;">
                                     Select numbers of :
                                     <asp:TextBox
                                         ID="TextBox1"
