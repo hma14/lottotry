@@ -250,6 +250,9 @@
             document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
             document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
             document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
+            document.getElementById('<%= txtResults.ClientID %>').value = '';
+
+            
         }
 
         function clearReductionInputs() {
@@ -293,7 +296,7 @@
 
 
         function generateLottoTickets(numbersPerDraw, maxNumber) {
-
+            document.getElementById('<%= txtResults.ClientID %>').value = '';
             var ticketCount =
                 parseInt(document.getElementById("rngTicketCount").value);
 
