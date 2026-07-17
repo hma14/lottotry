@@ -1651,6 +1651,17 @@ namespace Lottotry.Members
             List<string> tickets,
             int keepCount)
         {
+            // loads the last 10 official draws for the database.
+
+
+            // Each ticket is scored.
+
+
+            // The tickets are sorted by score 
+
+
+            // The top N tickets are returned to the results textbox.
+            
             return null;
         }
 
@@ -1675,9 +1686,22 @@ namespace Lottotry.Members
 
         protected void btnProduceTickets_Click(object sender, EventArgs e)
         {
-            List<string> tickets = txtTickets.Text
-                .Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
-                .ToList();
+            lblMessage.Text = "";
+
+            List<string> tickets = txtTickets?.Text
+                ?.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                ?.ToList();
+            if (tickets == null || tickets.Count == 0)
+            {
+                lblMessage.Text = "Generate Tickets first!";
+                ClientScript.RegisterStartupScript(
+                GetType(),
+                "RefreshReductionUI",
+                "refreshReductionUI();",
+                true);
+                //return;
+            }
+
 
             List<string> result;
 

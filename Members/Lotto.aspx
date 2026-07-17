@@ -248,6 +248,7 @@
 
         function resetInputs() {
             document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
+            document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';
             document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
             document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
             document.getElementById('<%= txtResults.ClientID %>').value = '';
@@ -255,38 +256,25 @@
             
         }
 
-        function clearReductionInputs() {
-
-            document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
-            document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
-            document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
-        }
-
         function reductionChanged() {
-
-            //clearReductionInputs()
             
             if (document.getElementById('<%= rbRandom.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = '';
                 document.getElementById('divDeleteLines').style.display = 'none';
-                document.getElementById('divKeepLines').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
-
+                document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = ''; 
                 
             }
             else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = '';
-                document.getElementById('divKeepLines').style.display = '';
-
-                
+                document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';               
             }
             else {
                 document.getElementById('divNumStats').style.display = '';
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = 'none';
-                document.getElementById('divKeepLines').style.display = 'none';
             }
         }
 
@@ -2019,33 +2007,22 @@
 
                                 </div>
                                 <div  id="divNumStats" style="display:none; margin-bottom:10px;">
-                                    Select numbers of :
+                                    Tickets To Play:
                                     <asp:TextBox
-                                        ID="TextBox1"
+                                        ID="txtSmartTicketCount"
                                         runat="server"
-                                        Width="60px" />
-                                    Hot, 
-                                    <asp:TextBox
-                                        ID="TextBox2"
-                                        runat="server"
-                                        Width="60px" />
-                                    Cold,
-                                    <asp:TextBox
-                                        ID="TextBox3"
-                                        runat="server"
-                                        Width="60px" />
-                                    Warm
-                                    <br />
-                                    <label> Based on number's distance value. For example
-                                        <ul>
-                                          <li>Hot: distance < 5</li> 
-                                          <li>Varm: 5 <= distance < 10</li> 
-                                          <li>Cold: distance >= 10</li> 
-                                        </ul>
-                                        <br />Note: the total numbers cannot beyond current lotto's numbers. 
-                                    </label>
+                                        Width="60px" 
+                                        onclick="resetInputs();" 
+                                        />
                                 </div> 
-                                
+                                <div style="text-align:right; margin-top:10px;">
+                                    <asp:Label
+                                        ID="lblMessage"
+                                        runat="server"
+                                        ForeColor="Red"
+                                        EnableViewState="false">
+                                    </asp:Label>
+                                </div>
 
                                 <div style="text-align:right; margin-top:10px;">
                                     <asp:Button
