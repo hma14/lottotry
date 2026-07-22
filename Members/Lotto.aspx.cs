@@ -1712,8 +1712,6 @@ namespace Lottotry.Members
         {
             // loads the last 10 official draws from the database.
 
-            Dictionary<int, int> hotness;
-
             int start = 0;
             int target = 0;
 
@@ -1786,16 +1784,19 @@ namespace Lottotry.Members
             }
 
 
-            List<string> result = null;
-            Dictionary<List<int>, int> smartResult = new Dictionary<List<int>, int>();
+            List<string> result;
+            string resultText = "";
+            string resultCount = "";
 
             if (rbRandom.Checked)
             {
 #if false
-            result = RandomReduction(tickets, int.Parse(txtTicketCount.Text));
+                result = RandomReduction(tickets, int.Parse(txtTicketCount.Text));
 #else
                 result = RandomReduction_Fisher_Yates_shuffle(tickets, int.Parse(txtTicketCount.Text));
 #endif
+                resultText = string.Join(Environment.NewLine, result);
+                resultCount = result.Count.ToString();
             }
             else if (rbSystemic.Checked)
             {
@@ -1807,15 +1808,23 @@ namespace Lottotry.Members
                 {
                     result = SystemicReduction_keep(tickets, int.Parse(txtKeepLines.Text));
                 }
+                resultText = string.Join(Environment.NewLine, result);
+                resultCount = result.Count.ToString();
             }
             else
             {
                 var ticketCount = 5;
-                if (int.TryParse(txtSmartTicketCount.Text, out int resultCount))
+                if (int.TryParse(txtSmartTicketCount.Text, out int count))
                 {
-                    ticketCount = resultCount;
+                    ticketCount = count;
                 }
-                smartResult = SmartReduction(tickets, ticketCount);
+                var smartResult = SmartReduction(tickets, ticketCount);
+                //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
+                resultText = string.Join(
+                            Environment.NewLine,
+                            smartResult.Select(x =>
+                                $"{string.Join(" ", x.Key.Select(n => n.ToString("00")))} score({x.Value:00})"));
+                resultCount = smartResult.Count.ToString();
 #if false
                 try
                 {
@@ -1843,15 +1852,9 @@ namespace Lottotry.Members
 #endif
             }
             lblGeneratedCount.Text = tickets.Count.ToString();
-            lblResultCount.Text = result != null ? result.Count.ToString() : smartResult.Count.ToString();
-            if (result != null)
-            {
-                txtResults.Text = string.Join(Environment.NewLine, result);
-            }
-            else
-            {
-                txtResults.Text = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
-            }
+            lblResultCount.Text = resultCount; 
+            txtResults.Text = resultText;
+            
 
             //Debug.WriteLine(result.GetType());
             //Debug.WriteLine(result.FirstOrDefault());
