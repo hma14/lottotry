@@ -9,6 +9,8 @@ using System.Data;
 
 using DataAccessTier;
 using BusinessTier;
+using System.Linq;
+using System.Net.Sockets;
 
 namespace Lottotry.BusinessTier
 {
@@ -2167,6 +2169,83 @@ namespace Lottotry.BusinessTier
             stmt += Util.CreateHTML_Tail();
             return stmt;
         }
+
+        private NumGen getNumGen(int start, int target)
+        {
+            if(target == 0)
+            {
+                target = lastRow;
+            }
+            if (start == 0)
+            {
+                start = (target > Util.MAX_ROWS) ? (target - Util.MAX_ROWS) : 1;
+            }
+
+            numgen = new NumGen(db, start, target);
+
+            return numgen;
+        }
+
+        private List<List<int>> getPastDraws(Database db, int startRow, int targetRow)
+        {
+            var info = Util.GetDbInfo(db);
+            DataAccessLayer dataAccessLayer = new DataAccessLayer();
+            SqlDataReader reader = dataAccessLayer.SelectAllOnRangeOfDrawNo(info.DbId, startRow, targetRow, info.ColName);
+
+            List<List<int>> pastDraws = new List<List<int>>();
+            int cols = Util.getColumnnsOfLotto(db);
+            while (reader.Read())
+            {
+                List<int> draw = new List<int>();
+                for (int i = 2; i < cols + 2; i++)
+                {
+                    draw.Add((int)reader.GetSqlInt32(i));
+                }
+                pastDraws.Add(draw);
+            }
+            return pastDraws;
+        }
+
+
+        public Dictionary<List<int>, int> getNumberStats(int start, int target, List<List<int>> tickets, int ticketCount)
+        {
+            if (target == 0)
+            {
+                target = lastRow;
+            }
+            if (start == 0)
+            {
+                start = lastRow - 10;
+            }
+            var pastDraws = getPastDraws(db, start, target);
+
+            Dictionary<int, int> recentHits = new Dictionary<int, int>();
+            Dictionary<List<int>, int> scorePerTicket = new Dictionary<List<int>, int>();
+
+            for (int i = 0; i < tickets.Count; i++)
+            {
+                int score = 0;
+                var ticket = tickets[i];
+                for (int j = 0; j < pastDraws.Count; j++)
+                {                  
+                    var pastDraw  = pastDraws[j];
+                    score += ticket.Intersect(pastDraw).Count();                  
+
+                }
+                if (!scorePerTicket.ContainsKey(ticket))
+                {
+                    scorePerTicket.Add(ticket, score);
+                }
+            }
+
+
+
+
+
+
+            return scorePerTicket.OrderByDescending(x => x.Value).Take(ticketCount).ToDictionary(x => x.Key, x => x.Value);
+        }
+
 
     }
 

@@ -248,7 +248,7 @@
 
         function resetInputs() {
             document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
-            document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';
+            //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';
             document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
             document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
             document.getElementById('<%= txtResults.ClientID %>').value = '';
@@ -262,14 +262,14 @@
                 document.getElementById('divTicketCount').style.display = '';
                 document.getElementById('divDeleteLines').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
-                document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = ''; 
+                //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = ''; 
                 
             }
             else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = '';
-                document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';               
+                //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';               
             }
             else {
                 document.getElementById('divNumStats').style.display = '';
@@ -330,13 +330,16 @@
         }
 
         function refreshReductionUI() {
+            alert("I am here - 1")
             var hiddenValue = document.getElementById("<%= hfTicketCount.ClientID %>").value;
             document.getElementById('rngTicketCount').value = hiddenValue;
-
+            alert("I am here - 2");
             updateTicketCount();
             reductionChanged();
             //updateResultCount();
             //setStatus("Ready");
+
+            alert("I am here - 3");
         }
 
 
@@ -2012,6 +2015,22 @@
                                         ID="txtSmartTicketCount"
                                         runat="server"
                                         Width="60px" 
+                                        Value="5" 
+                                        onclick="resetInputs();" 
+                                        />
+                                    Start Draw:
+                                    <asp:TextBox
+                                        ID="txtStart"
+                                        runat="server"
+                                        Width="60px"
+                                        Value="0"   
+                                        onclick="resetInputs();" />
+                                    Target Draw:
+                                    <asp:TextBox
+                                        ID="txtTarget"
+                                        runat="server"
+                                        Width="60px" 
+                                        Value="0" 
                                         onclick="resetInputs();" 
                                         />
                                 </div> 

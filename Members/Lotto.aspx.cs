@@ -1647,26 +1647,108 @@ namespace Lottotry.Members
             return res;
         }
 
-        private List<string> SmartReduction(
-            List<string> tickets,
-            int keepCount)
+        private double ScoreTicket(
+            List<int> ticket,
+            List<List<int>> lastDraws)
         {
-            // loads the last 10 official draws for the database.
+            double score = 0;
 
+            score += ScoreHotNumbers(ticket, lastDraws);
 
-            // Each ticket is scored.
+            score += ScoreOddEven(ticket);
 
+            score += ScoreHighLow(ticket);
 
-            // The tickets are sorted by score 
+            score += ScoreCoverage(ticket);
 
+            score += ScoreOverdue(ticket);
 
-            // The top N tickets are returned to the results textbox.
-            
-            return null;
+            score -= ScoreConsecutive(ticket);
+
+            return score;
+        }
+
+        private double ScoreConsecutive(List<int> ticket)
+        {
+            throw new NotImplementedException();
+        }
+
+        private double ScoreOverdue(List<int> ticket)
+        {
+            throw new NotImplementedException();
+        }
+
+        private double ScoreCoverage(List<int> ticket)
+        {
+            throw new NotImplementedException();
+        }
+
+        private double ScoreHighLow(List<int> ticket)
+        {
+            throw new NotImplementedException();
+        }
+
+        private double ScoreOddEven(List<int> ticket)
+        {
+            throw new NotImplementedException();
+        }
+
+        private int ScoreHotNumbers(
+            List<int> ticket,
+            List<List<int>> draws)
+        {
+            int score = 0;
+
+            foreach (var draw in draws)
+                score += ticket.Intersect(draw).Count();
+
+            return score;
+        }
+
+        private List<string> SmartReduction(
+            List<string> strTickets,
+            int ticketCount,
+            Database db = Database.FloridaFantasy5)
+        {
+            // loads the last 10 official draws from the database.
+
+            Dictionary<int, int> hotness;
+
+            int start = 0;
+            int target = 0;
+
+            if (txtTarget.Text != "0")
+            {
+                target = int.Parse(txtTarget.Text);
+            }
+
+            if (txtStart.Text != "0")
+            {
+                start = int.Parse(txtStart.Text);
+            }
+
+            lotto = new BusinessTier.clsLotto(db, fromSite);
+
+            List<List<int>> tickets = strTickets
+                .Select(x => x.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                            .Select(int.Parse)
+                            .ToList())
+                .ToList();
+
+            var result = lotto.getNumberStats(start, target, tickets, ticketCount);
+
+            // The top N (ticketCount) tickets are returned to the results textbox.
+            var resultTickets = result
+                .OrderByDescending(x => x.Value)
+                .Take(ticketCount)
+                .Select(x => string.Join(" ", x.Key))
+                .ToList();
+
+            return resultTickets;
         }
 
         private List<string> RandomReduction_Fisher_Yates_shuffle(
-            List<string> tickets, 
+            List<string> tickets,
             int keepCount)
         {
             Random rnd = new Random();
@@ -1678,7 +1760,7 @@ namespace Lottotry.Members
             {
                 int j = rnd.Next(i + 1);
 
-                (shuffled[j], shuffled[i]) = (shuffled[i], shuffled[j]);             
+                (shuffled[j], shuffled[i]) = (shuffled[i], shuffled[j]);
             }
 
             return shuffled.Take(keepCount).ToList();
@@ -1691,6 +1773,7 @@ namespace Lottotry.Members
             List<string> tickets = txtTickets?.Text
                 ?.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 ?.ToList();
+
             if (tickets == null || tickets.Count == 0)
             {
                 lblMessage.Text = "Generate Tickets first!";
@@ -1699,39 +1782,70 @@ namespace Lottotry.Members
                 "RefreshReductionUI",
                 "refreshReductionUI();",
                 true);
-                //return;
             }
 
 
             List<string> result;
-
             if (rbRandom.Checked)
             {
 #if false
-                result = RandomReduction(tickets, int.Parse(txtTicketCount.Text));
+            result = RandomReduction(tickets, int.Parse(txtTicketCount.Text));
 #else
                 result = RandomReduction_Fisher_Yates_shuffle(tickets, int.Parse(txtTicketCount.Text));
 #endif
             }
             else if (rbSystemic.Checked)
             {
-                if(txtDeleteLines.Text != "")
+                if (txtDeleteLines.Text != "")
                 {
                     result = SystemicReduction_delete(tickets, int.Parse(txtDeleteLines.Text));
                 }
                 else
                 {
                     result = SystemicReduction_keep(tickets, int.Parse(txtKeepLines.Text));
-                }                  
+                }
             }
             else
             {
-                result = SmartReduction(tickets, int.Parse(txtTicketCount.Text));
+                var ticketCount = 5;
+                if (int.TryParse(txtSmartTicketCount.Text, out int resultCount))
+                {
+                    ticketCount = resultCount;
+                }
+                result = SmartReduction(tickets, ticketCount);
+#if false
+                try
+                {
+                    result = SmartReduction(tickets, ticketCount);
+                    result = result
+                        .Where(x => !string.IsNullOrWhiteSpace(x))
+                        .Select(x => x.Trim())
+                        .ToList();
+                    if (result.Any(x => x == null))
+                    {
+                        txtResults.Text = "Result contains NULL item";
+                        return;
+                    }
+                    if (result.Any(x => string.IsNullOrWhiteSpace(x)))
+                    {
+                        txtResults.Text = "Result contains empty item";
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtResults.Text = ex.ToString();
+                    return;
+                }
+#endif
             }
             lblGeneratedCount.Text = tickets.Count.ToString();
             lblResultCount.Text = result.Count.ToString();
 
             txtResults.Text = string.Join(Environment.NewLine, result);
+
+            //Debug.WriteLine(result.GetType());
+            //Debug.WriteLine(result.FirstOrDefault());
 
             ScriptManager.RegisterStartupScript(
                 this,
@@ -1740,6 +1854,8 @@ namespace Lottotry.Members
                 //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
                 "refreshReductionUI();",
                 true);
+
+
         }
     }
 }
