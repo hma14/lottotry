@@ -330,16 +330,13 @@
         }
 
         function refreshReductionUI() {
-            alert("I am here - 1")
             var hiddenValue = document.getElementById("<%= hfTicketCount.ClientID %>").value;
             document.getElementById('rngTicketCount').value = hiddenValue;
-            alert("I am here - 2");
             updateTicketCount();
             reductionChanged();
             //updateResultCount();
             //setStatus("Ready");
 
-            alert("I am here - 3");
         }
 
 

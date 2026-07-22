@@ -1705,7 +1705,7 @@ namespace Lottotry.Members
             return score;
         }
 
-        private List<string> SmartReduction(
+        private Dictionary<List<int>, int> SmartReduction(
             List<string> strTickets,
             int ticketCount,
             Database db = Database.FloridaFantasy5)
@@ -1741,8 +1741,9 @@ namespace Lottotry.Members
             var resultTickets = result
                 .OrderByDescending(x => x.Value)
                 .Take(ticketCount)
-                .Select(x => string.Join(" ", x.Key))
-                .ToList();
+                //.Select(x => string.Join(" ", x.Key))
+                //.ToList();
+                .ToDictionary(x => x.Key, x => x.Value);
 
             return resultTickets;
         }
@@ -1785,7 +1786,9 @@ namespace Lottotry.Members
             }
 
 
-            List<string> result;
+            List<string> result = null;
+            Dictionary<List<int>, int> smartResult = new Dictionary<List<int>, int>();
+
             if (rbRandom.Checked)
             {
 #if false
@@ -1812,7 +1815,7 @@ namespace Lottotry.Members
                 {
                     ticketCount = resultCount;
                 }
-                result = SmartReduction(tickets, ticketCount);
+                smartResult = SmartReduction(tickets, ticketCount);
 #if false
                 try
                 {
@@ -1840,9 +1843,15 @@ namespace Lottotry.Members
 #endif
             }
             lblGeneratedCount.Text = tickets.Count.ToString();
-            lblResultCount.Text = result.Count.ToString();
-
-            txtResults.Text = string.Join(Environment.NewLine, result);
+            lblResultCount.Text = result != null ? result.Count.ToString() : smartResult.Count.ToString();
+            if (result != null)
+            {
+                txtResults.Text = string.Join(Environment.NewLine, result);
+            }
+            else
+            {
+                txtResults.Text = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
+            }
 
             //Debug.WriteLine(result.GetType());
             //Debug.WriteLine(result.FirstOrDefault());
