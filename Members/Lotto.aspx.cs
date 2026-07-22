@@ -1708,7 +1708,7 @@ namespace Lottotry.Members
         private Dictionary<List<int>, int> SmartReduction(
             List<string> strTickets,
             int ticketCount,
-            Database db = Database.FloridaFantasy5)
+            Database db)
         {
             // loads the last 10 official draws from the database.
 
@@ -1724,7 +1724,6 @@ namespace Lottotry.Members
             {
                 start = int.Parse(txtStart.Text);
             }
-
             lotto = new BusinessTier.clsLotto(db, fromSite);
 
             List<List<int>> tickets = strTickets
@@ -1818,7 +1817,8 @@ namespace Lottotry.Members
                 {
                     ticketCount = count;
                 }
-                var smartResult = SmartReduction(tickets, ticketCount);
+                Database db = (Database) int.Parse(hfDbName.Value);
+                var smartResult = SmartReduction(tickets, ticketCount, db);
                 //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
                 resultText = string.Join(
                             Environment.NewLine,

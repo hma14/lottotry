@@ -843,6 +843,15 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.HiddenField hfTicketCount;
 
         /// <summary>
+        /// hfDbName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfDbName;
+
+        /// <summary>
         /// lblGeneratedCount control.
         /// </summary>
         /// <remarks>

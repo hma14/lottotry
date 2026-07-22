@@ -247,12 +247,12 @@
         }
 
         function resetInputs() {
-            document.getElementById('<%= txtTicketCount.ClientID %>').value = '';
-            //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';
-            document.getElementById('<%= txtDeleteLines.ClientID %>').value = '';
-            document.getElementById('<%= txtKeepLines.ClientID %>').value = '';
-            document.getElementById('<%= txtResults.ClientID %>').value = '';
-
+            
+            document.getElementById("txtTicketCount").value = '';
+            //document.getElementById("txtSmartTicketCount").value = '';
+            document.getElementById("txtDeleteLines").value = '';
+            document.getElementById("txtKeepLines").value = '';
+            //document.getElementById("txtResults").value = '';
             
         }
 
@@ -288,6 +288,19 @@
             var ticketCount =
                 parseInt(document.getElementById("rngTicketCount").value);
 
+            switch (numbersPerDraw) {
+                case 6:
+                    hfDbName.innerText = 3;
+                    document.getElementById("hfDbName").value = "3";
+                    break;
+                case 5:
+                    document.getElementById("hfDbName").value = "25";
+                    break;
+               
+                default:
+                    document.getElementById("hfDbName").value = "25";
+            }
+
             var allTickets = [];
 
             for (var i = 0; i < ticketCount; i++) {
@@ -316,8 +329,7 @@
                 allTickets.push(line);
             }
 
-            document.getElementById("<%= txtTickets.ClientID %>").value =
-                allTickets.join("\n");
+            document.getElementById("<%= txtTickets.ClientID %>").value = allTickets.join("\n");
             document.getElementById("<%=lblGeneratedCount.ClientID %>").innerText = allTickets.length;
         }
 
@@ -1886,7 +1898,8 @@
                                             <span id="lblTicketCount">20</span>
 
                                             <br />
-                                            <asp:HiddenField ID="hfTicketCount" runat="server" Value="20" />
+                                            <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="20" />
+                                            <asp:HiddenField ID="hfDbName" runat="server" ClientIDMode="Static" Value="25" />
                                             <input type="range"
                                                     id="rngTicketCount"
                                                     min="10"
@@ -1933,6 +1946,7 @@
                                                 Rows="25"
                                                 Width="100%"
                                                 ReadOnly="true"
+                                                ClientIDMode="Static" 
                                                 style="box-sizing:border-box;">
                                             </asp:TextBox>
 
@@ -1961,7 +1975,7 @@
                                 <div class="legend">
                                     Removes tickets according to a fixed interval.
                                 </div>
-
+                                
                                 <asp:RadioButton ID="rbSmart"
                                     runat="server"
                                     GroupName="Reduction"
@@ -1982,6 +1996,7 @@
                                         ID="txtTicketCount"
                                         runat="server"
                                         Width="60px" 
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
                                 </div>
@@ -1992,6 +2007,7 @@
                                         ID="txtDeleteLines"
                                         runat="server"
                                         Width="60px"
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();"
                                         />
                                     Lines
@@ -2001,6 +2017,7 @@
                                         ID="txtKeepLines"
                                         runat="server"
                                         Width="60px" 
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
                                     Lines
@@ -2013,6 +2030,7 @@
                                         runat="server"
                                         Width="60px" 
                                         Value="5" 
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
                                     Start Draw:
@@ -2028,6 +2046,7 @@
                                         runat="server"
                                         Width="60px" 
                                         Value="0" 
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
                                 </div> 
