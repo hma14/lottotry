@@ -834,6 +834,15 @@ namespace Lottotry.Members
         protected global::System.Web.UI.UpdatePanel pnlLottoReduction;
 
         /// <summary>
+        /// DBDdlReduction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DBDdlReduction;
+
+        /// <summary>
         /// hfTicketCount control.
         /// </summary>
         /// <remarks>

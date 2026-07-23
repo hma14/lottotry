@@ -283,8 +283,8 @@
         //Sys.Application.add_load(reductionChanged);
 
 
-        function generateLottoTickets(numbersPerDraw, maxNumber) {
-            document.getElementById('<%= txtResults.ClientID %>').value = '';
+        function generateLottoTickets_org(numbersPerDraw, maxNumber) {
+            document.getElementById("txtResults").value = '';
             var ticketCount =
                 parseInt(document.getElementById("rngTicketCount").value);
 
@@ -329,9 +329,99 @@
                 allTickets.push(line);
             }
 
+            document.getElementById("txtTickets").value = allTickets.join("\n");
+            document.getElementById("lblGeneratedCount").innerText = allTickets.length;
+        }
+
+        function generateLottoTickets() {
+
+            // get db
+
+            var db = parseInt(document.getElementById("DBDdlReduction").value, 10);
+            //var text = ddl.options[ddl.selectedIndex].text;
+
+
+            var numbersPerDraw, maxNumber;
+       
+            document.getElementById("hfDbName").value = db;
+            hfDbName.innerText = db;
+
+            switch (db) {
+                      
+                case 1:
+                    numbersPerDraw = 7;
+                    maxNumber = 52;
+                    
+                    break;
+                case 25:
+                    numbersPerDraw = 5;
+                    maxNumber = 36
+                    break;
+                case 33:
+                    
+                    numbersPerDraw = 3;
+                    maxNumber = 10;
+                    break;
+                default:
+                    numbersPerDraw = 6;
+                    maxNumber = 49;
+                  
+
+            }
+            
+            document.getElementById("txtResults").value = '';
+            var ticketCount =
+                parseInt(document.getElementById("rngTicketCount").value);
+
+            switch (numbersPerDraw) {
+                case 6:
+                    hfDbName.innerText = 3;
+                    document.getElementById("hfDbName").value = "3";
+                    break;
+                case 5:
+                    document.getElementById("hfDbName").value = "25";
+                    break;
+
+                default:
+                    document.getElementById("hfDbName").value = "25";
+            }
+
+            var allTickets = [];
+
+            for (var i = 0; i < ticketCount; i++) {
+
+                var nums = [];
+
+                while (nums.length < numbersPerDraw) {
+
+                    var n = Math.floor(Math.random() * maxNumber) + 1;
+
+                    //if (nums.indexOf(n) == -1)
+                    //    nums.push(n);
+                    if (!nums.includes(n)) {
+                        nums.push(n);
+                    }
+                }
+
+                nums.sort(function (a, b) {
+                    return a - b;
+                });
+
+                var line = nums.map(function (n) {
+                    return ("0" + n).slice(-2);
+                }).join(" ");
+
+                allTickets.push(line);
+            }
+
+<%--            
             document.getElementById("<%= txtTickets.ClientID %>").value = allTickets.join("\n");
             document.getElementById("<%=lblGeneratedCount.ClientID %>").innerText = allTickets.length;
+--%>
+            document.getElementById("txtTickets").value = allTickets.join("\n");
+            document.getElementById("lblGeneratedCount").innerText = allTickets.length;
         }
+
 
         function updateTicketCount() {
            
@@ -1884,13 +1974,17 @@
                                     <h5>
                                         ENTER TICKETS:
                                     </h5>
+                                    
                                      <div  style="text-align:right;margin:10px;">
+                                        <asp:DropDownList ID="DBDdlReduction" runat="server" SkinID="dwopDownListLongSkin" OnSelectedIndexChanged="DBDdlReduction_SelectedIndexChanged"
+                                            ClientIDMode="Static" onchange="resetDDL('DBDdlReduction')">
+                                        </asp:DropDownList>
                                          <input  type="button"
-                                                 value="Generate Florida Fantasy 5 Tickets"
-                                                 onclick="generateLottoTickets(5, 36);"  class="buttonGen_long" />
-                                         <input  type="button"
+                                                 value="Generate Lotto Tickets"
+                                                 onclick="generateLottoTickets();"  class="buttonGen_long" />
+                                         <%--<input  type="button"
                                                  value="Generate Florida Lotto Tickets"
-                                                 onclick="generateLottoTickets(6, 53);"  class="buttonGen_long" />
+                                                 onclick="generateLottoTickets(6, 53);"  class="buttonGen_long" />--%>
                                                                              
                                          <div style="margin:10px 0;">
 
@@ -1915,11 +2009,11 @@
                                     <tr>
                                         <th style="width:50%; text-align:left; padding-bottom:8px;">
                                             Generated Tickets
-                                            (<asp:Label ID="lblGeneratedCount" runat="server" Text="0" />)
+                                            (<asp:Label ID="lblGeneratedCount" runat="server" ClientIDMode="Static"  Text="0" />)
                                         </th>
                                         <th style="width:50%; text-align:left; padding-bottom:8px;">
                                             Reduction Results                                           
-                                            (<asp:Label ID="lblResultCount" runat="server" Text="0" />)
+                                            (<asp:Label ID="lblResultCount" runat="server" ClientIDMode="Static" Text="0" />)
                                         </th>
                                     </tr>
 
@@ -1932,6 +2026,7 @@
                                                 TextMode="MultiLine"
                                                 Rows="25"
                                                 Width="100%"
+                                                ClientIDMode="Static"
                                                 style="box-sizing:border-box;">
                                             </asp:TextBox>
 

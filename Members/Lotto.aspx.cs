@@ -192,6 +192,11 @@ namespace Lottotry.Members
                     DBDdl13.DataValueField = "id";
                     DBDdl13.DataBind();
 
+                    DBDdlReduction.DataSource = dt;
+                    DBDdlReduction.DataTextField = "Name";
+                    DBDdlReduction.DataValueField = "id";
+                    DBDdlReduction.DataBind();
+
                     AddFloridaPick3Items(DBDdl1);
                     AddFloridaPick3Items(DBDdl2);
                     AddFloridaPick3Items(DBDdl3);
@@ -203,6 +208,7 @@ namespace Lottotry.Members
                     AddFloridaPick3Items(DBDdl10);
                     AddFloridaPick3Items(DBDdl12);
                     AddFloridaPick3Items(DBDdl13);
+                    AddFloridaPick3Items(DBDdlReduction);
 
 
 #endif
@@ -246,6 +252,7 @@ namespace Lottotry.Members
             DBDdl10.SelectedIndex = index;
             DBDdl12.SelectedIndex = index;
             DBDdl13.SelectedIndex = index;
+            DBDdlReduction.SelectedIndex = index;
         }
 
         protected void setLoadLottoLogo(Database db)
@@ -1380,6 +1387,16 @@ namespace Lottotry.Members
 
 
         }
+        protected void DBDdlReduction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Database db = (Database)int.Parse(DBDdlReduction.SelectedValue);
+            setLoadLottoLogo(db);
+            setDBDropDownSelectedItem(DBDdlReduction.SelectedIndex);
+            chartCacheNeedUpdate = true;
+            //submit13_Click(sender, e);
+
+
+        }
 
 
 
@@ -1817,7 +1834,8 @@ namespace Lottotry.Members
                 {
                     ticketCount = count;
                 }
-                Database db = (Database) int.Parse(hfDbName.Value);
+                //Database db = (Database) int.Parse(hfDbName.Value);
+                Database db = (Database)int.Parse(DBDdlReduction.SelectedItem.Value);
                 var smartResult = SmartReduction(tickets, ticketCount, db);
                 //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
                 resultText = string.Join(
