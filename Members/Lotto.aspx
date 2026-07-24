@@ -283,55 +283,7 @@
         //Sys.Application.add_load(reductionChanged);
 
 
-        function generateLottoTickets_org(numbersPerDraw, maxNumber) {
-            document.getElementById("txtResults").value = '';
-            var ticketCount =
-                parseInt(document.getElementById("rngTicketCount").value);
-
-            switch (numbersPerDraw) {
-                case 6:
-                    hfDbName.innerText = 3;
-                    document.getElementById("hfDbName").value = "3";
-                    break;
-                case 5:
-                    document.getElementById("hfDbName").value = "25";
-                    break;
-               
-                default:
-                    document.getElementById("hfDbName").value = "25";
-            }
-
-            var allTickets = [];
-
-            for (var i = 0; i < ticketCount; i++) {
-
-                var nums = [];
-
-                while (nums.length < numbersPerDraw) {
-
-                    var n = Math.floor(Math.random() * maxNumber) + 1;
-
-                    //if (nums.indexOf(n) == -1)
-                    //    nums.push(n);
-                    if (!nums.includes(n)) {
-                        nums.push(n);
-                    }
-                }
-
-                nums.sort(function (a, b) {
-                    return a - b;
-                });
-
-                var line = nums.map(function (n) {
-                    return ("0" + n).slice(-2);
-                }).join(" ");
-
-                allTickets.push(line);
-            }
-
-            document.getElementById("txtTickets").value = allTickets.join("\n");
-            document.getElementById("lblGeneratedCount").innerText = allTickets.length;
-        }
+      
 
         function generateLottoTickets() {
 
@@ -343,9 +295,6 @@
 
             var numbersPerDraw, maxNumber;
        
-            document.getElementById("hfDbName").value = db;
-            hfDbName.innerText = db;
-
             switch (db) {
                       
                 case 1:
@@ -373,18 +322,6 @@
             var ticketCount =
                 parseInt(document.getElementById("rngTicketCount").value);
 
-            switch (numbersPerDraw) {
-                case 6:
-                    hfDbName.innerText = 3;
-                    document.getElementById("hfDbName").value = "3";
-                    break;
-                case 5:
-                    document.getElementById("hfDbName").value = "25";
-                    break;
-
-                default:
-                    document.getElementById("hfDbName").value = "25";
-            }
 
             var allTickets = [];
 
@@ -414,10 +351,6 @@
                 allTickets.push(line);
             }
 
-<%--            
-            document.getElementById("<%= txtTickets.ClientID %>").value = allTickets.join("\n");
-            document.getElementById("<%=lblGeneratedCount.ClientID %>").innerText = allTickets.length;
---%>
             document.getElementById("txtTickets").value = allTickets.join("\n");
             document.getElementById("lblGeneratedCount").innerText = allTickets.length;
         }
@@ -428,11 +361,11 @@
             var count = document.getElementById("rngTicketCount").value;
 
             document.getElementById("lblTicketCount").innerHTML = count;
-            document.getElementById("<%= hfTicketCount.ClientID %>").value = count;
+            document.getElementById("hfTicketCount").value = count;
         }
 
         function refreshReductionUI() {
-            var hiddenValue = document.getElementById("<%= hfTicketCount.ClientID %>").value;
+            var hiddenValue = document.getElementById("hfTicketCount").value;
             document.getElementById('rngTicketCount').value = hiddenValue;
             updateTicketCount();
             reductionChanged();
@@ -1993,7 +1926,7 @@
 
                                             <br />
                                             <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="20" />
-                                            <asp:HiddenField ID="hfDbName" runat="server" ClientIDMode="Static" Value="25" />
+                                            
                                             <input type="range"
                                                     id="rngTicketCount"
                                                     min="10"

@@ -1,6 +1,7 @@
 ﻿using BusinessTier;
 using DataAccessTier;
 using Lottotry.BusinessTier;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -1732,7 +1733,7 @@ namespace Lottotry.Members
             int start = 0;
             int target = 0;
 
-            if (txtTarget.Text != "0")
+            if (txtTarget.Text != "0" && !txtTarget.Text.IsNullOrWhiteSpace())
             {
                 target = int.Parse(txtTarget.Text);
             }
@@ -1834,7 +1835,6 @@ namespace Lottotry.Members
                 {
                     ticketCount = count;
                 }
-                //Database db = (Database) int.Parse(hfDbName.Value);
                 Database db = (Database)int.Parse(DBDdlReduction.SelectedItem.Value);
                 var smartResult = SmartReduction(tickets, ticketCount, db);
                 //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
