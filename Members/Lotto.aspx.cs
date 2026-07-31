@@ -197,6 +197,7 @@ namespace Lottotry.Members
                     DBDdlReduction.DataTextField = "Name";
                     DBDdlReduction.DataValueField = "id";
                     DBDdlReduction.DataBind();
+                    //DBDdlReduction.SelectedValue = "2"; // default to db = 2 (BC49)
 
                     AddFloridaPick3Items(DBDdl1);
                     AddFloridaPick3Items(DBDdl2);
@@ -213,9 +214,9 @@ namespace Lottotry.Members
 
 
 #endif
-                    setDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 13);
+                    SetDBDropDownSelectedItem(Session["SelectedDBDdl"] != null ? (int)Session["SelectedDBDdl"] : 2);
 
-                    setLoadLottoLogo((Database)int.Parse(DBDdl12.SelectedValue));
+                    SetLoadLottoLogo((Database)int.Parse(DBDdl12.SelectedValue));
 
 
                 }
@@ -239,7 +240,7 @@ namespace Lottotry.Members
             ddl.Items.Add(new ListItem("FloridaPick3Fb", "37"));
         }
 
-        protected void setDBDropDownSelectedItem(int index)
+        protected void SetDBDropDownSelectedItem(int index)
         {
             Session["SelectedDBDdl"] = index;
             DBDdl1.SelectedIndex = index;
@@ -256,7 +257,7 @@ namespace Lottotry.Members
             DBDdlReduction.SelectedIndex = index;
         }
 
-        protected void setLoadLottoLogo(Database db)
+        protected void SetLoadLottoLogo(Database db)
         {
             ImagePredict.ImageUrl = Util.getLottoImage(db);
             ImageAuto.ImageUrl = Util.getLottoImage(db);
@@ -1363,8 +1364,8 @@ namespace Lottotry.Members
         protected void DBDdl12_SelectedIndexChanged(object sender, EventArgs e)
         {
             Database db = (Database)int.Parse(DBDdl12.SelectedValue);
-            setLoadLottoLogo(db);
-            setDBDropDownSelectedItem(DBDdl12.SelectedIndex);
+            SetLoadLottoLogo(db);
+            SetDBDropDownSelectedItem(DBDdl12.SelectedIndex);
             potentialDrawCacheNeedUpdate = true;
             ConfigForm1.setSumMinMax(db);
         }
@@ -1372,8 +1373,8 @@ namespace Lottotry.Members
         protected void DBDdl8_SelectedIndexChanged(object sender, EventArgs e)
         {
             Database db = (Database)int.Parse(DBDdl8.SelectedValue);
-            setLoadLottoLogo(db);
-            setDBDropDownSelectedItem(DBDdl8.SelectedIndex);
+            SetLoadLottoLogo(db);
+            SetDBDropDownSelectedItem(DBDdl8.SelectedIndex);
             AutoDrawConfig1.AutoDrawCacheNeedUpdate = true;
 
         }
@@ -1381,8 +1382,8 @@ namespace Lottotry.Members
         protected void DBDdl13_SelectedIndexChanged(object sender, EventArgs e)
         {
             Database db = (Database)int.Parse(DBDdl13.SelectedValue);
-            setLoadLottoLogo(db);
-            setDBDropDownSelectedItem(DBDdl13.SelectedIndex);
+            SetLoadLottoLogo(db);
+            SetDBDropDownSelectedItem(DBDdl13.SelectedIndex);
             chartCacheNeedUpdate = true;
             submit13_Click(sender, e);
 
@@ -1391,8 +1392,8 @@ namespace Lottotry.Members
         protected void DBDdlReduction_SelectedIndexChanged(object sender, EventArgs e)
         {
             Database db = (Database)int.Parse(DBDdlReduction.SelectedValue);
-            setLoadLottoLogo(db);
-            setDBDropDownSelectedItem(DBDdlReduction.SelectedIndex);
+            SetLoadLottoLogo(db);
+            SetDBDropDownSelectedItem(DBDdlReduction.SelectedIndex);
             chartCacheNeedUpdate = true;
             //submit13_Click(sender, e);
 
@@ -1411,8 +1412,8 @@ namespace Lottotry.Members
         protected void DBDdl10_SelectedIndexChanged(object sender, EventArgs e)
         {
             Database db = (Database)int.Parse(DBDdl10.SelectedValue);
-            setLoadLottoLogo(db);
-            setDBDropDownSelectedItem(DBDdl10.SelectedIndex);
+            SetLoadLottoLogo(db);
+            SetDBDropDownSelectedItem(DBDdl10.SelectedIndex);
             potentialDrawCacheNeedUpdate = true;
             ConfigForm2.setSumMinMax(db);
         }
@@ -1580,37 +1581,37 @@ namespace Lottotry.Members
 
         protected void DBDdl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl1.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl1.SelectedIndex);
         }
 
         protected void DBDdl5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl5.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl5.SelectedIndex);
         }
 
         protected void DBDdl4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl4.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl4.SelectedIndex);
         }
 
         protected void DBDdl6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl6.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl6.SelectedIndex);
         }
 
         protected void DBDdl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl2.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl2.SelectedIndex);
         }
 
         protected void DBDdl3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl3.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl3.SelectedIndex);
         }
 
         protected void DBDdl7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setDBDropDownSelectedItem(DBDdl7.SelectedIndex);
+            SetDBDropDownSelectedItem(DBDdl7.SelectedIndex);
         }
 
         protected void tbStartRow13_TextChanged(object sender, EventArgs e)
@@ -1723,7 +1724,7 @@ namespace Lottotry.Members
             return score;
         }
 
-        private Dictionary<List<int>, int> SmartReduction(
+        private List<TicketNumberScore> SmartReduction(
             List<string> strTickets,
             int ticketCount,
             Database db)
@@ -1750,17 +1751,24 @@ namespace Lottotry.Members
                             .ToList())
                 .ToList();
 
-            var result = lotto.getNumberStats(start, target, tickets, ticketCount);
+            var rankedTickets = lotto.getNumberStats(start, target, tickets, ticketCount);
 
-            // The top N (ticketCount) tickets are returned to the results textbox.
-            var resultTickets = result
-                .OrderByDescending(x => x.Value)
-                .Take(ticketCount)
-                //.Select(x => string.Join(" ", x.Key))
-                //.ToList();
-                .ToDictionary(x => x.Key, x => x.Value);
+            // filter with diversity
+            List<TicketNumberScore> selectedTickets = new List<TicketNumberScore>(); 
+            foreach (var candidate in rankedTickets)
+            {
+                if (selectedTickets.Count == ticketCount)
+                    break;
 
-            return resultTickets;
+                bool isTooSimilar = selectedTickets.Any(selected =>
+                    candidate.Numbers.Intersect(selected.Numbers).Count() >= 3);
+
+                if (!isTooSimilar)
+                {
+                    selectedTickets.Add(candidate);
+                }
+            }
+            return selectedTickets;
         }
 
         private List<string> RandomReduction_Fisher_Yates_shuffle(
@@ -1841,7 +1849,7 @@ namespace Lottotry.Members
                 resultText = string.Join(
                             Environment.NewLine,
                             smartResult.Select(x =>
-                                $"{string.Join(" ", x.Key.Select(n => n.ToString("00")))} score({x.Value:00})"));
+                                $"{string.Join(" ", x.Numbers.Select(n => n.ToString("00")))} score({x.TotalScore:F2})"));
                 resultCount = smartResult.Count.ToString();
 #if false
                 try

@@ -11,6 +11,7 @@ using DataAccessTier;
 using BusinessTier;
 using System.Linq;
 using System.Net.Sockets;
+using System.Web.UI.MobileControls;
 
 namespace Lottotry.BusinessTier
 {
@@ -128,7 +129,7 @@ namespace Lottotry.BusinessTier
             dbExecTime = numgen.DatabaseExecutionTime;
 
             IEnumerator dno = numgen.DrawNo.GetEnumerator();
-            IEnumerator ddate = numgen.DrawDate.GetEnumerator();         
+            IEnumerator ddate = numgen.DrawDate.GetEnumerator();
             int cols = Util.getColumnnsOfLotto(db);
 
             // blow is exception only for Florida Lotto, not including bonus
@@ -175,7 +176,7 @@ namespace Lottotry.BusinessTier
                         total++;
                     }
                 }
-               
+
 
                 stmt += "<TR>";
                 i = -1;
@@ -572,7 +573,7 @@ namespace Lottotry.BusinessTier
 
             for (int i = 0; i < cols_no_bonus; ++i)
             {
-                stmt += "<TH>No." + (i+1).ToString() + "</TH>";
+                stmt += "<TH>No." + (i + 1).ToString() + "</TH>";
             }
             if (db == Database.OZLottoTue)
             {
@@ -590,7 +591,7 @@ namespace Lottotry.BusinessTier
                 }
             }
             stmt += "</TR>";
-            
+
             IEnumerator dno = numgen.DrawNo.GetEnumerator();
             IEnumerator ddate = numgen.DrawDate.GetEnumerator();
             IEnumerator[] en = new IEnumerator[cols];
@@ -601,7 +602,7 @@ namespace Lottotry.BusinessTier
             }
             int loop = 0;
             int maxLoop = target - start + 1;
-            SubStatistics [] ss = new SubStatistics[cols];
+            SubStatistics[] ss = new SubStatistics[cols];
             while (dno.MoveNext() && loop < maxLoop)
             {
                 loop++;
@@ -612,25 +613,25 @@ namespace Lottotry.BusinessTier
                     ss[i] = (SubStatistics)en[i].Current;
                 }
                 stmt += "<TR>"
-                    + "<TD><font color=\"#ff00ff\">" 
-                    + dno.Current.ToString() 
+                    + "<TD><font color=\"#ff00ff\">"
+                    + dno.Current.ToString()
                     + "</font></TD>"
-                    + "<TD><font style=\"color:maroon;font-size:small;\">" 
-                    + ddate.Current.ToString() 
+                    + "<TD><font style=\"color:maroon;font-size:small;\">"
+                    + ddate.Current.ToString()
                     + "</font></TD>";
 
                 for (int i = 0; i < cols; ++i)
-                {     
+                {
                     //stmt += "<TD align=\"center\"><font color=\"#ff0000\"><font weight=\"bolder\">" 
                     stmt += "<td><font style=font-weight:bold;color:#ff0000;text-align:center>"
-                        + ss[i].Num 
-                        + "</font> (<font style=\"FONT-STYLE: italic\" color=\"#0066cc\">" 
-                        + ss[i].SavedDist 
+                        + ss[i].Num
+                        + "</font> (<font style=\"FONT-STYLE: italic\" color=\"#0066cc\">"
+                        + ss[i].SavedDist
                         + "</font>)</td> ";
                 }
                 stmt += "</TR>";
             }
-            
+
 
             // For bottom of table
             stmt += "<TR>" + "<TH>Draw No</TH>" + "<TH>DrawDate</TH>";
@@ -1022,7 +1023,7 @@ namespace Lottotry.BusinessTier
                     stmt += "<TH bgcolor=\"ffcccc\"><font style=\"font-style: italic\">" + 9 + "</font></TH>";
                 }
                 */
-                
+
             }
             stmt += "</TR>";
             return stmt;
@@ -1070,8 +1071,8 @@ namespace Lottotry.BusinessTier
             {
                 stmt += createFreqBand(fragments);
             }
-                
-                
+
+
             for (int j = start; j <= target; j++)
             {
                 numgen = new NumGen(db, 0, j, scale);
@@ -1091,7 +1092,7 @@ namespace Lottotry.BusinessTier
 
                 stmt += "<TH style=\"color:#ff33ff; font-size:small\">" + j + "</font></TH>";
 
-                
+
                 // Only for output draw date for this table row
                 for (; i < st.Length; i++)
                 {
@@ -1117,7 +1118,7 @@ namespace Lottotry.BusinessTier
                                 + st[i].SavedDist
                                 + ")<br />"
                                 + "<font color=\"#00bfff\" size=\"2\">("
-                                + st[i].Cnt                              
+                                + st[i].Cnt
                                 + ")</font></TD>";
                     }
                     else
@@ -1226,7 +1227,7 @@ namespace Lottotry.BusinessTier
                 if (Util.IsDbInPicks(db))
                 {
                     i = 0;
-                }                 
+                }
                 for (; i < st.Length; i++)
                 {
                     if (st[i].RelativeDist == 0)
@@ -1256,7 +1257,8 @@ namespace Lottotry.BusinessTier
                                     + st[i].Cnt
                                     + "</B>)</font></TD>";
                         }
-                        else {
+                        else
+                        {
                             stmt += "<TD bgcolor=\"#ffff00\"><font style=\"font-size: 14pt;FONT-STYLE: italic; TEXT-ALIGN: justify\" color=\"#ff0099\"><B>"
                                     + st[i].Num
                                     + "</B></font><br />"
@@ -1542,12 +1544,12 @@ namespace Lottotry.BusinessTier
                 }
                 if (st[i].RelativeDist == 0)
                 {
-                    stmt += "<TH style=\"background-color:#E0FFFF;\"><font style=\"FONT-STYLE: italic\" color=\"#ff0033\"><B>" 
+                    stmt += "<TH style=\"background-color:#E0FFFF;\"><font style=\"FONT-STYLE: italic\" color=\"#ff0033\"><B>"
                         + st[i].Num + "</B></font></TH>";
                 }
                 else
                 {
-                    stmt += "<TH style=\"background-color:#E0FFFF;\">" 
+                    stmt += "<TH style=\"background-color:#E0FFFF;\">"
                         + st[i].Num + "</TH>";
                 }
             }
@@ -1559,7 +1561,7 @@ namespace Lottotry.BusinessTier
                 i = -1;
                 a1 = -1;
             }
-                for (; i < st.Length; i++)
+            for (; i < st.Length; i++)
             {
                 if (i == a1)
                 {
@@ -1567,7 +1569,7 @@ namespace Lottotry.BusinessTier
                     continue;
                 }
 
-                stmt += "<TD style=\"background-color:#C3FDB8;\"><font color=\"#ff0000\">" 
+                stmt += "<TD style=\"background-color:#C3FDB8;\"><font color=\"#ff0000\">"
                     + st[i].Cnt + "</font></TD>";
 
             }
@@ -1588,7 +1590,7 @@ namespace Lottotry.BusinessTier
                 }
                 if (st[i].RelativeDist == 0)
                 {
-                    stmt += "<TD align=\"center\" style=\"background-color:#FFF8C6;\"><font color=\"#827839\">" 
+                    stmt += "<TD align=\"center\" style=\"background-color:#FFF8C6;\"><font color=\"#827839\">"
                         + st[i].RelativeDist
                         + "</font><font style=\"FONT-STYLE: italic\" color=\"#254117\">"
                         + "(" + st[i].SavedDist + ")"
@@ -1596,7 +1598,7 @@ namespace Lottotry.BusinessTier
                 }
                 else
                 {
-                    stmt += "<TD align=\"center\" style=\"background-color:#FFF8C6;\"><font color=\"#ff0000\">" 
+                    stmt += "<TD align=\"center\" style=\"background-color:#FFF8C6;\"><font color=\"#ff0000\">"
                         + st[i].RelativeDist + "</font></TD>";
                 }
             }
@@ -1632,9 +1634,9 @@ namespace Lottotry.BusinessTier
             {
                 if (st[i].RelativeDist == 0)
                 {
-                    stmt += "<TH style=\"color:#ff00ff\">" 
+                    stmt += "<TH style=\"color:#ff00ff\">"
                         + st[i].DrawNumber.ToString() + "</TH>";
-                    stmt += "<TH style=\"color:#ff00ff;width=120px;font-size:small;\">" 
+                    stmt += "<TH style=\"color:#ff00ff;width=120px;font-size:small;\">"
                         + st[i].DDate + "</TH>";
                     break;
                 }
@@ -1659,8 +1661,8 @@ namespace Lottotry.BusinessTier
                 else
                 {
                     stmt += "<TD id=numbers>" + st[i].Num + "<br />";
-                    stmt += "(" + "<font id=tdRelativeDist>" + st[i].RelativeDist + "</font>)" 
-                        +"<br />"
+                    stmt += "(" + "<font id=tdRelativeDist>" + st[i].RelativeDist + "</font>)"
+                        + "<br />"
                         + "<font color=\"#00bfff\" size=\"2\">("
                         + st[i].Cnt
                         + ")</TD>";
@@ -1681,7 +1683,7 @@ namespace Lottotry.BusinessTier
             stmt += "<A href=" + fromSite + ">Back</A>";
             if (numgen.ScaleLength < 20)
                 stmt += "<table class=\"smallTable\" border=\"1\">";
-            else if(numgen.ScaleLength < 40)
+            else if (numgen.ScaleLength < 40)
                 stmt += "<table class=\"mediumTable\" border=\"1\">";
             else
                 stmt += "<table class=\"tblRetrieveAllNumber\" border=\"1\">";
@@ -1749,7 +1751,7 @@ namespace Lottotry.BusinessTier
                     continue;
                 }
                 switch (i)
-                {                  
+                {
                     case 1:
                         stmt += "<TH width=\"80\" bgcolor=\"ffff66\">" + i + "</TH>";
                         break;
@@ -1829,7 +1831,7 @@ namespace Lottotry.BusinessTier
             }
             stmt += "</TR>";
 
-            
+
             for (int d = 0; d < dist; d++)
             {
                 stmt += "<TR>";
@@ -1917,14 +1919,14 @@ namespace Lottotry.BusinessTier
                 }
             }
             IEnumerator ddate = numgen.DrawDate.GetEnumerator();
-            IEnumerator [] n = new IEnumerator[cols];
+            IEnumerator[] n = new IEnumerator[cols];
             for (int k = 0; k < cols; k++)
             {
                 n[k] = numgen.numberArray[k].GetEnumerator();
             }
 
             int ii = 0;
-            SubStatistics [] ss = new SubStatistics[cols];
+            SubStatistics[] ss = new SubStatistics[cols];
             int[] num = new int[cols];
 
             while (n[0].MoveNext() && ii < t)
@@ -1936,7 +1938,7 @@ namespace Lottotry.BusinessTier
                 {
                     n[k].MoveNext();
                     ss[k] = (SubStatistics)n[k].Current;
-                    num[k] = ss[k].Num;                   
+                    num[k] = ss[k].Num;
                 }
 
                 drawDateArray[ii] = (string)ddate.Current;
@@ -1949,7 +1951,7 @@ namespace Lottotry.BusinessTier
                     else if (num[i] >= 10 && num[i] < 20)
                     {
                         arr[ii][1]++;
-                    }                   
+                    }
                     else if (num[i] >= 20 && num[i] < 30)
                     {
                         arr[ii][2]++;
@@ -1973,7 +1975,7 @@ namespace Lottotry.BusinessTier
                     else if (num[i] >= 70)
                     {
                         arr[ii][7]++;
-                    }                    
+                    }
                 }
                 ii++;
             }
@@ -1995,10 +1997,10 @@ namespace Lottotry.BusinessTier
                 + "<TR>"
                 + "<TH class=\"tableheader\">Draw No.</TH>"
                 + "<TH class=\"tableheader\">Draw Date</TH>";
-             
+
             if (Util.IsDbInPicks(db))
             {
-                stmt += "<TH class=\"tableheader\">0 - " + (numbers-1).ToString() + "</TH>";
+                stmt += "<TH class=\"tableheader\">0 - " + (numbers - 1).ToString() + "</TH>";
             }
             else if (numbers < 10)
             {
@@ -2013,14 +2015,14 @@ namespace Lottotry.BusinessTier
             {
                 stmt += "<TH class=\"tableheader\">1 - 9</TH>";
                 stmt += "<TH class=\"tableheader\">10 - 19</TH>";
-                stmt += "<TH class=\"tableheader\">20 - " + numbers.ToString() + "</TH>"; 
-            }           
+                stmt += "<TH class=\"tableheader\">20 - " + numbers.ToString() + "</TH>";
+            }
             else if (numbers < 40)
             {
                 stmt += "<TH class=\"tableheader\">1 - 9</TH>";
                 stmt += "<TH class=\"tableheader\">10 - 19</TH>";
                 stmt += "<TH class=\"tableheader\">20 - 29</TH>";
-                stmt += "<TH class=\"tableheader\">30 - " + numbers.ToString() + "</TH>"; 
+                stmt += "<TH class=\"tableheader\">30 - " + numbers.ToString() + "</TH>";
             }
             else if (numbers <= 50)
             {
@@ -2028,7 +2030,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">10 - 19</TH>";
                 stmt += "<TH class=\"tableheader\">20 - 29</TH>";
                 stmt += "<TH class=\"tableheader\">30 - 39</TH>";
-                stmt += "<TH class=\"tableheader\">40 - " + numbers.ToString() + "</TH>"; 
+                stmt += "<TH class=\"tableheader\">40 - " + numbers.ToString() + "</TH>";
             }
             else if (numbers <= 60)
             {
@@ -2037,7 +2039,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">20 - 29</TH>";
                 stmt += "<TH class=\"tableheader\">30 - 39</TH>";
                 stmt += "<TH class=\"tableheader\">40 - 49</TH>";
-                stmt += "<TH class=\"tableheader\">50 - " + numbers.ToString() + "</TH>"; 
+                stmt += "<TH class=\"tableheader\">50 - " + numbers.ToString() + "</TH>";
             }
             else if (numbers < 70)
             {
@@ -2093,7 +2095,7 @@ namespace Lottotry.BusinessTier
                 }
                 stmt += "</TR>";
             }
-            
+
 
             stmt += "<TR>"
                 + "<TH class=\"tableheader\">Draw No.</TH>"
@@ -2163,7 +2165,7 @@ namespace Lottotry.BusinessTier
                 stmt += "<TH class=\"tableheader\">60 - 69</TH>";
                 stmt += "<TH class=\"tableheader\">70 - " + numbers.ToString() + "</TH>";
             }
-            
+
             stmt += "</TR></TABLE>"
                 + "<A href=" + fromSite + ">Back</A>";
             stmt += Util.CreateHTML_Tail();
@@ -2172,7 +2174,7 @@ namespace Lottotry.BusinessTier
 
         private NumGen getNumGen(int start, int target)
         {
-            if(target == 0)
+            if (target == 0)
             {
                 target = lastRow;
             }
@@ -2207,7 +2209,7 @@ namespace Lottotry.BusinessTier
         }
 
 
-        public Dictionary<List<int>, int> getNumberStats(int start, int target, List<List<int>> tickets, int ticketCount)
+        public List<TicketNumberScore> getNumberStats(int start, int target, List<List<int>> tickets, int ticketCount)
         {
             if (target == 0)
             {
@@ -2217,36 +2219,104 @@ namespace Lottotry.BusinessTier
             {
                 start = lastRow - 10;
             }
-            var pastDraws = getPastDraws(db, start, target);
+            numgen = new NumGen(db, start, target);
+
+            SubStatistics[] stat;
+            stat = numgen.Stat;
+
+            //var pastDraws = getPastDraws(db, start, target);
 
             Dictionary<int, int> recentHits = new Dictionary<int, int>();
-            Dictionary<List<int>, int> scorePerTicket = new Dictionary<List<int>, int>();
+            List<TicketNumberScore> scorePerTicket = new List<TicketNumberScore>();
+
 
             for (int i = 0; i < tickets.Count; i++)
             {
-                int score = 0;
+                TicketNumberScore score = null;
+                int maxNumber = Util.getTotalLottoNumbers(db);
+                int numbersPerTicket = Util.getColumnnsOfLotto_no_bonus(db);
                 var ticket = tickets[i];
-                for (int j = 0; j < pastDraws.Count; j++)
-                {                  
-                    var pastDraw  = pastDraws[j];
-                    score += ticket.Intersect(pastDraw).Count();                  
 
-                }
-                if (!scorePerTicket.ContainsKey(ticket))
-                {
-                    scorePerTicket.Add(ticket, score);
-                }
+                TicketScore tc = new TicketScore(ticket, db, stat, start, target, maxNumber, numbersPerTicket);
+                tc.Run();
+                score = tc.GetTotalScore();
+                scorePerTicket.Add(score);
+                
             }
 
-
-
-
-
-
-            return scorePerTicket.OrderByDescending(x => x.Value).Take(ticketCount).ToDictionary(x => x.Key, x => x.Value);
+            return scorePerTicket.OrderByDescending(x => x.TotalScore).ToList();
         }
 
 
+        private double ScoreRecentHits(List<int> ticket)
+        {
+            double score = 0;
+
+
+            return score;
+        }
+
+        private double ScoreWeightedHits(List<int> ticket)
+        {
+            double score = 0;
+
+
+            return score;
+        }
+
+        private double ScoreConsecutive(List<int> ticket)
+        {
+            double score = 0;
+
+
+            return score;
+        }
+
+        private double ScoreOverdue(List<int> ticket)
+        {
+            double score = 0;
+
+
+            return score;
+        }
+
+        private double ScoreCoverage(List<int> ticket)
+        {
+            double score = 0;
+
+
+            return score;
+        }
+
+        private double ScoreHighLow(List<int> ticket, int maxNumber)
+        {
+            int high = ticket.Count(n => n > maxNumber / 2);
+
+            double ideal = ticket.Count / 2.0;
+
+            double difference = Math.Abs(high - ideal);
+
+            return Math.Max(0, 2 - difference);
+        }
+
+        private double ScoreOddEven(List<int> ticket)
+        {
+            double score = 0;
+            score += ticket.Count(x => x % 2 == 0);
+            for (int i = 0; i < ticket.Count; i++)
+            {
+                if (ticket[i] % 2 == 0)
+                {
+                    score += 1;
+                }
+                else
+                {
+                    score += 0.5;
+                }
+            }
+
+            return score;
+        }
     }
 
 }

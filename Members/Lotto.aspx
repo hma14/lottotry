@@ -1910,7 +1910,7 @@
                                     
                                      <div  style="text-align:right;margin:10px;">
                                         <asp:DropDownList ID="DBDdlReduction" runat="server" SkinID="dwopDownListLongSkin" OnSelectedIndexChanged="DBDdlReduction_SelectedIndexChanged"
-                                            ClientIDMode="Static" onchange="resetDDL('DBDdlReduction')">
+                                            ClientIDMode="Static" onchange="resetDDL('DBDdlReduction')" >
                                         </asp:DropDownList>
                                          <input  type="button"
                                                  value="Generate Lotto Tickets"
@@ -1922,17 +1922,17 @@
                                          <div style="margin:10px 0;">
 
                                             Number of Tickets:
-                                            <span id="lblTicketCount">20</span>
+                                            <span id="lblTicketCount">100</span>
 
                                             <br />
-                                            <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="20" />
+                                            <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="100" />
                                             
                                             <input type="range"
                                                     id="rngTicketCount"
                                                     min="10"
-                                                    max="100"
+                                                    max="1000"
                                                     step="5"
-                                                    value="20"
+                                                    value="100"
                                                     oninput="updateTicketCount();"  class="buttonGen_long"  />
 
                                         </div>
@@ -1986,8 +1986,7 @@
                                 <asp:RadioButton ID="rbRandom"
                                     runat="server"
                                     GroupName="Reduction"
-                                    Text=" Random Reduction"
-                                    Checked="true" 
+                                    Text=" Random Reduction"                                   
                                     onclick="reductionChanged();" />
 
                                 <div class="legend">
@@ -2008,6 +2007,7 @@
                                     runat="server"
                                     GroupName="Reduction"
                                     Text=" Smart Reduction" 
+                                    Checked="true" 
                                     onclick="reductionChanged();" />
 
                                 <div class="legend">
@@ -2018,7 +2018,7 @@
                                 <hr />
                                 <br />
 
-                                <div id="divTicketCount" style="margin-bottom:10px;">
+                                <div id="divTicketCount" style="display:none; margin-bottom:10px;">
                                     Tickets To Play:
                                     <asp:TextBox
                                         ID="txtTicketCount"
@@ -2051,7 +2051,7 @@
                                     Lines
 
                                 </div>
-                                <div  id="divNumStats" style="display:none; margin-bottom:10px;">
+                                <div  id="divNumStats" style="margin-bottom:10px;">
                                     Tickets To Play:
                                     <asp:TextBox
                                         ID="txtSmartTicketCount"
