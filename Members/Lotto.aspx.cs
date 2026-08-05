@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Caching;
 using System.Web.UI;
@@ -1724,7 +1725,7 @@ namespace Lottotry.Members
             return score;
         }
 
-        private List<TicketNumberScore> SmartReduction(
+        private List<TicketScore> SmartReduction(
             List<string> strTickets,
             int ticketCount,
             Database db)
@@ -1751,17 +1752,17 @@ namespace Lottotry.Members
                             .ToList())
                 .ToList();
 
-            var rankedTickets = lotto.getNumberStats(start, target, tickets, ticketCount);
+            var rankedTickets = lotto.getNumberStats(start, target, tickets);
 
             // filter with diversity
-            List<TicketNumberScore> selectedTickets = new List<TicketNumberScore>(); 
+            List<TicketScore> selectedTickets = new List<TicketScore>(); 
             foreach (var candidate in rankedTickets)
             {
                 if (selectedTickets.Count == ticketCount)
                     break;
 
                 bool isTooSimilar = selectedTickets.Any(selected =>
-                    candidate.Numbers.Intersect(selected.Numbers).Count() >= 3);
+                    candidate.Numbers.Intersect(selected.Numbers).Count() > 3);
 
                 if (!isTooSimilar)
                 {
@@ -1792,21 +1793,21 @@ namespace Lottotry.Members
 
         protected void btnProduceTickets_Click(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
+            //lblMessage.Text = "";
 
             List<string> tickets = txtTickets?.Text
                 ?.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 ?.ToList();
 
-            if (tickets == null || tickets.Count == 0)
-            {
-                lblMessage.Text = "Generate Tickets first!";
-                ClientScript.RegisterStartupScript(
-                GetType(),
-                "RefreshReductionUI",
-                "refreshReductionUI();",
-                true);
-            }
+            //if (tickets == null || tickets.Count == 0)
+            //{
+            //    lblMessage.Text = "Generate Tickets first!";
+            //    ClientScript.RegisterStartupScript(
+            //    GetType(),
+            //    "RefreshReductionUI",
+            //    "refreshReductionUI();",
+            //    true);
+            //}
 
 
             List<string> result;
@@ -1845,55 +1846,156 @@ namespace Lottotry.Members
                 }
                 Database db = (Database)int.Parse(DBDdlReduction.SelectedItem.Value);
                 var smartResult = SmartReduction(tickets, ticketCount, db);
-                //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
-                resultText = string.Join(
-                            Environment.NewLine,
-                            smartResult.Select(x =>
-                                $"{string.Join(" ", x.Numbers.Select(n => n.ToString("00")))} score({x.TotalScore:F2})"));
-                resultCount = smartResult.Count.ToString();
-#if false
-                try
+
+                StringBuilder sb = new StringBuilder();
+                double maxTotal = smartResult.Max(x => x.Total);
+                double d = maxTotal / 5.0;
+                foreach (TicketScore t in smartResult)
                 {
-                    result = SmartReduction(tickets, ticketCount);
-                    result = result
-                        .Where(x => !string.IsNullOrWhiteSpace(x))
-                        .Select(x => x.Trim())
-                        .ToList();
-                    if (result.Any(x => x == null))
+                    int stars = (int)Math.Floor(t.Total / d);
+                    stars = Math.Max(1, Math.Min(5, stars));
+
+                    string starText =
+                        new string('★', stars)
+                        + new string('☆', 5 - stars);
+
+                    string numbers =
+                    string.Join(" ",
+                        t.Numbers.Select(x => x.ToString("00")));
+
+                    
+
+                    string id = Guid.NewGuid().ToString("N");
+
+                    sb.Append($@"
+
+                        <div class='ticketHeader'
+                             onclick=""toggle('{id}')"">
+
+                        <b>{starText}</b>
+
+                        &nbsp;
+
+                        {numbers}
+
+                        &nbsp;&nbsp;
+
+                        Total:
+                        <b>{t.Total:F2}</b>
+
+                        </div>
+
+                        ");                
+
+                    sb.Append($@"
+
+                        <div
+                        id='{id}'
+                        class='ticketDetails'>
+
+                        <table>
+
+                        <tr>
+                        <td>Distribution</td>
+                        <td>{t.Distribution:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Consecutive</td>
+                        <td>{t.Consecutive:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Odd/Even</td>
+                        <td>{t.OddEven:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Low/High</td>
+                        <td>{t.HighLow:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Zone Diversity</td>
+                        <td>{t.Diversity:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Recent Hits</td>
+                        <td>{t.RecentHits:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Overdue</td>
+                        <td>{t.Overdue:F2}</td>
+                        </tr>
+
+
+                        <tr>
+                        <td>Historical</td>
+                        <td>{t.HistoricalFrequency:F2}</td>
+                        </tr>
+
+                        <tr>
+                        <td>Last Digit Diversity</td>
+                        <td>{t.LastDigitDiversity:F2}</td>
+                        </tr>
+
+                        <tr>
+
+                        <td><b>Total</b></td>
+
+                        <td><b>{t.Total:F2}</b></td>
+
+                        </tr>
+
+                        </table>
+
+                        <br/>
+
+                        ");
+                    sb.Append("<b>Why this ticket?</b><br/>");
+
+                    foreach (string reason in t.Reasons)
                     {
-                        txtResults.Text = "Result contains NULL item";
-                        return;
+                        sb.Append("✓ " + reason + "<br/>");
                     }
-                    if (result.Any(x => string.IsNullOrWhiteSpace(x)))
+
+                    sb.Append("</div>");
+                }
+                phTickets.Controls.Clear();
+
+                phTickets.Controls.Add(
+                    new Literal
                     {
-                        txtResults.Text = "Result contains empty item";
-                        return;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    txtResults.Text = ex.ToString();
-                    return;
-                }
-#endif
+                        Text = sb.ToString()
+                    });
+
+                //            //resultText = string.Join(Environment.NewLine, smartResult.Select(x => $"{string.Join(" ", x.Key)} score({x.Value})"));
+                //            resultText = string.Join(
+                //                        Environment.NewLine,
+                //                        smartResult.Select(x =>
+                //                            $"{string.Join(" ", x.Numbers.Select(n => n.ToString("00")))} score({x.Total:F2})"));
+                //            resultCount = smartResult.Count.ToString();
+                //}
+                //        lblGeneratedCount.Text = tickets.Count.ToString();
+                //        lblResultCount.Text = resultCount; 
+                //        txtResults.Text = resultText;
+
+
+                //        //Debug.WriteLine(result.GetType());
+                //        //Debug.WriteLine(result.FirstOrDefault());
+
+                //        ScriptManager.RegisterStartupScript(
+                //            this,
+                //            GetType(),
+                //            "RefreshReductionUI",
+                //            //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                //            "refreshReductionUI();",
+                //            true);
+
+
             }
-            lblGeneratedCount.Text = tickets.Count.ToString();
-            lblResultCount.Text = resultCount; 
-            txtResults.Text = resultText;
-            
-
-            //Debug.WriteLine(result.GetType());
-            //Debug.WriteLine(result.FirstOrDefault());
-
-            ScriptManager.RegisterStartupScript(
-                this,
-                GetType(),
-                "RefreshReductionUI",
-                //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                "refreshReductionUI();",
-                true);
-
-
         }
     }
 }

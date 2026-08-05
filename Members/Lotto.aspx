@@ -318,7 +318,6 @@
 
             }
             
-            document.getElementById("txtResults").value = '';
             var ticketCount =
                 parseInt(document.getElementById("rngTicketCount").value);
 
@@ -374,6 +373,23 @@
 
         }
 
+        function toggle(id) {
+            var all =
+                document.getElementsByClassName("ticketDetails");
+
+            for (var i = 0; i < all.length; i++) {
+                if (all[i].id != id)
+                    all[i].style.display = "none";
+            }
+
+            var div =
+                document.getElementById(id);
+
+            if (div.style.display == "block")
+                div.style.display = "none";
+            else
+                div.style.display = "block";
+        }
 
     </script>
 </asp:Content>
@@ -1940,11 +1956,11 @@
                                 </div>
                                 <table style="width:100%; border-collapse:collapse;">
                                     <tr>
-                                        <th style="width:50%; text-align:left; padding-bottom:8px;">
+                                        <th style="width:20%; text-align:left; padding-bottom:8px;">
                                             Generated Tickets
                                             (<asp:Label ID="lblGeneratedCount" runat="server" ClientIDMode="Static"  Text="0" />)
                                         </th>
-                                        <th style="width:50%; text-align:left; padding-bottom:8px;">
+                                        <th style="width:80%; text-align:left; padding-bottom:8px;">
                                             Reduction Results                                           
                                             (<asp:Label ID="lblResultCount" runat="server" ClientIDMode="Static" Text="0" />)
                                         </th>
@@ -1961,23 +1977,13 @@
                                                 Width="100%"
                                                 ClientIDMode="Static"
                                                 style="box-sizing:border-box;">
-                                            </asp:TextBox>
-
+                                            </asp:TextBox>                                            
                                         </td>
-
-                                        <td style="padding-left:10px; vertical-align:top;">
-
-                                            <asp:TextBox
-                                                ID="txtResults"
-                                                runat="server"
-                                                TextMode="MultiLine"
-                                                Rows="25"
-                                                Width="100%"
-                                                ReadOnly="true"
-                                                ClientIDMode="Static" 
-                                                style="box-sizing:border-box;">
-                                            </asp:TextBox>
-
+                                        <td >
+                                            <asp:PlaceHolder
+                                                ID="phTickets"
+                                                runat="server">                                                
+                                            </asp:PlaceHolder>
                                         </td>
                                     </tr>
                                 </table>

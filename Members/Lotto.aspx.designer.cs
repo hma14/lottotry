@@ -879,13 +879,13 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.TextBox txtTickets;
 
         /// <summary>
-        /// txtResults control.
+        /// phTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtResults;
+        protected global::System.Web.UI.WebControls.PlaceHolder phTickets;
 
         /// <summary>
         /// rbRandom control.

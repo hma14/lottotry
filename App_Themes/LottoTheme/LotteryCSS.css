@@ -959,3 +959,42 @@ strike
     {
         font-size:1.1em;
     }
+
+.ticketHeader {
+    padding: 10px;
+    cursor: pointer;
+    background: #F3F3F3;
+    margin-top: 5px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    font-family: Consolas;
+}
+
+    .ticketHeader:hover {
+        background: #DCEEFF;
+    }
+
+    .ticketHeader b {
+        color: teal;
+        margin: 0px;
+        padding: 0px;
+    }
+
+.ticketDetails {
+    display: none;
+    margin-left: 20px;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+    background: #FAFAFA;
+}
+
+    .ticketDetails td {
+        width: 200px!important;
+        text-align: left!important;
+    }
+
+    .ticketDetails b {
+        color: teal;
+        margin: 0px;
+        padding: 0px;
+}

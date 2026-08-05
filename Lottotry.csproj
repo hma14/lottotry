@@ -528,6 +528,7 @@
     <Compile Include="BusinessTier\SendGridEmailClient.cs" />
     <Compile Include="BusinessTier\TicketNumberScore.cs" />
     <Compile Include="BusinessTier\TicketScore.cs" />
+    <Compile Include="BusinessTier\TicketScoreEngine.cs" />
     <Compile Include="LottoSites\CaSuperlottoPlus.aspx.cs">
       <DependentUpon>CaSuperlottoPlus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

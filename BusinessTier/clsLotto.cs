@@ -2209,7 +2209,7 @@ namespace Lottotry.BusinessTier
         }
 
 
-        public List<TicketNumberScore> getNumberStats(int start, int target, List<List<int>> tickets, int ticketCount)
+        public List<TicketScore> getNumberStats(int start, int target, List<List<int>> tickets)
         {
             if (target == 0)
             {
@@ -2227,24 +2227,24 @@ namespace Lottotry.BusinessTier
             //var pastDraws = getPastDraws(db, start, target);
 
             Dictionary<int, int> recentHits = new Dictionary<int, int>();
-            List<TicketNumberScore> scorePerTicket = new List<TicketNumberScore>();
+            List<TicketScore> scorePerTicket = new List<TicketScore>();
 
 
             for (int i = 0; i < tickets.Count; i++)
             {
-                TicketNumberScore score = null;
+                TicketScore score = null;
                 int maxNumber = Util.getTotalLottoNumbers(db);
                 int numbersPerTicket = Util.getColumnnsOfLotto_no_bonus(db);
                 var ticket = tickets[i];
 
-                TicketScore tc = new TicketScore(ticket, db, stat, start, target, maxNumber, numbersPerTicket);
+                TicketScoreEngine tc = new TicketScoreEngine(ticket, db, stat, start, target, maxNumber, numbersPerTicket);
                 tc.Run();
                 score = tc.GetTotalScore();
                 scorePerTicket.Add(score);
                 
             }
 
-            return scorePerTicket.OrderByDescending(x => x.TotalScore).ToList();
+            return scorePerTicket.OrderByDescending(x => x.Total).ToList();
         }
 
 
