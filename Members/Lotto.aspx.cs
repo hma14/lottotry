@@ -1958,7 +1958,7 @@ namespace Lottotry.Members
 
                     foreach (string reason in t.Reasons)
                     {
-                        sb.Append("<p>✓ " + reason + "<p/>");
+                        sb.Append("<p>" + reason + "<p/>");
                     }
 
                     sb.Append("</div>");
