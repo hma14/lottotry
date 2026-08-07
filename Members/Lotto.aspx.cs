@@ -1978,21 +1978,22 @@ namespace Lottotry.Members
                 //                            $"{string.Join(" ", x.Numbers.Select(n => n.ToString("00")))} score({x.Total:F2})"));
                 //            resultCount = smartResult.Count.ToString();
                 //}
-                //        lblGeneratedCount.Text = tickets.Count.ToString();
-                //        lblResultCount.Text = resultCount; 
-                //        txtResults.Text = resultText;
+
+                resultCount = smartResult.Count.ToString();
+                lblGeneratedCount.Text = tickets.Count.ToString();
+                lblResultCount.Text = resultCount;
 
 
                 //        //Debug.WriteLine(result.GetType());
                 //        //Debug.WriteLine(result.FirstOrDefault());
 
-                //        ScriptManager.RegisterStartupScript(
-                //            this,
-                //            GetType(),
-                //            "RefreshReductionUI",
-                //            //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                //            "refreshReductionUI();",
-                //            true);
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    GetType(),
+                    "RefreshReductionUI",
+                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                    "refreshReductionUI();",
+                    true);
 
 
             }

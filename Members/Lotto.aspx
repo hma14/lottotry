@@ -272,9 +272,11 @@
                 //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';               
             }
             else {
+                
                 document.getElementById('divNumStats').style.display = '';
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = 'none';
+                
             }
         }
 
@@ -287,12 +289,14 @@
 
         function generateLottoTickets() {
 
+            document.getElementById("divTickets").innerHTML = ""
+
             // get db
 
             var db = parseInt(document.getElementById("DBDdlReduction").value, 10);
             //var text = ddl.options[ddl.selectedIndex].text;
 
-
+            
             var numbersPerDraw, maxNumber;
        
             switch (db) {
@@ -1980,10 +1984,14 @@
                                             </asp:TextBox>                                            
                                         </td>
                                         <td >
-                                            <asp:PlaceHolder
-                                                ID="phTickets"
-                                                runat="server">                                                
-                                            </asp:PlaceHolder>
+                                            <div id="divTickets">
+                                                <asp:PlaceHolder
+                                                    ID="phTickets"
+                                                    runat="server"
+                                                    ClientIDMode="Static"
+                                                    >                                                
+                                                </asp:PlaceHolder>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
