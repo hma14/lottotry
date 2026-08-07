@@ -997,4 +997,9 @@ strike
         color: teal;
         margin: 0px;
         padding: 0px;
-}
+    }
+    .ticketDetails i {
+        color: blue;
+        margin: 0px;
+        padding: 0px;
+    }

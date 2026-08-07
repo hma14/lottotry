@@ -1897,48 +1897,48 @@ namespace Lottotry.Members
 
                         <tr>
                         <td>Distribution</td>
-                        <td>{t.Distribution:F2}</td>
+                        <td><i>{t.Distribution:F2}</i> out of <b> {t.Numbers.Count * 2 * 0.15:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Consecutive</td>
-                        <td>{t.Consecutive:F2}</td>
+                        <td><i>{t.Consecutive:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Odd/Even</td>
-                        <td>{t.OddEven:F2}</td>
+                        <td><i>{t.OddEven:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Low/High</td>
-                        <td>{t.HighLow:F2}</td>
+                        <td><i>{t.HighLow:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Zone Diversity</td>
-                        <td>{t.Diversity:F2}</td>
+                        <td><i>{t.Diversity:F2}</i> out of <b> {t.Numbers.Count * 2 * 0.15:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Recent Hits</td>
-                        <td>{t.RecentHits:F2}</td>
+                        <td><i>{t.RecentHits:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Overdue</td>
-                        <td>{t.Overdue:F2}</td>
+                        <td><i>{t.Overdue:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
 
                         <tr>
                         <td>Historical</td>
-                        <td>{t.HistoricalFrequency:F2}</td>
+                        <td><i>{t.HistoricalFrequency:F2}</i> out of <b> {20 * 0.05:F2}</b></td>
                         </tr>
 
                         <tr>
                         <td>Last Digit Diversity</td>
-                        <td>{t.LastDigitDiversity:F2}</td>
+                        <td><i>{t.LastDigitDiversity:F2}</i> out of <b> {10 * 0.1:F2}</b></td>
                         </tr>
 
                         <tr>
@@ -1958,7 +1958,7 @@ namespace Lottotry.Members
 
                     foreach (string reason in t.Reasons)
                     {
-                        sb.Append("✓ " + reason + "<br/>");
+                        sb.Append("<p>✓ " + reason + "<p/>");
                     }
 
                     sb.Append("</div>");

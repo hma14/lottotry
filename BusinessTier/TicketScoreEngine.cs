@@ -121,27 +121,101 @@ namespace Lottotry.BusinessTier
 
         public void ScoreRecentHits()
         {
-            RecentHits = Ticket.Count(x => Stat[x].RelativeDist <= 5 && Stat[x].Cnt >= 2);
+            int cnt = Ticket.Count(x => Stat[x].RelativeDist <= 5 && Stat[x].Cnt >= 2);
+            int score = 0;
+            switch (cnt)
+            {
+                case 0:
+                    score = 0;
+                    break;
+                case 1:
+                    score = 1;
+                    break;
+                case 2:
+                case 4:
+                    score = 5;
+                    break;
+                case 3:
+                    score = 10;
+                    break;
+
+                default:
+                    score = -5;
+                    break;
+            }
+            RecentHits = score;
         }
         private void ScoreOverdue()
         {
-            Overdue = Ticket.Count(n => Stat[n].RelativeDist > 10 & Stat[n].Cnt < 2);
+            int cnt = Ticket.Count(n => Stat[n].RelativeDist > 10 & Stat[n].Cnt < 2);
+            int score = 0;
+            switch (cnt)
+            {
+                case 0:
+                    score = 1;
+                    break;
+                case 1:
+                    score = 10;
+                    break;
+                case 2:
+                    score = 5;
+                    break;
+                case 3:
+                    score = -1;
+                    break;
+
+                default:
+                    score = -10;
+                    break;
+            }
+            Overdue = score;
         }
         private void ScoreOddEven() {
             int even = Ticket.Count(n => n % 2 == 0);
             double ideal = Ticket.Count / 2.0;
             double difference = Math.Abs(even - ideal);
-            OddEven = Math.Max(0, 2 - difference);
+            var oe = Math.Max(0, 2 - difference);
+            switch (oe)
+            {
+                case 0:
+                    OddEven = -5;
+                    break;
+                case 1:
+                    OddEven = 5;
+                    break;
+                case 2:
+                    OddEven = 10;
+                    break;
+                default:
+                    OddEven = -5;
+                    break;
+            }
         }
         private void ScoreHighLow()
         {
             int high = Ticket.Count(n => n > MaxNumber / 2);
             double ideal = Ticket.Count / 2.0;
             double difference = Math.Abs(high - ideal);
-            HighLow = Math.Max(0, 2 - difference);
+
+            var oe = Math.Max(0, 2 - difference);
+            switch (oe)
+            {
+                case 0:
+                    HighLow = -5;
+                    break;
+                case 1:
+                    HighLow = 5;
+                    break;
+                case 2:
+                    HighLow = 10;
+                    break;
+                default:
+                    HighLow = -5;
+                    break;
+            }
         }
         private void ScoreDistribution() {
-            int zones = 7;
+            int zones = Ticket.Count;
             int zoneSize = (int)Math.Ceiling((float) MaxNumber / zones);
 
             int[] counts = new int[zones];
@@ -159,15 +233,15 @@ namespace Lottotry.BusinessTier
                 switch (count)
                 {
                     case 0:
-                        score -= 2;      // Empty zone
+                        score -= 1;      // Empty zone
                         break;
 
                     case 1:
-                        score += 3;      // Perfect
+                        score += 2;      // Perfect
                         break;
 
                     case 2:
-                        score += 2;      // Still good
+                        score += 1;      // Still good
                         break;
 
                     default:
@@ -194,20 +268,20 @@ namespace Lottotry.BusinessTier
                     Consecutive = 10;
                     break;
                 case 1:
-                    Consecutive = 8;
+                    Consecutive = 5;
                     break;
                 case 2:
-                    Consecutive = 3;
+                    Consecutive = 0;
                     break;
                 case 3:
-                    Consecutive = 2;
+                    Consecutive = -5;
                     break;
-                default: Consecutive = 0;
+                default: Consecutive = -10;
                     break;
             }
         }
         private void ScoreDiversity() {
-            int zones = 4;
+            int zones = Ticket.Count;
             int zoneSize = (int)Math.Ceiling((double) MaxNumber / zones);
 
             int[] zoneCounts = new int[zones];
@@ -225,15 +299,15 @@ namespace Lottotry.BusinessTier
                 switch (count)
                 {
                     case 0:
-                        score -= 1.0;   // Empty zone
+                        score -= 1;   // Empty zone
                         break;
 
                     case 1:
-                        score += 2.0;   // Ideal
+                        score += 2;   // Ideal
                         break;
 
                     case 2:
-                        score += 1.0;   // Acceptable
+                        score += 1;   // Acceptable
                         break;
 
                     default:
@@ -251,7 +325,7 @@ namespace Lottotry.BusinessTier
             {
                 score += Stat[n].Cnt;
             }
-            HistoricalFrequency = score;
+            HistoricalFrequency = Math.Min(20, score);
         }
         private void ScoreLastDigitDiversity()
         {
@@ -267,13 +341,13 @@ namespace Lottotry.BusinessTier
                 switch (count)
                 {
                     case int c when c == NumbersPerDraw - 2:
-                        score -= 1.0;   // dup = 4
+                        score -= 5.0;   // dup = 4
                         break;
                     case int c when c == NumbersPerDraw - 1:
-                        score -= 2.0;   // dup = 5
+                        score -= 8.0;   // dup = 5
                         break;
                     case int c when c == NumbersPerDraw:
-                        score -= 3.0;   // dup = 6
+                        score -= 10.0;   // dup = 6
                         break;
                     default:
                         //score += (NumbersPerDraw - count - NumbersPerDraw  / 2.0);   
@@ -285,17 +359,30 @@ namespace Lottotry.BusinessTier
         }
         private void BiildReasons(TicketScore ts)
         {
-            if (ts.Consecutive >= 8 * 0.1)
-                ts.Reasons.Add("No consecutive numbers");
+            if (ts.Distribution >= 1.5 * 3.0 / 4)
+                ts.Reasons.Add("✓ Distribution is good");
+            if (ts.Consecutive == 1)
+                ts.Reasons.Add("✓ No consecutive numbers");
 
-            if (ts.Diversity >= 2 * 0.15)
-                ts.Reasons.Add("Excellent zone coverage");
+            if (ts.Diversity >= 1.5 * 3.0 / 4)
+                ts.Reasons.Add("✓ Excellent zone coverage");
 
-            if (ts.OddEven == Math.Ceiling(Ticket.Count / 2.0))
-                ts.Reasons.Add("Balanced odd/even");
+            if (ts.OddEven >= 3.0/4)
+                ts.Reasons.Add("✓ Balanced odd/even numberd");
 
-            if (ts.HighLow == Math.Ceiling(Ticket.Count / 2.0))
-                ts.Reasons.Add("Balanced low/high");
+            if (ts.HighLow >= 3.0 / 4)
+                ts.Reasons.Add("✓ Balanced low/high numbers");
+            if (ts.RecentHits >= 3.0 / 4)
+                ts.Reasons.Add("✓ Contains hot numbers ideally");
+
+            if (ts.Overdue >= 3.0 / 4)
+                ts.Reasons.Add("✓ Contains cold numbers ideally");
+
+            if (ts.HistoricalFrequency >= 3.0 / 4)
+                ts.Reasons.Add("✓ Appearing in the past draws more frequently");
+
+            if (ts.LastDigitDiversity >= 3.0 / 4)
+                ts.Reasons.Add("✓ Less last digital numbers duplicated");
 
         }
 
