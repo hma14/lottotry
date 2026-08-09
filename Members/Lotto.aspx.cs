@@ -1755,7 +1755,7 @@ namespace Lottotry.Members
             var rankedTickets = lotto.getNumberStats(start, target, tickets);
 
             // filter with diversity
-            List<TicketScore> selectedTickets = new List<TicketScore>(); 
+            List<TicketScore> selectedTickets = new List<TicketScore>();
             foreach (var candidate in rankedTickets)
             {
                 if (selectedTickets.Count == ticketCount)
@@ -1770,6 +1770,44 @@ namespace Lottotry.Members
                 }
             }
             return selectedTickets;
+        }
+
+        private List<List<int>> SearchMatchingTickets(
+            List<string> strTickets,
+            int numMatches,
+            Database db)
+        {
+            // loads the last 10 official draws from the database.
+
+            int target = 0;
+
+            if (txtMatchTarget.Text != "0" && !txtMatchTarget.Text.IsNullOrWhiteSpace())
+            {
+                target = int.Parse(txtMatchTarget.Text);
+            }
+
+            List<List<int>> tickets = strTickets
+                .Select(x => x.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                            .Select(int.Parse)
+                            .ToList())
+                .ToList();
+
+            potent = new PotentialNumbers(db, fromSite);
+
+            var targetDraw = potent.getTargetDraw(db, target);
+            List<List<int>> matches = new List<List<int>>();
+
+            foreach (var ticket in tickets)
+            {
+                bool match = (ticket.Intersect(targetDraw).Count() >= numMatches);
+                if (match)
+                {
+                    matches.Add(ticket);
+                }
+            }
+
+            lblTargeDraw.Text = string.Join(" ", targetDraw.Select(x => x.ToString("00")));
+            return matches;
         }
 
         private List<string> RandomReduction_Fisher_Yates_shuffle(
@@ -1837,6 +1875,60 @@ namespace Lottotry.Members
                 resultText = string.Join(Environment.NewLine, result);
                 resultCount = result.Count.ToString();
             }
+            else if (rbMatchTargeDraw.Checked)
+            {
+                var numMatches = 3;
+                if (int.TryParse(txtMatchCount.Text, out int count))
+                {
+                    numMatches = count;
+                }
+                Database db = (Database)int.Parse(DBDdlReduction.SelectedItem.Value);
+                var matchResult = SearchMatchingTickets(tickets, numMatches, db);
+                List<string> matchesString = new List<string>();
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append($@"
+
+                        <div class='targetDrawMatch'>
+                         <table>");
+
+                foreach (var match in matchResult)
+                {
+                    string numbers =
+                    string.Join(" ", match.Select(x => x.ToString("00")));
+
+                    sb.Append($@"
+                        <tr>
+                        <td><i>{numbers}</i></td>
+                        </tr>");
+                }
+                sb.Append($@"
+                        </table>
+                        </div>");
+
+
+                string html = sb.ToString();
+                phTickets.Controls.Clear();
+
+                phTickets.Controls.Add(
+                    new Literal
+                    {
+                        Text = sb.ToString()
+                    });
+
+                resultCount = matchResult.Count.ToString();
+                lblGeneratedCount.Text = tickets.Count.ToString();
+                lblResultCount.Text = resultCount;
+
+
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    GetType(),
+                    "RefreshReductionUI",
+                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                    "refreshReductionUI();",
+                    true);
+            }
             else
             {
                 var ticketCount = 5;
@@ -1863,7 +1955,7 @@ namespace Lottotry.Members
                     string.Join(" ",
                         t.Numbers.Select(x => x.ToString("00")));
 
-                    
+
 
                     string id = Guid.NewGuid().ToString("N");
 
@@ -1885,7 +1977,7 @@ namespace Lottotry.Members
 
                         </div>
 
-                        ");                
+                        ");
 
                     sb.Append($@"
 

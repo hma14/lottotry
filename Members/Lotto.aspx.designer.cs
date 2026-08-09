@@ -879,6 +879,15 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.TextBox txtTickets;
 
         /// <summary>
+        /// lblTargeDraw control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTargeDraw;
+
+        /// <summary>
         /// phTickets control.
         /// </summary>
         /// <remarks>
@@ -906,6 +915,15 @@ namespace Lottotry.Members
         protected global::System.Web.UI.WebControls.RadioButton rbSystemic;
 
         /// <summary>
+        /// rbMatchTargeDraw control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rbMatchTargeDraw;
+
+        /// <summary>
         /// rbSmart control.
         /// </summary>
         /// <remarks>
@@ -922,6 +940,24 @@ namespace Lottotry.Members
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTicketCount;
+
+        /// <summary>
+        /// txtMatchCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMatchCount;
+
+        /// <summary>
+        /// txtMatchTarget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMatchTarget;
 
         /// <summary>
         /// txtDeleteLines control.

@@ -68,7 +68,7 @@ namespace BusinessTier
                     for (int i = 0; i < drawLength; ++i)
                     {
                         // Skip drawnumber and drawdate columns
-                        drawNumArray[i] = (int)reader[i+2];
+                        drawNumArray[i] = (int)reader[i + 2];
                     }
                 }
             }
@@ -76,6 +76,34 @@ namespace BusinessTier
             {
                 throw;
             }
+        }
+        public List<int> getTargetDraw(Database db, int target)
+        {
+            if (target == 0)
+            {
+                target = lastRow;
+            }
+            int drawLength = Util.getColumnnsOfLotto_no_bonus(db);
+            List<int> drawList = new List<int>();
+
+            try
+            {
+                // Retrieve target draw from database
+                SqlDataReader reader = dataAccessLayer.SpGetTargetDraw(db, target);
+                while (reader.Read())
+                {
+                    for (int i = 0; i < drawLength; ++i)
+                    {
+                        // Skip drawnumber and drawdate columns
+                        drawList.Add((int)reader[i + 2]);
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            return drawList;
         }
 
         public string genPotentialDraws()

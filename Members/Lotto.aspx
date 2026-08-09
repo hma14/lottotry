@@ -262,20 +262,27 @@
                 document.getElementById('divTicketCount').style.display = '';
                 document.getElementById('divDeleteLines').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
-                //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = ''; 
+                document.getElementById('divMatchCount').style.display = 'none';
                 
             }
             else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = '';
-                //document.getElementById('<%= txtSmartTicketCount.ClientID %>').value = '';               
+                document.getElementById('divMatchCount').style.display = 'none';;               
+            }
+            else if (document.getElementById('<%= rbMatchTargeDraw.ClientID %>').checked) {
+                document.getElementById('divMatchCount').style.display = '';
+                document.getElementById('divTicketCount').style.display = 'none';
+                document.getElementById('divNumStats').style.display = 'none';
+                document.getElementById('divDeleteLines').style.display = 'none';
             }
             else {
                 
                 document.getElementById('divNumStats').style.display = '';
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = 'none';
+                document.getElementById('divMatchCount').style.display = 'none';
                 
             }
         }
@@ -372,6 +379,11 @@
             document.getElementById('rngTicketCount').value = hiddenValue;
             updateTicketCount();
             reductionChanged();
+
+            //var details = document.getElementsByClassName("ticketDetails");
+            //details.style.display = "none!important";
+
+
             //updateResultCount();
             //setStatus("Ready");
 
@@ -1972,18 +1984,21 @@
 
                                     <tr>
                                         <td style="padding-right:10px; vertical-align:top;">
-
-                                            <asp:TextBox
+                                       
+                                                <asp:TextBox
                                                 ID="txtTickets"
-                                                runat="server"
-                                                TextMode="MultiLine"
-                                                Rows="25"
-                                                Width="100%"
-                                                ClientIDMode="Static"
-                                                style="box-sizing:border-box;">
-                                            </asp:TextBox>                                            
-                                        </td>
+                                                    runat="server"
+                                                    TextMode="MultiLine"
+                                                    Rows="25"
+                                                    Width="100%"
+                                                    ClientIDMode="Static"
+                                                    style="box-sizing:border-box;">
+                                                </asp:TextBox>
+                                        </td>                                                                                                                         
+                                        
                                         <td >
+                                            <asp:Label ID="lblTargeDraw" runat="server" ClientIDMode="Static" Text="" /> 
+                                            <br />
                                             <div id="divTickets">
                                                 <asp:PlaceHolder
                                                     ID="phTickets"
@@ -2016,6 +2031,16 @@
                                 <div class="legend">
                                     Removes tickets according to a fixed interval.
                                 </div>
+                                <asp:RadioButton ID="rbMatchTargeDraw"
+                                    runat="server"
+                                    GroupName="Reduction"
+                                    Text=" Tickets Matching Target Draw" 
+                                    onclick="reductionChanged();" />
+
+                                <div class="legend">
+                                    At least number of digit in generated draws to be matched in target past draw.
+                                </div>
+                              
                                 
                                 <asp:RadioButton ID="rbSmart"
                                     runat="server"
@@ -2039,9 +2064,30 @@
                                         runat="server"
                                         Width="60px" 
                                         ClientIDMode="Static" 
+                                        onclick="redivMatchCountsetInputs();" 
+                                        />
+                                </div>
+                                <div id="divMatchCount" style="display:none; margin-bottom:10px;">
+                                    Number to Match:
+                                    <asp:TextBox
+                                        ID="txtMatchCount"
+                                        runat="server"
+                                        Width="60px" 
+                                        Value="3"
+                                        ClientIDMode="Static" 
+                                        onclick="resetInputs();" 
+                                        />
+                                    Target Draw:
+                                    <asp:TextBox
+                                        ID="txtMatchTarget"
+                                        runat="server"
+                                        Width="60px" 
+                                        Value="0" 
+                                        ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
                                 </div>
+                                
 
                                 <div id="divDeleteLines" style="display:none; margin-bottom:10px;">
                                     Delete Every
