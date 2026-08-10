@@ -24,7 +24,6 @@ namespace Lottotry.BusinessTier
 
         private int Start { get; set; }
         private int Target { get; set; }
-        private Database Db { get; set; }
         private SubStatistics[] Stat { get; set; }
         private int MaxNumber { get; set; }
         private int NumbersPerDraw { get; set; }
@@ -33,7 +32,6 @@ namespace Lottotry.BusinessTier
 
 
         public TicketScoreEngine(List<int> ticket,
-                            Database db,
                             SubStatistics[] stat,
                             int start,
                             int target,
@@ -62,7 +60,6 @@ namespace Lottotry.BusinessTier
             LastDigitDiversity = lastDigitDiversity;
             TotalScore = totalScore;
 
-            Db = db;
             Stat = stat;
             Start = start;
             Target = target;

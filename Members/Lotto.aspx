@@ -263,13 +263,14 @@
                 document.getElementById('divDeleteLines').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divMatchCount').style.display = 'none';
-                
+                document.getElementById('lblTargeDraw').style.display = 'none';
             }
             else if (document.getElementById('<%= rbSystemic.ClientID %>').checked) {
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divNumStats').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = '';
-                document.getElementById('divMatchCount').style.display = 'none';;               
+                document.getElementById('divMatchCount').style.display = 'none';;  
+                document.getElementById('lblTargeDraw').style.display = 'none';
             }
             else if (document.getElementById('<%= rbMatchTargeDraw.ClientID %>').checked) {
                 document.getElementById('divMatchCount').style.display = '';
@@ -283,6 +284,8 @@
                 document.getElementById('divTicketCount').style.display = 'none';
                 document.getElementById('divDeleteLines').style.display = 'none';
                 document.getElementById('divMatchCount').style.display = 'none';
+                document.getElementById('lblTargeDraw').style.display = 'none';
+                
                 
             }
         }
@@ -1962,7 +1965,7 @@
                                             <input type="range"
                                                     id="rngTicketCount"
                                                     min="10"
-                                                    max="1000"
+                                                    max="100000"
                                                     step="5"
                                                     value="100"
                                                     oninput="updateTicketCount();"  class="buttonGen_long"  />
@@ -2073,7 +2076,7 @@
                                         ID="txtMatchCount"
                                         runat="server"
                                         Width="60px" 
-                                        Value="3"
+                                        Value="4"
                                         ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />
@@ -2105,6 +2108,7 @@
                                         ID="txtKeepLines"
                                         runat="server"
                                         Width="60px" 
+                                        Value="5"
                                         ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />

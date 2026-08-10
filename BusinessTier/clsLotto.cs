@@ -2237,7 +2237,7 @@ namespace Lottotry.BusinessTier
                 int numbersPerTicket = Util.getColumnnsOfLotto_no_bonus(db);
                 var ticket = tickets[i];
 
-                TicketScoreEngine tc = new TicketScoreEngine(ticket, db, stat, start, target, maxNumber, numbersPerTicket);
+                TicketScoreEngine tc = new TicketScoreEngine(ticket, stat, start, target, maxNumber, numbersPerTicket);
                 tc.Run();
                 score = tc.GetTotalScore();
                 scorePerTicket.Add(score);
@@ -2247,6 +2247,29 @@ namespace Lottotry.BusinessTier
             return scorePerTicket.OrderByDescending(x => x.Total).ToList();
         }
 
+        public List<List<int>> SearchMatchingTickets(
+                                List<string> strTickets,
+                                int numMatches,
+                                List<int> targetDraw)
+        {
+            List<List<int>> tickets = strTickets
+                .Select(x => x.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                            .Select(int.Parse)
+                            .ToList())
+                .ToList();
+
+            List<List<int>> matches = new List<List<int>>();
+            foreach (var ticket in tickets)
+            {
+                bool match = (ticket.Intersect(targetDraw).Count() >= numMatches);
+                if (match)
+                {
+                    matches.Add(ticket);
+                }
+            }
+
+            return matches;
+        }
 
     }
 

@@ -1772,43 +1772,7 @@ namespace Lottotry.Members
             return selectedTickets;
         }
 
-        private List<List<int>> SearchMatchingTickets(
-            List<string> strTickets,
-            int numMatches,
-            Database db)
-        {
-            // loads the last 10 official draws from the database.
-
-            int target = 0;
-
-            if (txtMatchTarget.Text != "0" && !txtMatchTarget.Text.IsNullOrWhiteSpace())
-            {
-                target = int.Parse(txtMatchTarget.Text);
-            }
-
-            List<List<int>> tickets = strTickets
-                .Select(x => x.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
-                            .Select(int.Parse)
-                            .ToList())
-                .ToList();
-
-            potent = new PotentialNumbers(db, fromSite);
-
-            var targetDraw = potent.getTargetDraw(db, target);
-            List<List<int>> matches = new List<List<int>>();
-
-            foreach (var ticket in tickets)
-            {
-                bool match = (ticket.Intersect(targetDraw).Count() >= numMatches);
-                if (match)
-                {
-                    matches.Add(ticket);
-                }
-            }
-
-            lblTargeDraw.Text = string.Join(" ", targetDraw.Select(x => x.ToString("00")));
-            return matches;
-        }
+        
 
         private List<string> RandomReduction_Fisher_Yates_shuffle(
             List<string> tickets,
@@ -1861,6 +1825,44 @@ namespace Lottotry.Members
 #endif
                 resultText = string.Join(Environment.NewLine, result);
                 resultCount = result.Count.ToString();
+
+                phTickets.Controls.Clear();
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append($@"
+
+                        <div class='targetDrawMatch'>
+                         <table>");
+
+                foreach (var row in result)
+                {
+                    sb.Append($@"
+                        <tr>
+                        <td><i>{row}</i></td>
+                        </tr>");
+                }
+                sb.Append($@"
+                        </table>
+                        </div>");
+
+                phTickets.Controls.Add(
+                    new Literal
+                    {
+                        Text = sb.ToString()
+                    });
+
+                resultCount = result.Count.ToString();
+                lblGeneratedCount.Text = tickets.Count.ToString();
+                lblResultCount.Text = resultCount;
+
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    GetType(),
+                    "RefreshReductionUI",
+                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                    "refreshReductionUI();",
+                    true);
+
             }
             else if (rbSystemic.Checked)
             {
@@ -1874,16 +1876,64 @@ namespace Lottotry.Members
                 }
                 resultText = string.Join(Environment.NewLine, result);
                 resultCount = result.Count.ToString();
+                phTickets.Controls.Clear();
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append($@"
+
+                        <div class='targetDrawMatch'>
+                         <table>");
+
+                foreach (var row in result)
+                {
+                    sb.Append($@"
+                        <tr>
+                        <td><i>{row}</i></td>
+                        </tr>");
+                }
+                sb.Append($@"
+                        </table>
+                        </div>");
+
+                phTickets.Controls.Add(
+                    new Literal
+                    {
+                        Text = sb.ToString()
+                    });
+
+                resultCount = result.Count.ToString();
+                lblGeneratedCount.Text = tickets.Count.ToString();
+                lblResultCount.Text = resultCount;
+
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    GetType(),
+                    "RefreshReductionUI",
+                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                    "refreshReductionUI();",
+                    true);
+
+
             }
             else if (rbMatchTargeDraw.Checked)
             {
+                int target = 0;
+                if (txtMatchTarget.Text != "0" && !txtMatchTarget.Text.IsNullOrWhiteSpace())
+                {
+                    target = int.Parse(txtMatchTarget.Text);
+                }
+
                 var numMatches = 3;
                 if (int.TryParse(txtMatchCount.Text, out int count))
                 {
                     numMatches = count;
                 }
                 Database db = (Database)int.Parse(DBDdlReduction.SelectedItem.Value);
-                var matchResult = SearchMatchingTickets(tickets, numMatches, db);
+                potent = new PotentialNumbers(db, fromSite);
+
+                lotto = new clsLotto(db, fromSite);
+                var targetDraw = potent.getTargetDraw(db, target);
+                var matchResult = lotto.SearchMatchingTickets(tickets, numMatches, targetDraw);
                 List<string> matchesString = new List<string>();
                 StringBuilder sb = new StringBuilder();
 
@@ -1919,7 +1969,7 @@ namespace Lottotry.Members
                 resultCount = matchResult.Count.ToString();
                 lblGeneratedCount.Text = tickets.Count.ToString();
                 lblResultCount.Text = resultCount;
-
+                lblTargeDraw.Text = string.Join(" ", targetDraw.Select(x => x.ToString("00")));
 
                 ScriptManager.RegisterStartupScript(
                     this,
