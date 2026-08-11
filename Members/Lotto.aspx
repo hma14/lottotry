@@ -2066,6 +2066,7 @@
                                         ID="txtTicketCount"
                                         runat="server"
                                         Width="60px" 
+                                        Value="15"
                                         ClientIDMode="Static" 
                                         onclick="redivMatchCountsetInputs();" 
                                         />

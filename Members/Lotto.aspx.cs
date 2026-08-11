@@ -1793,6 +1793,29 @@ namespace Lottotry.Members
             return shuffled.Take(keepCount).ToList();
         }
 
+        private string getStringBuilder(List<string> numbers)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($@"
+
+                        <div class='targetDrawMatch'>
+                         <table>");
+
+            foreach (var number in numbers)
+            {
+                sb.Append($@"
+                        <tr>
+                        <td><i>{number}</i></td>
+                        </tr>");
+            }
+            sb.Append($@"
+                        </table>
+                        </div>");
+
+            return sb.ToString();
+        }
+
         protected void btnProduceTickets_Click(object sender, EventArgs e)
         {
             //lblMessage.Text = "";
@@ -1800,17 +1823,6 @@ namespace Lottotry.Members
             List<string> tickets = txtTickets?.Text
                 ?.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 ?.ToList();
-
-            //if (tickets == null || tickets.Count == 0)
-            //{
-            //    lblMessage.Text = "Generate Tickets first!";
-            //    ClientScript.RegisterStartupScript(
-            //    GetType(),
-            //    "RefreshReductionUI",
-            //    "refreshReductionUI();",
-            //    true);
-            //}
-
 
             List<string> result;
             string resultText = "";
@@ -1827,42 +1839,15 @@ namespace Lottotry.Members
                 resultCount = result.Count.ToString();
 
                 phTickets.Controls.Clear();
-                StringBuilder sb = new StringBuilder();
-
-                sb.Append($@"
-
-                        <div class='targetDrawMatch'>
-                         <table>");
-
-                foreach (var row in result)
-                {
-                    sb.Append($@"
-                        <tr>
-                        <td><i>{row}</i></td>
-                        </tr>");
-                }
-                sb.Append($@"
-                        </table>
-                        </div>");
-
                 phTickets.Controls.Add(
                     new Literal
                     {
-                        Text = sb.ToString()
+                        Text = getStringBuilder(result)
                     });
 
                 resultCount = result.Count.ToString();
                 lblGeneratedCount.Text = tickets.Count.ToString();
                 lblResultCount.Text = resultCount;
-
-                ScriptManager.RegisterStartupScript(
-                    this,
-                    GetType(),
-                    "RefreshReductionUI",
-                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                    "refreshReductionUI();",
-                    true);
-
             }
             else if (rbSystemic.Checked)
             {
@@ -1898,22 +1883,12 @@ namespace Lottotry.Members
                 phTickets.Controls.Add(
                     new Literal
                     {
-                        Text = sb.ToString()
+                        Text = getStringBuilder(result) 
                     });
 
                 resultCount = result.Count.ToString();
                 lblGeneratedCount.Text = tickets.Count.ToString();
                 lblResultCount.Text = resultCount;
-
-                ScriptManager.RegisterStartupScript(
-                    this,
-                    GetType(),
-                    "RefreshReductionUI",
-                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                    "refreshReductionUI();",
-                    true);
-
-
             }
             else if (rbMatchTargeDraw.Checked)
             {
@@ -1934,36 +1909,13 @@ namespace Lottotry.Members
                 lotto = new clsLotto(db, fromSite);
                 var targetDraw = potent.getTargetDraw(db, target);
                 var matchResult = lotto.SearchMatchingTickets(tickets, numMatches, targetDraw);
-                List<string> matchesString = new List<string>();
-                StringBuilder sb = new StringBuilder();
 
-                sb.Append($@"
-
-                        <div class='targetDrawMatch'>
-                         <table>");
-
-                foreach (var match in matchResult)
-                {
-                    string numbers =
-                    string.Join(" ", match.Select(x => x.ToString("00")));
-
-                    sb.Append($@"
-                        <tr>
-                        <td><i>{numbers}</i></td>
-                        </tr>");
-                }
-                sb.Append($@"
-                        </table>
-                        </div>");
-
-
-                string html = sb.ToString();
                 phTickets.Controls.Clear();
 
                 phTickets.Controls.Add(
                     new Literal
                     {
-                        Text = sb.ToString()
+                        Text = getStringBuilder(matchResult)
                     });
 
                 resultCount = matchResult.Count.ToString();
@@ -1971,13 +1923,6 @@ namespace Lottotry.Members
                 lblResultCount.Text = resultCount;
                 lblTargeDraw.Text = string.Join(" ", targetDraw.Select(x => x.ToString("00")));
 
-                ScriptManager.RegisterStartupScript(
-                    this,
-                    GetType(),
-                    "RefreshReductionUI",
-                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                    "refreshReductionUI();",
-                    true);
             }
             else
             {
@@ -2125,20 +2070,16 @@ namespace Lottotry.Members
                 lblGeneratedCount.Text = tickets.Count.ToString();
                 lblResultCount.Text = resultCount;
 
-
-                //        //Debug.WriteLine(result.GetType());
-                //        //Debug.WriteLine(result.FirstOrDefault());
-
-                ScriptManager.RegisterStartupScript(
-                    this,
-                    GetType(),
-                    "RefreshReductionUI",
-                    //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
-                    "refreshReductionUI();",
-                    true);
-
-
             }
+
+            ScriptManager.RegisterStartupScript(
+                this,
+                GetType(),
+                "RefreshReductionUI",
+                //$"document.getElementById('rngTicketCount').value='{hfTicketCount.Value}'; updateTicketCount(); reductionChanged();",
+                "refreshReductionUI();",
+                true);
+
         }
     }
 }

@@ -2247,7 +2247,7 @@ namespace Lottotry.BusinessTier
             return scorePerTicket.OrderByDescending(x => x.Total).ToList();
         }
 
-        public List<List<int>> SearchMatchingTickets(
+        public List<string> SearchMatchingTickets(
                                 List<string> strTickets,
                                 int numMatches,
                                 List<int> targetDraw)
@@ -2258,13 +2258,13 @@ namespace Lottotry.BusinessTier
                             .ToList())
                 .ToList();
 
-            List<List<int>> matches = new List<List<int>>();
+            List<string> matches = new List<string>();
             foreach (var ticket in tickets)
             {
                 bool match = (ticket.Intersect(targetDraw).Count() >= numMatches);
                 if (match)
                 {
-                    matches.Add(ticket);
+                    matches.Add(string.Join(" ", ticket.Select(x => x.ToString("00"))));
                 }
             }
 
