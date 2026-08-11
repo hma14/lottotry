@@ -1845,9 +1845,7 @@ namespace Lottotry.Members
                         Text = getStringBuilder(result)
                     });
 
-                resultCount = result.Count.ToString();
-                lblGeneratedCount.Text = tickets.Count.ToString();
-                lblResultCount.Text = resultCount;
+                resultCount = result.Count.ToString();              
             }
             else if (rbSystemic.Checked)
             {
@@ -1862,23 +1860,6 @@ namespace Lottotry.Members
                 resultText = string.Join(Environment.NewLine, result);
                 resultCount = result.Count.ToString();
                 phTickets.Controls.Clear();
-                StringBuilder sb = new StringBuilder();
-
-                sb.Append($@"
-
-                        <div class='targetDrawMatch'>
-                         <table>");
-
-                foreach (var row in result)
-                {
-                    sb.Append($@"
-                        <tr>
-                        <td><i>{row}</i></td>
-                        </tr>");
-                }
-                sb.Append($@"
-                        </table>
-                        </div>");
 
                 phTickets.Controls.Add(
                     new Literal
@@ -1919,8 +1900,6 @@ namespace Lottotry.Members
                     });
 
                 resultCount = matchResult.Count.ToString();
-                lblGeneratedCount.Text = tickets.Count.ToString();
-                lblResultCount.Text = resultCount;
                 lblTargeDraw.Text = string.Join(" ", targetDraw.Select(x => x.ToString("00")));
 
             }
@@ -2067,10 +2046,11 @@ namespace Lottotry.Members
                 //}
 
                 resultCount = smartResult.Count.ToString();
-                lblGeneratedCount.Text = tickets.Count.ToString();
-                lblResultCount.Text = resultCount;
 
             }
+
+            lblGeneratedCount.Text = tickets.Count.ToString();
+            lblResultCount.Text = resultCount;
 
             ScriptManager.RegisterStartupScript(
                 this,
