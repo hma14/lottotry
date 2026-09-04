@@ -1939,49 +1939,52 @@
                             
                             <div style="margin:10px;">
                                 <div>
-                                    <h5>
-                                        ENTER TICKETS:
-                                    </h5>
                                     
-                                     <div  style="text-align:right;margin:10px;">
-                                        <asp:DropDownList ID="DBDdlReduction" runat="server" SkinID="dwopDownListLongSkin" OnSelectedIndexChanged="DBDdlReduction_SelectedIndexChanged"
-                                            ClientIDMode="Static" onchange="resetDDL('DBDdlReduction')" >
-                                        </asp:DropDownList>
-                                         <input  type="button"
-                                                 value="Generate Lotto Tickets"
-                                                 onclick="generateLottoTickets();"  class="buttonGen_long" />
-                                         <%--<input  type="button"
-                                                 value="Generate Florida Lotto Tickets"
-                                                 onclick="generateLottoTickets(6, 53);"  class="buttonGen_long" />--%>
-                                                                             
-                                         <div style="margin:10px 0;">
-
-                                            Number of Tickets:
-                                            <span id="lblTicketCount">100</span>
-
-                                            <br />
-                                            <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="100" />
-                                            
-                                            <input type="range"
-                                                    id="rngTicketCount"
-                                                    min="10"
-                                                    max="100000"
-                                                    step="5"
-                                                    value="100"
-                                                    oninput="updateTicketCount();"  class="buttonGen_long"  />
-
-                                        </div>
+                                    <div style="width: 50%">
+                                        <h4>
+                                            You may paste your own <br>
+                                            ticket numbers or generate tickets:
+                                        </h4>
                                     </div>
+                                    <div  style="text-align:right;">
+                                    <asp:DropDownList ID="DBDdlReduction" runat="server" SkinID="dwopDownListLongSkin" OnSelectedIndexChanged="DBDdlReduction_SelectedIndexChanged"
+                                        ClientIDMode="Static" onchange="resetDDL('DBDdlReduction')" >
+                                    </asp:DropDownList>
+                                        <input  type="button"
+                                                value="Generate Lotto Tickets"
+                                                onclick="generateLottoTickets();"  class="buttonGen_long" />
+                                        <%--<input  type="button"
+                                                value="Generate Florida Lotto Tickets"
+                                                onclick="generateLottoTickets(6, 53);"  class="buttonGen_long" />--%>
+                                                                             
+                                        <div style="margin:10px 0;">
+
+                                        Number of Tickets:
+                                        <span id="lblTicketCount">50</span>
+
+                                        <br />
+                                        <asp:HiddenField ID="hfTicketCount" runat="server" ClientIDMode="Static" Value="50" />
+                                            
+                                        <input type="range"
+                                                id="rngTicketCount"
+                                                min="10"
+                                                max="1000"
+                                                step="10"
+                                                value="50"
+                                                oninput="updateTicketCount();"  class="buttonGen_long"  style="width: 75%;" />
+
+                                    </div>
+                                </div>
                                 </div>
                                 <table style="width:100%; border-collapse:collapse;">
                                     <tr>
-                                        <th style="width:20%; text-align:left; padding-bottom:8px;">
-                                            Generated Tickets
-                                            (<asp:Label ID="lblGeneratedCount" runat="server" ClientIDMode="Static"  Text="0" />)
+                                        <th style="width:25%; text-align:left; padding-bottom:8px;">
+                                            Pasted or Generated Tickets
+                                            (<asp:Label ID="lblGeneratedCount" runat="server" ClientIDMode="Static"  Text="0"/>)
                                         </th>
-                                        <th style="width:80%; text-align:left; padding-bottom:8px;">
+                                        <th style="width:75%; text-align:center; padding-bottom:8px;">
                                             Reduction Results                                           
-                                            (<asp:Label ID="lblResultCount" runat="server" ClientIDMode="Static" Text="0" />)
+                                            (<asp:Label ID="lblResultCount" runat="server" ClientIDMode="Static" Text="0"/>)
                                         </th>
                                     </tr>
 
