@@ -676,13 +676,12 @@ hr
 
 }
 
-.htmlcontent td, th
-{
-    width: 60px;
-    text-align: center;
-    color: Maroon;
-    text-shadow: #985813 0 -1px;
-}
+    .htmlcontent td, th {
+        width: 60px;
+        text-align: center;
+        color: #fc8c03;
+        text-shadow: #985813 0 -1px;
+    }
 
     .htmlcontent 
     {
