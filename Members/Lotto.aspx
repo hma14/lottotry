@@ -502,8 +502,7 @@
 						you. The lotteries this tool covers are displayed in the drop down list.
 						<br />
                         <br />
-                        <span class="numItems">4.</span>Actual generating draw numbers for target draw (could
-						be next draw, or any past draws as long as it is correct one). The generated numbers
+                        <span class="numItems">4.</span>Actual generating draw numbers for target draw (lblTargeDraw
 						(in RED) are based on user input as shown in text boxes of Sum Min, Sum Max and
 						Number of Odds displayed in the screen of Variable Configuration page. These three
 						values determine the generated draw numbers, i.e. the sum of six draw numbers must
@@ -2004,7 +2003,7 @@
                                         
                                         <td >
                                             <asp:Label ID="lblTargeDraw" runat="server" ClientIDMode="Static" Text="" /> 
-                                            <br />
+                                            <br /><br />
                                             <div id="divTickets">
                                                 <asp:PlaceHolder
                                                     ID="phTickets"
@@ -2080,7 +2079,7 @@
                                         ID="txtMatchCount"
                                         runat="server"
                                         Width="60px" 
-                                        Value="4"
+                                        Value="3"
                                         ClientIDMode="Static" 
                                         onclick="resetInputs();" 
                                         />

@@ -1816,6 +1816,39 @@ namespace Lottotry.Members
             return sb.ToString();
         }
 
+        private string getStringBuilder(List<MatchingTicket> numbers)
+        {
+            if (numbers.Count == 0) return null;
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($@"
+
+                        <div class='targetDrawMatch'>
+                         <table> 
+                         <tr>
+                         <th>Ticket</th>
+                         <th>Matched Numbers</th>
+                         <th>Matches</th>  
+                         </tr>");
+
+            foreach (var number in numbers)
+            {
+                sb.Append($@"
+                        <tr>
+                        <td><i>{number.Ticket}</i></td>
+                        <td><i>{string.Join(" ", number.MatchedNumbers.Select(x => x.ToString("00")))}</i></td>
+                        <td><i>{number.Matches}</i></td>
+                        </tr>");
+            }
+            sb.Append($@"
+                        </table>
+                        </div>");
+
+            return sb.ToString();
+        }
+
+
         protected void btnProduceTickets_Click(object sender, EventArgs e)
         {
             //lblMessage.Text = "";

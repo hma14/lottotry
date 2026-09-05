@@ -12,6 +12,7 @@ using BusinessTier;
 using System.Linq;
 using System.Net.Sockets;
 using System.Web.UI.MobileControls;
+using System.Text.RegularExpressions;
 
 namespace Lottotry.BusinessTier
 {
@@ -2247,7 +2248,7 @@ namespace Lottotry.BusinessTier
             return scorePerTicket.OrderByDescending(x => x.Total).ToList();
         }
 
-        public List<string> SearchMatchingTickets(
+        public List<MatchingTicket> SearchMatchingTickets(
                                 List<string> strTickets,
                                 int numMatches,
                                 List<int> targetDraw)
@@ -2258,13 +2259,19 @@ namespace Lottotry.BusinessTier
                             .ToList())
                 .ToList();
 
-            List<string> matches = new List<string>();
+            List<MatchingTicket> matches = new List<MatchingTicket>();
             foreach (var ticket in tickets)
             {
-                bool match = (ticket.Intersect(targetDraw).Count() >= numMatches);
-                if (match)
+                List<int> matched = ticket
+                                .Intersect(targetDraw)
+                                .ToList();
+                if (matched.Count >= numMatches)
                 {
-                    matches.Add(string.Join(" ", ticket.Select(x => x.ToString("00"))));
+                    matches.Add(new MatchingTicket
+                    {
+                        Ticket = string.Join(" ", ticket.Select(x => x.ToString("00"))),
+                        MatchedNumbers = matched,
+                    });
                 }
             }
 

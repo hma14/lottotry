@@ -525,6 +525,7 @@
       <DependentUpon>ShawAllMembers.aspx</DependentUpon>
     </Compile>
     <Compile Include="BusinessTier\LottoRule.cs" />
+    <Compile Include="BusinessTier\MatchingTicket.cs" />
     <Compile Include="BusinessTier\SendGridEmailClient.cs" />
     <Compile Include="BusinessTier\TicketNumberScore.cs" />
     <Compile Include="BusinessTier\TicketScore.cs" />
